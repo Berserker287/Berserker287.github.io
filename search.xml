@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>本该如此轻松</title>
+    <url>/2021/05/09/%E6%9C%AC%E8%AF%A5%E5%A6%82%E6%AD%A4%E8%BD%BB%E6%9D%BE/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="本该如此轻松"><a href="#本该如此轻松" class="headerlink" title="本该如此轻松"></a>本该如此轻松</h2><p>我们立志让计算机和金融商科专业背景的同学能够在所有的课程中获得高GPA</p>
+<h3 id="RESPONSIVE"><a href="#RESPONSIVE" class="headerlink" title="RESPONSIVE"></a>RESPONSIVE</h3><p>7*24小时不间断服务，平均回复时长不超过1分钟，高效沟通，只为解决你的疑惑</p>
+<h3 id="QUALITY"><a href="#QUALITY" class="headerlink" title="QUALITY"></a>QUALITY</h3><p>作业质量经过层层把关，杜绝抄袭、重复赘述等问题，详细注释，思路解析，一点就通</p>
+<h3 id="SUPPORT"><a href="#SUPPORT" class="headerlink" title="SUPPORT"></a>SUPPORT</h3><p>7天售后，作业有问题全额退款，精英导师手把手答疑解惑</p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>基于Spring的旅游景区项目</title>
+    <url>/2022/05/21/Java%E6%99%AF%E5%8C%BA%E6%97%85%E6%B8%B8%E9%A1%B9%E7%9B%AE%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于Spring的旅游景区项目.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios<br>支付宝沙盒支付<br>百度地图JS</p>
+<p>民宿管理员：订单数量统计，订单交易额统计，客房统计饼图，酒店信息修改，房间订单查询，房间入住状态修改，查看住宿订单详情，酒店房间管理，查看用户房间订单评价</p>
+<p>超级管理员：景点民宿导航，公告管理，订单评价，民宿管理，民宿订单，论坛管理，消息回复，房间信息，景点管理，用户管理，景区订单</p>
+<p>用户：邮箱注册，修改个人信息，订单支付，我的贴子，订单评价，发帖回复，修改密码</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[民宿管理员]<br>xierdun<br>1234qwer</p>
+<p>[用户]<br>test<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://imgtu.com/i/OIVagf"><img src="https://s1.ax1x.com/2022/05/17/OIVagf.png" alt="OIVagf.png"></a></td>
+<td><a href="https://imgtu.com/i/OIVBDg"><img src="https://s1.ax1x.com/2022/05/17/OIVBDg.png" alt="OIVBDg.png"></a></td>
+</tr>
+<tr>
+<td><a href="https://imgtu.com/i/OIVDbQ"><img src="https://s1.ax1x.com/2022/05/17/OIVDbQ.png" alt="OIVDbQ.png"></a></td>
+<td><a href="https://imgtu.com/i/OIV0KS"><img src="https://s1.ax1x.com/2022/05/17/OIV0KS.png" alt="OIV0KS.png"></a></td>
+</tr>
+<tr>
+<td><a href="https://imgtu.com/i/OIVdv8"><img src="https://s1.ax1x.com/2022/05/17/OIVdv8.png" alt="OIVdv8.png"></a></td>
+<td><a href="https://imgtu.com/i/OIVgCq"><img src="https://s1.ax1x.com/2022/05/17/OIVgCq.png" alt="OIVgCq.png"></a></td>
+</tr>
+<tr>
+<td><a href="https://imgtu.com/i/OIV5b4"><img src="https://s1.ax1x.com/2022/05/17/OIV5b4.png" alt="OIV5b4.png"></a></td>
+<td><a href="https://imgtu.com/i/OIVsEj"><img src="https://s1.ax1x.com/2022/05/17/OIVsEj.png" alt="OIVsEj.png"></a></td>
+</tr>
+<tr>
+<td><a href="https://imgtu.com/i/OIVyUs"><img src="https://s1.ax1x.com/2022/05/17/OIVyUs.png" alt="OIVyUs.png"></a></td>
+<td><a href="https://imgtu.com/i/OIV65n"><img src="https://s1.ax1x.com/2022/05/17/OIV65n.png" alt="OIV65n.png"></a></td>
+</tr>
+<tr>
+<td><a href="https://imgtu.com/i/OIV280"><img src="https://s1.ax1x.com/2022/05/17/OIV280.png" alt="OIV280.png"></a></td>
+<td><a href="https://imgtu.com/i/OIVhKU"><img src="https://s1.ax1x.com/2022/05/17/OIVhKU.png" alt="OIVhKU.png"></a></td>
+</tr>
+<tr>
+<td><a href="https://imgtu.com/i/OIVR2V"><img src="https://s1.ax1x.com/2022/05/17/OIVR2V.png" alt="OIVR2V.png"></a></td>
+<td><a href="https://imgtu.com/i/OIV4rF"><img src="https://s1.ax1x.com/2022/05/17/OIV4rF.png" alt="OIV4rF.png"></a></td>
+</tr>
+<tr>
+<td><a href="https://imgtu.com/i/OIuelq"><img src="https://s1.ax1x.com/2022/05/17/OIuelq.png" alt="OIuelq.png"></a></td>
+<td><a href="https://imgtu.com/i/OIum60"><img src="https://s1.ax1x.com/2022/05/17/OIum60.png" alt="OIum60.png"></a></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1S94y1f7Dg/">项目视频：基于Spring的旅游住宿小程序</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#110;&#49;&#107;&#101;&#50;&#107;&#101;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#102;&#x61;&#110;&#49;&#107;&#101;&#50;&#107;&#101;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java8 Stream完全使用指南</title>
+    <url>/2022/05/21/Java8%20Stream%E5%AE%8C%E5%85%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h2 id="什么是Stream"><a href="#什么是Stream" class="headerlink" title="什么是Stream"></a>什么是Stream</h2><p>Stream是Java 1.8版本开始提供的一个接口，主要提供对数据集合使用流的方式进行操作，流中的元素不可变且只会被消费一次，所有方法都设计成支持链式调用。使用Stream API可以极大生产力，写出高效率、干净、简洁的代码。</p>
+<h2 id="如何获得Stream实例"><a href="#如何获得Stream实例" class="headerlink" title="如何获得Stream实例"></a>如何获得Stream实例</h2><p>Stream提供了静态构建方法，可以基于不同的参数创建返回Stream实例<br>使用Collection的子类实例调用stream()或者parallelStream()方法也可以得到Stream实例，两个方法的区别在于后续执行Stream其他方法的时候是单线程还是多线程</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;String&gt; stringStream = Stream.of(<span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>);</span><br><span class="line"><span class="comment">//无限长的偶数流</span></span><br><span class="line">Stream&lt;Integer&gt; evenNumStream = Stream.iterate(<span class="number">0</span>, n -&gt; n + <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; strList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">strList.add(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">strList.add(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">strList.add(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">Stream&lt;String&gt; strStream = strList.stream();</span><br><span class="line">Stream&lt;String&gt; strParallelStream = strList.parallelStream();</span><br></pre></td></tr></table></figure>
+
+<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><p>filter方法用于根据指定的条件做过滤，返回符合条件的流</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//获得只包含正数的流，positiveNumStream -&gt; (1，2，3)</span></span><br><span class="line">Stream&lt;Integer&gt; positiveNumStream = numStream.filter(num -&gt; num &gt; <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>map方法用于将流中的每个元素执行指定的转换逻辑，返回其他类型元素的流</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//转换成字符串流</span></span><br><span class="line">Stream&lt;String&gt; strStream = numStream.map(String::valueOf);</span><br></pre></td></tr></table></figure>
+
+<h2 id="mapToInt-mapToLong-mapToDouble"><a href="#mapToInt-mapToLong-mapToDouble" class="headerlink" title="mapToInt mapToLong mapToDouble"></a>mapToInt mapToLong mapToDouble</h2><p>这三个方法是对map方法的封装，返回的是官方为各个类型单独定义的Stream，该Stream还提供了适合各自类型的其他操作方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;String&gt; stringStream = Stream.of(<span class="string">&quot;-2&quot;</span>, <span class="string">&quot;-1&quot;</span>, <span class="string">&quot;0&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>);</span><br><span class="line">IntStream intStream = stringStream.mapToInt(Integer::parseInt);</span><br><span class="line">LongStream longStream = stringStream.mapToLong(Long::parseLong);</span><br><span class="line">DoubleStream doubleStream = stringStream.mapToDouble(Double::parseDouble);</span><br></pre></td></tr></table></figure>
+
+<h2 id="flatMap"><a href="#flatMap" class="headerlink" title="flatMap"></a>flatMap</h2><p>flatMap方法用于将流中的每个元素转换成其他类型元素的流，比如，当前有一个订单(Order)列表，每个订单又包含多个商品(itemList)，如果要得到所有订单的所有商品汇总，就可以使用该方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Item&gt; allItemStream = orderList.stream().flatMap(order -&gt; order.itemList.stream());</span><br></pre></td></tr></table></figure>
+
+<h2 id="flatMapToInt-flatMapToLong-flatMapToDouble"><a href="#flatMapToInt-flatMapToLong-flatMapToDouble" class="headerlink" title="flatMapToInt flatMapToLong flatMapToDouble"></a>flatMapToInt flatMapToLong flatMapToDouble</h2><p>这三个方法是对flatMap方法的封装，返回的是官方为各个类型单独定义的Stream，使用方法同上</p>
+<h2 id="distinct"><a href="#distinct" class="headerlink" title="distinct"></a>distinct</h2><p>distinct方法用于对流中的元素去重，判断元素是否重复使用的是equals方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//不重复的数字流，uniqueNumStream -&gt; (-2, -1, 0, 1, 2, 3)</span></span><br><span class="line">Stream&lt;Integer&gt; uniqueNumStream = numStream.distinct();</span><br></pre></td></tr></table></figure>
+
+<h2 id="sorted"><a href="#sorted" class="headerlink" title="sorted"></a>sorted</h2><p>sorted有一个无参和一个有参的方法，用于对流中的元素进行排序。无参方法要求流中的元素必须实现Comparable接口，不然会报java.lang.ClassCastException异常</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; unorderedStream = Stream.of(<span class="number">5</span>, <span class="number">6</span>, <span class="number">32</span>, <span class="number">7</span>, <span class="number">27</span>, <span class="number">4</span>);</span><br><span class="line"><span class="comment">//按从小到大排序完成的流，orderedStream -&gt; (4, 5, 6, 7, 27, 32)</span></span><br><span class="line">Stream&lt;Integer&gt; orderedStream = unorderedStream.sorted();</span><br></pre></td></tr></table></figure>
+
+<p>有参方法sorted(Comparator&lt;? super T&gt; comparator)不需要元素实现Comparable接口，通过指定的元素比较器对流内的元素进行排序</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;String&gt; unorderedStream = Stream.of(<span class="string">&quot;1234&quot;</span>, <span class="string">&quot;123&quot;</span>, <span class="string">&quot;12&quot;</span>, <span class="string">&quot;12345&quot;</span>, <span class="string">&quot;123456&quot;</span>, <span class="string">&quot;1&quot;</span>);</span><br><span class="line"><span class="comment">//按字符串长度从小到大排序完成的流，orderedStream -&gt; (&quot;1&quot;, &quot;12&quot;, &quot;123&quot;, &quot;1234&quot;, &quot;12345&quot;, &quot;123456&quot;)</span></span><br><span class="line">Stream&lt;String&gt; orderedStream = unorderedStream.sorted(Comparator.comparingInt(String::length));</span><br></pre></td></tr></table></figure>
+
+<h2 id="peek"><a href="#peek" class="headerlink" title="peek"></a>peek</h2><p>peek方法可以不调整元素顺序和数量的情况下消费每一个元素，然后产生新的流，按文档上的说明，主要是用于对流执行的中间过程做debug的时候使用，因为Stream使用的时候一般都是链式调用的，所以可能会执行多次流操作，如果想看每个元素在多次流操作中间的流转情况，就可以使用这个方法实现</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream.of(<span class="string">&quot;one&quot;</span>, <span class="string">&quot;two&quot;</span>, <span class="string">&quot;three&quot;</span>, <span class="string">&quot;four&quot;</span>)</span><br><span class="line">     .filter(e -&gt; e.length() &gt; <span class="number">3</span>)</span><br><span class="line">     .peek(e -&gt; System.out.println(<span class="string">&quot;Filtered value: &quot;</span> + e))</span><br><span class="line">     .map(String::toUpperCase)</span><br><span class="line">     .peek(e -&gt; System.out.println(<span class="string">&quot;Mapped value: &quot;</span> + e))</span><br><span class="line">     .collect(Collectors.toList());</span><br><span class="line">     </span><br><span class="line">输出：</span><br><span class="line">Filtered value: three</span><br><span class="line">Mapped value: THREE</span><br><span class="line">Filtered value: four</span><br><span class="line">Mapped value: FOUR</span><br></pre></td></tr></table></figure>
+
+<h2 id="limit-long-maxSize"><a href="#limit-long-maxSize" class="headerlink" title="limit(long maxSize)"></a>limit(long maxSize)</h2><p>limit方法会对流进行顺序截取，从第1个元素开始，保留最多maxSize个元素</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;String&gt; stringStream = Stream.of(<span class="string">&quot;-2&quot;</span>, <span class="string">&quot;-1&quot;</span>, <span class="string">&quot;0&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>);</span><br><span class="line"><span class="comment">//截取前3个元素，subStringStream -&gt; (&quot;-2&quot;, &quot;-1&quot;, &quot;0&quot;)</span></span><br><span class="line">Stream&lt;String&gt; subStringStream = stringStream.limit(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="skip-long-n"><a href="#skip-long-n" class="headerlink" title="skip(long n)"></a>skip(long n)</h2><p>skip方法用于跳过前n个元素，如果流中的元素数量不足n，则返回一个空的流</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;String&gt; stringStream = Stream.of(<span class="string">&quot;-2&quot;</span>, <span class="string">&quot;-1&quot;</span>, <span class="string">&quot;0&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>);</span><br><span class="line"><span class="comment">//跳过前3个元素，subStringStream -&gt; (&quot;1&quot;, &quot;2&quot;, &quot;3&quot;)</span></span><br><span class="line">Stream&lt;String&gt; subStringStream = stringStream.skip(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h2><p>forEach方法的作用跟普通的for循环类似，不过这个可以支持多线程遍历，但是不保证遍历的顺序</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;String&gt; stringStream = Stream.of(<span class="string">&quot;-2&quot;</span>, <span class="string">&quot;-1&quot;</span>, <span class="string">&quot;0&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>);</span><br><span class="line"><span class="comment">//单线程遍历输出元素</span></span><br><span class="line">stringStream.forEach(System.out::println);</span><br><span class="line"><span class="comment">//多线程遍历输出元素</span></span><br><span class="line">stringStream.parallel().forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+
+<h2 id="forEachOrdered"><a href="#forEachOrdered" class="headerlink" title="forEachOrdered"></a>forEachOrdered</h2><p>forEachOrdered方法可以保证顺序遍历，比如这个流是从外部传进来的，然后在这之前调用过parallel方法开启了多线程执行，就可以使用这个方法保证单线程顺序遍历</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;String&gt; stringStream = Stream.of(<span class="string">&quot;-2&quot;</span>, <span class="string">&quot;-1&quot;</span>, <span class="string">&quot;0&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>);</span><br><span class="line"><span class="comment">//顺序遍历输出元素</span></span><br><span class="line">stringStream.forEachOrdered(System.out::println);</span><br><span class="line"><span class="comment">//多线程遍历输出元素，下面这行跟上面的执行结果是一样的</span></span><br><span class="line"><span class="comment">//stringStream.parallel().forEachOrdered(System.out::println);</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="toArray"><a href="#toArray" class="headerlink" title="toArray"></a>toArray</h2><p>toArray有一个无参和一个有参的方法，无参方法用于把流中的元素转换成Object数组</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;String&gt; stringStream = Stream.of(<span class="string">&quot;-2&quot;</span>, <span class="string">&quot;-1&quot;</span>, <span class="string">&quot;0&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>);</span><br><span class="line">Object[] objArray = stringStream.toArray();</span><br></pre></td></tr></table></figure>
+
+<p>有参方法toArray(IntFunction&lt;A[]&gt; generator)支持把流中的元素转换成指定类型的元素数组</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;String&gt; stringStream = Stream.of(<span class="string">&quot;-2&quot;</span>, <span class="string">&quot;-1&quot;</span>, <span class="string">&quot;0&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>);</span><br><span class="line">String[] strArray = stringStream.toArray(String[]::<span class="keyword">new</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h2><p>reduce有三个重载方法，作用是对流内元素做累进操作</p>
+<p>第一个reduce(BinaryOperator<T> accumulator)</p>
+<p>accumulator 为累进操作的具体计算</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//查找最小值</span></span><br><span class="line">Optional&lt;Integer&gt; min = numStream.reduce(BinaryOperator.minBy(Integer::compareTo));</span><br><span class="line"><span class="comment">//输出 -2</span></span><br><span class="line">System.out.println(min.get());</span><br><span class="line"></span><br><span class="line"><span class="comment">//过滤出大于5的元素流</span></span><br><span class="line">numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>).filter(num -&gt; num &gt; <span class="number">5</span>);</span><br><span class="line"><span class="comment">//查找最小值</span></span><br><span class="line">min = numStream.reduce(BinaryOperator.minBy(Integer::compareTo));</span><br><span class="line"><span class="comment">//输出 Optional.empty</span></span><br><span class="line">System.out.println(min);</span><br></pre></td></tr></table></figure>
+
+<p>第二个reduce(T identity, BinaryOperator<T> accumulator)</p>
+<p>identity 为累进操作的初始值<br>accumulator 同上</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//累加计算所有元素的和，sum=3</span></span><br><span class="line"><span class="keyword">int</span> sum = numStream.reduce(<span class="number">0</span>, Integer::sum);</span><br></pre></td></tr></table></figure>
+
+<h2 id="collect"><a href="#collect" class="headerlink" title="collect"></a>collect</h2><p>主要作用是把流中的元素作为集合转换成其他Collection的子类，其内部实现类似于前面的累进操作</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">List&lt;Integer&gt; numList = numStream.collect(Collectors.toList());</span><br><span class="line">Set&lt;Integer&gt; numSet = numStream.collect(Collectors.toSet());</span><br></pre></td></tr></table></figure>
+
+<h2 id="min"><a href="#min" class="headerlink" title="min"></a>min</h2><p>min方法用于计算流内元素的最小值</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">Optional&lt;Integer&gt; min = numStream.min(Integer::compareTo);</span><br></pre></td></tr></table></figure>
+
+<h2 id="max"><a href="#max" class="headerlink" title="max"></a>max</h2><p>min方法用于计算流内元素的最大值</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">Optional&lt;Integer&gt; max = numStream.max(Integer::compareTo);</span><br></pre></td></tr></table></figure>
+
+<h2 id="count"><a href="#count" class="headerlink" title="count"></a>count</h2><p>count方法用于统计流内元素的总个数</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//count=6</span></span><br><span class="line"><span class="keyword">long</span> count = numStream.count();</span><br></pre></td></tr></table></figure>
+
+<h2 id="anyMatch"><a href="#anyMatch" class="headerlink" title="anyMatch"></a>anyMatch</h2><p>anyMatch方法用于匹配校验流内元素是否有符合指定条件的元素</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//判断是否包含正数，hasPositiveNum=true</span></span><br><span class="line"><span class="keyword">boolean</span> hasPositiveNum = numStream.anyMatch(num -&gt; num &gt; <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="allMatch"><a href="#allMatch" class="headerlink" title="allMatch"></a>allMatch</h2><p>noneMatch方法用于匹配校验流内元素是否都不符合指定条件</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//判断是否没有小于0的元素，noNegativeNum=false</span></span><br><span class="line"><span class="keyword">boolean</span> noNegativeNum = numStream.noneMatch(num -&gt; num &lt; <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="findFirst"><a href="#findFirst" class="headerlink" title="findFirst"></a>findFirst</h2><p>findFirst方法用于获取第一个元素，如果流是空的，则返回Optional.empty</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//获取第一个元素，firstNum=-2</span></span><br><span class="line">Optional&lt;Integer&gt; firstNum = numStream.findFirst();</span><br></pre></td></tr></table></figure>
+
+<h2 id="findAny"><a href="#findAny" class="headerlink" title="findAny"></a>findAny</h2><p>findAny方法用于获取流中的任意一个元素，如果流是空的，则返回Optional.empty，因为可能会使用多线程，所以不保证每次返回的是同一个元素</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">Optional&lt;Integer&gt; anyNum = numStream.findAny();</span><br></pre></td></tr></table></figure>
+
+
+<p>More info: <a href="https://segmentfault.com/a/1190000022791696">MartinDai</a></p>
+]]></content>
+      <tags>
+        <tag>技术分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于Spring学习论坛系统</title>
+    <url>/2022/05/22/Java%E5%AD%A6%E4%B9%A0%E8%AE%BA%E5%9D%9B%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于Spring学习论坛系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<p>（1）用户的注册登录</p>
+<p>（2）帖子的发布与评论</p>
+<p>（3）前台不同学科帖子的分类与展示</p>
+<p>（4）搜索功能，对于想要搜索的学科与具体帖子进行搜索</p>
+<p>（5）基于用户喜欢的帖子的类型进行相关学科类别的帖子进行内容推荐</p>
+<p>（6）用户对于自己帖子的管理</p>
+<p>（7）用户对于自己喜欢的帖子点赞及收藏</p>
+<p>（8）对敏感词汇的屏蔽处理</p>
+<p>（9）管理员对用户帖子以及评论的管理</p>
+<p>（10）管理员对于帖子的板块分类管理</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>test<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1RB4y1174A/">项目视频：基于Spring学习论坛系统</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#x6e;&#x31;&#x6b;&#x65;&#x32;&#x6b;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#x66;&#x61;&#x6e;&#x31;&#x6b;&#x65;&#x32;&#x6b;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于Spring的学生选课系统</title>
+    <url>/2022/05/22/Java%E5%AD%A6%E7%94%9F%E9%80%89%E8%AF%BE%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于Spring的学生选课系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios<br>报表：Spread.js</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<p>教员，学生账号注册；管理员，教员，学生账号登陆，系统公告管理，系统动态管理，系统数据统计（学生统计，教员统计，课程统计， 缺席统计）</p>
+<p>学生专业分布状况统计图，访问记录统计图，课程预约人数统计图，参加课程学生情况，学生选课信息，教员代课信息</p>
+<p>管理员：课程管理，学生管理，教员管理，选课管理，系统用户管理，系统公告管理，系统动态管理，系统账户封禁</p>
+<p>教员：教员信息管理，查看学生列表信息，教学任务管理，选课或停课，查看当前课程学生情况</p>
+<p>学生：个人信息修改，课程预约，学生课程管理</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[教员]<br>test1<br>1234qwer</p>
+<p>[学生]<br>fkkk<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1ui4y1Q7oS/">项目视频：基于Spring的学生选课系统</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#x6e;&#49;&#x6b;&#101;&#50;&#107;&#x65;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#x66;&#x61;&#x6e;&#49;&#x6b;&#101;&#50;&#107;&#x65;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于Spring的实验室耗材管理系统</title>
+    <url>/2022/05/22/Java%E5%AE%9E%E9%AA%8C%E5%AE%A4%E8%80%97%E6%9D%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于Spring的实验室耗材管理系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios<br>报表：Spread.js</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<p>学生管理，套餐管理，申请记录，库房管理，入库记录，出库记录，采购计划，报表统计，耗材类别，出入库物品明细</p>
+<p>学生制定申请耗材-&gt;管理员审批制定采购计划-&gt;采购员采购-&gt;入库-&gt;出库</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[采购员]<br>caigou<br>1234qwer</p>
+<p>[学生]<br>lisi<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1y94y1f783/">项目视频：基于Spring的实验室耗材管理系统</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#97;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#x66;&#97;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于Spring的小区物业管理系统</title>
+    <url>/2022/05/22/Java%E5%B0%8F%E5%8C%BA%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于Spring的小区物业管理系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios<br>报表：Spread.js</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<p>1、实现小区信息管理（包括业主信息，楼宇信息，房间信息的管理，业主数量统计，房间数量统计（包括无人居住房与居住））；<br>2、实现物业费用缴纳管理（水电煤气清洁电梯停车位物业管理等费用数据管理，能够生成物业缴费的信息报表，缴费记录管理）；<br>3、物业项管理（包括水，电，煤气，清洁，消防，停车位等信息的管理）；<br>4、物业抄表入库管理（包括根据不同物业项以及业主的统计生成物业报表并将报表入库）；<br>5、业主日常管理（包括业主投诉，维修上报，业主评论及建议）；<br>6、物业抄表入库管理（包括根据不同物业项以及业主的统计生成物业报表并将报表入库）；<br>7、防疫登记管理（包括体温，健康码情况，进入时间以及地点）；<br>8、工作人员管理（包括管理员信息，管理人员权限，物业工作人员信息）；<br>9、公告管理（管理人员对相关的物业信息给予公告，包括停电停水暖气等相关信息）。</p>
+<p>还有就是人脸识别  百度人工智能云的sdk<br>以及一个梯度上升算法，<br>支付的话用支付宝的沙箱，</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[业主]<br>fank<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1yu411v7oZ/">项目视频：基于Spring的小区物业管理系统</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#110;&#x31;&#107;&#x65;&#50;&#107;&#101;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;">&#x66;&#x61;&#110;&#x31;&#107;&#x65;&#50;&#107;&#101;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于Spring的旅游住宿小程序</title>
+    <url>/2022/05/22/Java%E6%97%85%E6%B8%B8%E4%BD%8F%E5%AE%BF%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<p>基于Spring的旅游住宿小程序.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios<br>百度地图JS<br>微信小程序</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<p>实现权限的分布控制，如管理员和民宿管理员，二则所能够操作的权限有质的区别。</p>
+<p>实现控制前端页面的导航展示(添加，修改，删除，查询)。</p>
+<p>实现景点的发布(添加，修改，删除，查询)。</p>
+<p>实现旅游攻略的发布(添加，修改，删除，查询)。</p>
+<p>实现民宿预定(添加，修改，删除，查询)。</p>
+<p>实现民宿房间管理(添加，修改，删除，查询)。</p>
+<p>订单统计，订单评价</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[民宿管理员]<br>xierdun<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1S94y1f7Dg/">项目视频：基于Spring的旅游住宿小程序</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#x6e;&#x31;&#107;&#101;&#50;&#107;&#101;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x66;&#x61;&#x6e;&#x31;&#107;&#101;&#50;&#107;&#101;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于Spring的实验室耗材管理系统</title>
+    <url>/2022/05/22/Java%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%95%86%E5%9F%8E/</url>
+    <content><![CDATA[<p>基于Spring的实验室耗材管理系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios<br>报表：Spread.js</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<p>管理员数据统计，管理员设计师审核，商品管理，设计师管理，订单管理，订单评价，公告信息管理，论坛管理，论坛回复，用户与设计师消息通知，用户收货地址管理</p>
+<p>用户申请设计师，用户订单添加购物车，订单付款评价，论坛消息回复，收货地址新增修改，修改商品信息</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 用户登陆注册</span></span><br><span class="line">String openid = JSON.parseObject(res).get(<span class="string">&quot;openid&quot;</span>).toString();</span><br><span class="line">        System.out.println(<span class="string">&quot;openid&quot;</span> + openid);</span><br><span class="line">        Integer count = userInfoService.count(Wrappers.&lt;UserInfo&gt;lambdaQuery().eq(UserInfo::getOpenId, openid));</span><br><span class="line">        <span class="keyword">if</span> (count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> R.ok(userInfoService.getOne(Wrappers.&lt;UserInfo&gt;lambdaQuery().eq(UserInfo::getOpenId, openid)));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            user.setOpenId(openid);</span><br><span class="line">            user.setCreateDate(DateUtil.formatDateTime(<span class="keyword">new</span> Date()));</span><br><span class="line">            user.setCode(<span class="string">&quot;U-&quot;</span>+<span class="keyword">new</span> Date().getTime());</span><br><span class="line">            user.setType(<span class="number">1</span>);</span><br><span class="line">            userInfoService.save(user);</span><br><span class="line">            <span class="keyword">return</span> R.ok(user);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 查找聊天信息</span></span><br><span class="line"><span class="keyword">if</span> (takeUser == userId) &#123;</span><br><span class="line">            messageInfoService.update(Wrappers.&lt;MessageInfo&gt;lambdaUpdate().set(MessageInfo::getTaskStatus, <span class="number">1</span>)</span><br><span class="line">                    .eq(MessageInfo::getTakeUser, takeUser).eq(MessageInfo::getSendUser, sendUser));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            messageInfoService.update(Wrappers.&lt;MessageInfo&gt;lambdaUpdate().set(MessageInfo::getTaskStatus, <span class="number">1</span>)</span><br><span class="line">                    .eq(MessageInfo::getTakeUser, sendUser).eq(MessageInfo::getSendUser, takeUser));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> R.ok(messageInfoService.getMessageDetail(takeUser, sendUser));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 订单统计</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">        DATE_FORMAT( spo.days, <span class="string">&#x27;%m-%d&#x27;</span> ) <span class="keyword">AS</span> days,</span><br><span class="line">        <span class="built_in">COUNT</span>( oi.`code` ) <span class="keyword">AS</span> count,</span><br><span class="line">        IFNULL( <span class="built_in">SUM</span>( oi.price ), <span class="number">0</span> ) <span class="keyword">AS</span> orderPrice</span><br><span class="line">        <span class="keyword">FROM</span></span><br><span class="line">        (</span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">            DATE_SUB( curdate(), <span class="type">INTERVAL</span> <span class="operator">+</span> <span class="number">0</span> <span class="keyword">DAY</span> ) days <span class="keyword">UNION</span></span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">            DATE_SUB( curdate(), <span class="type">INTERVAL</span> <span class="operator">+</span> <span class="number">1</span> <span class="keyword">DAY</span> ) <span class="keyword">UNION</span></span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">            DATE_SUB( curdate(), <span class="type">INTERVAL</span> <span class="operator">+</span> <span class="number">2</span> <span class="keyword">DAY</span> ) <span class="keyword">UNION</span></span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">            DATE_SUB( curdate(), <span class="type">INTERVAL</span> <span class="operator">+</span> <span class="number">3</span> <span class="keyword">DAY</span> ) <span class="keyword">UNION</span></span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">            DATE_SUB( curdate(), <span class="type">INTERVAL</span> <span class="operator">+</span> <span class="number">4</span> <span class="keyword">DAY</span> ) <span class="keyword">UNION</span></span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">            DATE_SUB( curdate(), <span class="type">INTERVAL</span> <span class="operator">+</span> <span class="number">5</span> <span class="keyword">DAY</span> ) <span class="keyword">UNION</span></span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">        DATE_SUB( curdate(), <span class="type">INTERVAL</span> <span class="operator">+</span> <span class="number">6</span> <span class="keyword">DAY</span> )) spo</span><br><span class="line">        <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> order_info oi <span class="keyword">ON</span> (</span><br><span class="line">        DATE_FORMAT( oi.create_date, <span class="string">&#x27;%Y-%m-%d&#x27;</span> ) <span class="operator">=</span> DATE_FORMAT( spo.days, <span class="string">&#x27;%Y-%m-%d&#x27;</span> ))</span><br><span class="line">        <span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">        days</span><br><span class="line">        <span class="keyword">ORDER</span> <span class="keyword">BY</span> days <span class="keyword">ASC</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 根据商铺获取订单统计</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">        <span class="built_in">COUNT</span>( <span class="number">1</span> ) <span class="keyword">AS</span> orderNum,</span><br><span class="line">        IFNULL( <span class="built_in">SUM</span>( oi.price ), <span class="number">0</span> ) <span class="keyword">AS</span> orderPrice,</span><br><span class="line">        ui.avatar,</span><br><span class="line">        ui.user_name,</span><br><span class="line">        si.tag,</span><br><span class="line">        si.introduction</span><br><span class="line">        <span class="keyword">FROM</span></span><br><span class="line">        order_info oi</span><br><span class="line">        <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> commodity_info ci <span class="keyword">ON</span> ( ci.id <span class="operator">=</span> oi.commodity_id )</span><br><span class="line">        <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> shop_info si <span class="keyword">ON</span> ( si.id <span class="operator">=</span> ci.shop_id )</span><br><span class="line">        <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> user_info ui <span class="keyword">ON</span> ( ui.id <span class="operator">=</span> si.user_id )</span><br><span class="line">        <span class="keyword">WHERE</span></span><br><span class="line">        <span class="number">1</span> <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">        si.id</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 本月收益占比</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">        <span class="built_in">COUNT</span>( oi.commodity_id ) <span class="keyword">AS</span> orderNum,</span><br><span class="line">        IFNULL( <span class="built_in">SUM</span>( oi.price ), <span class="number">0</span> ) <span class="keyword">AS</span> orderPrice,</span><br><span class="line">        ci.`name`</span><br><span class="line">        <span class="keyword">FROM</span></span><br><span class="line">        order_info oi</span><br><span class="line">        <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> commodity_info ci <span class="keyword">ON</span> ( ci.id <span class="operator">=</span> oi.commodity_id )</span><br><span class="line">        <span class="keyword">WHERE</span></span><br><span class="line">        <span class="number">1</span> <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">AND</span> DATE_FORMAT( oi.create_date, <span class="string">&#x27;%Y-%m&#x27;</span> ) <span class="operator">=</span> DATE_FORMAT( NOW(), <span class="string">&#x27;%Y-%m&#x27;</span> )</span><br><span class="line">        <span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">        oi.commodity_id</span><br></pre></td></tr></table></figure>
+
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1dP4y1N7wp/">项目视频：基于Spring小程序商城</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#110;&#49;&#107;&#101;&#50;&#107;&#x65;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;">&#x66;&#x61;&#110;&#49;&#107;&#101;&#50;&#107;&#x65;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>桶装水配送小程序和管理平台</title>
+    <url>/2022/05/22/Java%E6%A1%B6%E8%A3%85%E6%B0%B4%E9%85%8D%E9%80%81%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<p>桶装水配送小程序和管理平台.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios<br>微信小程序</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<p>管理员：账户登陆， 密码修改，订单收益，订单量统计，待发货商品统计，月统计订单量，月统计交易额，用户收货地址管理，公告信息管理，订单评价管理，用户订单管理，商品信息管理，消息回复，用户购物车，商铺管理，小程序用户管理</p>
+<p>用户：小程序授权登陆，商铺搜索，商品查询，添加购物车，查看公告信息，商品下单，订单评价，收货地址管理</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1k5411R7RF/">项目视频：桶装水配送小程序</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#97;&#110;&#49;&#x6b;&#101;&#50;&#107;&#x65;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#x66;&#97;&#110;&#49;&#x6b;&#101;&#50;&#107;&#x65;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+</search>
