@@ -482,7 +482,7 @@
   </entry>
   <entry>
     <title>基于VisualBox的Linux环境搭建</title>
-    <url>/2022/05/23/%E5%9F%BA%E4%BA%8EVisualBox%E7%9A%84Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <url>/2022/05/24/%E5%9F%BA%E4%BA%8EVisualBox%E7%9A%84Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<p><code>VisualBox进行安装需要cpu开启虚拟化，在开机启动的时候设置主板，CPU configuration，然后点击Intel Vitualization Technology。重启电脑</code></p>
 <h2 id="Linux镜像"><a href="#Linux镜像" class="headerlink" title="Linux镜像"></a>Linux镜像</h2><p>普通安装linux虚拟机太麻烦，可以利用vagrant可以帮助我们快速地创建一个虚拟机。装了vitualbox，vagrant可以帮助我们快速创建出一个虚拟机</p>
 <p>去<a href="https://www.vagrantup.com/">https://www.vagrantup.com/</a> 下载vagrant安装，安装后重启系统。cmd中输入vagrant有版本代表成功了</p>
