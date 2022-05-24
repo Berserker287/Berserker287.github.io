@@ -480,4 +480,71 @@
         <tag>日常记录</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基于VisualBox的Linux环境搭建</title>
+    <url>/2022/05/23/%E5%9F%BA%E4%BA%8EVisualBox%E7%9A%84Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p><code>VisualBox进行安装需要cpu开启虚拟化，在开机启动的时候设置主板，CPU configuration，然后点击Intel Vitualization Technology。重启电脑</code></p>
+<h2 id="Linux镜像"><a href="#Linux镜像" class="headerlink" title="Linux镜像"></a>Linux镜像</h2><p>普通安装linux虚拟机太麻烦，可以利用vagrant可以帮助我们快速地创建一个虚拟机。装了vitualbox，vagrant可以帮助我们快速创建出一个虚拟机</p>
+<p>去<a href="https://www.vagrantup.com/">https://www.vagrantup.com/</a> 下载vagrant安装，安装后重启系统。cmd中输入vagrant有版本代表成功了</p>
+<p>输入<code>vagrant init centos/7</code>，即可初始化一个centos7系统。（注意这个命令在哪个目录下执行的，他的Vagrantfile就生成在哪里）</p>
+<p>输入<code>vagrant up</code>启动虚拟机环境</p>
+<p>启动后出现default folder:/cygdrive/c/User/… =&gt;/vagrant</p>
+<p>vagrant ssh 就会连上虚拟机。可以使用exit退出</p>
+<p>下次使用也可以直接vagrant up直接启动，但要确保当前目录在C:/用户/ 文件夹下，他下面有一个Vagrantfile，不过我们也可以配置环境变量。</p>
+<p>启动后再次vagrant ssh连上即可</p>
+<h2 id="虚拟机IP地址"><a href="#虚拟机IP地址" class="headerlink" title="虚拟机IP地址"></a>虚拟机IP地址</h2><p>使用的网络方式是网络地址转换NAT（端口转发），如果其他主机要访问虚拟机，必须由windows端口如3333断发给虚拟机端口如3306。这样每在linux里安一个软件都要进行端口映射，不方便，（也可以在virualBox里挨个设置）。我们想要给虚拟机一个固定的ip地址，windows和虚拟机可以互相ping通。</p>
+<ol>
+<li>在虚拟机中配置静态IP</li>
+</ol>
+<h2 id="添加账户密码"><a href="#添加账户密码" class="headerlink" title="添加账户密码"></a>添加账户密码</h2><p>默认只允许ssh登录方式，为了后来操作方便，文件上传等，我们可以配置允许账号密码登录</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">修改</span><br><span class="line">PasswordAuthentication yes</span><br><span class="line">重启</span><br><span class="line">service sshd restart</span><br><span class="line">账号root</span><br><span class="line">密码vagrant</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置YUM源"><a href="#配置YUM源" class="headerlink" title="配置YUM源"></a>配置YUM源</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 备份原yum源</span></span><br><span class="line"></span><br><span class="line">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</span><br><span class="line"><span class="comment"># 使用新yum源</span></span><br><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.163.com/.<span class="built_in">help</span>/CentOS7-Base-163.repo</span><br><span class="line"><span class="comment"># 生成缓存</span></span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><p><code>https://docs.docker.com/engine/install/centos/</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#卸载系统之前的docker </span></span><br><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br><span class="line">                  </span><br><span class="line">                  </span><br><span class="line">sudo yum install -y yum-utils</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置镜像</span></span><br><span class="line">sudo yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line">    </span><br><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io</span><br><span class="line"></span><br><span class="line">sudo systemctl start docker</span><br><span class="line"><span class="comment"># 设置开机自启动</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line"></span><br><span class="line">docker -v</span><br><span class="line">sudo docker images</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置镜像加速"><a href="#配置镜像加速" class="headerlink" title="配置镜像加速"></a>配置镜像加速</h3><p>目前主流 Linux 发行版均已使用 systemd 进行服务管理，这里介绍如何在使用 systemd 的 Linux 发行版中配置镜像加速器。</p>
+<p>请首先执行以下命令，查看是否在 docker.service 文件中配置过镜像地址</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl cat docker | grep <span class="string">&#x27;\-\-registry\-mirror&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果该命令有输出，那么请执行 $ systemctl cat docker 查看 ExecStart= 出现的位置，修改对应的文件内容去掉 –registry-mirror 参数及其值，并按接下来的步骤进行配置</p>
+<p>如果以上命令没有任何输出，那么就可以在 /etc/docker/daemon.json 中写入如下内容（如果文件不存在请新建该文件）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [</span><br><span class="line">    &quot;https://hub-mirror.c.163.com&quot;,</span><br><span class="line">    &quot;https://mirror.baidubce.com&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>之后重新启动服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<p>检查加速器是否生效</p>
+<p>执行 $ docker info，如果从结果中看到了如下内容，说明配置成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Registry Mirrors:</span><br><span class="line"> https://hub-mirror.c.163.com/</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装mysql-docker"><a href="#安装mysql-docker" class="headerlink" title="安装mysql-docker"></a>安装mysql-docker</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo docker pull mysql:5.7</span><br><span class="line"></span><br><span class="line"><span class="comment"># --name指定容器名字 -v目录挂载 -p指定端口映射  -e设置mysql参数 -d后台运行</span></span><br><span class="line">sudo docker run -p 3306:3306 --name mysql \</span><br><span class="line">-v /mydata/mysql/<span class="built_in">log</span>:/var/<span class="built_in">log</span>/mysql \</span><br><span class="line">-v /mydata/mysql/data:/var/lib/mysql \</span><br><span class="line">-v /mydata/mysql/conf:/etc/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=root \</span><br><span class="line">-d mysql:5.7</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入已启动的容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it mysql bin/bash</span><br><span class="line"><span class="comment"># 退出进入的容器</span></span><br><span class="line"><span class="built_in">exit</span>;</span><br><span class="line"></span><br><span class="line">因为有目录映射，所以我们可以直接在镜像外执行</span><br><span class="line">vi /mydata/mysql/conf/my.conf </span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysqld]</span><br><span class="line">init_connect=<span class="string">&#x27;SET collation_connection = utf8_unicode_ci&#x27;</span></span><br><span class="line">init_connect=<span class="string">&#x27;SET NAMES utf8&#x27;</span></span><br><span class="line">character-set-server=utf8</span><br><span class="line">collation-server=utf8_unicode_ci</span><br><span class="line">skip-character-set-client-handshake</span><br><span class="line">skip-name-resolve</span><br><span class="line"></span><br><span class="line">docker restart mysql</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Redis"><a href="#安装Redis" class="headerlink" title="安装Redis"></a>安装Redis</h2><p>如果直接挂载的话docker会以为挂载的是一个目录，所以我们先创建一个文件然后再挂载，在虚拟机中</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在虚拟机中</span></span><br><span class="line">mkdir -p /mydata/redis/conf</span><br><span class="line">touch /mydata/redis/conf/redis.conf</span><br><span class="line"></span><br><span class="line">docker pull redis</span><br><span class="line"></span><br><span class="line">docker run -p 6379:6379 --name redis \</span><br><span class="line">-v /mydata/redis/data:/data \</span><br><span class="line">-v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf \</span><br><span class="line">-d redis redis-server /etc/redis/redis.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接进去redis客户端。</span></span><br><span class="line">docker <span class="built_in">exec</span> -it redis redis-cli</span><br></pre></td></tr></table></figure>
+
+<p>默认是不持久化的。在配置文件中输入appendonly yes，就可以aof持久化了。修改完docker restart redis，docker -it redis redis-cli</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /mydata/redis/conf/redis.conf</span><br><span class="line"><span class="comment"># 插入下面内容</span></span><br><span class="line">appendonly yes</span><br><span class="line">保存</span><br><span class="line"></span><br><span class="line">docker restart redis</span><br></pre></td></tr></table></figure>
+
+<p>设置redis容器在docker启动的时候启动</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker update redis --restart=always</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装nginx-docker"><a href="#安装nginx-docker" class="headerlink" title="安装nginx docker"></a>安装nginx docker</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker pull nginx:1.10</span><br><span class="line"><span class="comment"># 随便启动一个nginx实例，只是为了复制出配置，放到docker里作为镜像的统一配置</span></span><br><span class="line">docker run -p 80:80 --name nginx -d nginx:1.10</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把nginx里的东西复制出来</span></span><br><span class="line"><span class="built_in">cd</span> /mydata/nginx</span><br><span class="line">docker container cp nginx:/etc/nginx .</span><br><span class="line">然后在外部 /mydata/nginx/nginx 有了一堆文件</span><br><span class="line">mv /mydata/nginx/nginx /mydata/nginx/conf</span><br><span class="line"><span class="comment"># 停掉nginx</span></span><br><span class="line">docker stop nginx</span><br><span class="line">docker rm nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建新的nginx，使用刚才复制出来的配置文件</span></span><br><span class="line">docker run -p 80:80 --name nginx \</span><br><span class="line">-v /mydata/nginx/html:/usr/share/nginx/html \</span><br><span class="line">-v /mydata/nginx/logs:/var/<span class="built_in">log</span>/nginx \</span><br><span class="line">-v /mydata/nginx/conf:/etc/nginx \</span><br><span class="line">-d nginx:1.10</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意一下这个路径映射到了/usr/share/nginx/html，我们在nginx配置文件中是写/usr/share/nginx/html，不是写/mydata/nginx/html</span></span><br><span class="line"></span><br><span class="line">docker update nginx --restart=always</span><br></pre></td></tr></table></figure>
+
+<p>测试</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /mydata/nginx/html/</span><br><span class="line">vim index.html</span><br><span class="line">随便写写</span><br><span class="line">测试 http://192.168.56.10:80</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何通过其他工具链接ssh"><a href="#如何通过其他工具链接ssh" class="headerlink" title="如何通过其他工具链接ssh"></a>如何通过其他工具链接ssh</h2><p>修改/etc/ssh/sshd_config</p>
+<p>修改 PasswordAuthentication yes</p>
+<p>systemctl restart sshd.service 或 service sshd restart</p>
+<p>连接192.168.56.10:22端口成功，用户名root，密码vagrant</p>
+<p>也可以通过vagrant ssh-config查看ip和端口，此时是127.0.0.1:2222</p>
+]]></content>
+      <tags>
+        <tag>技术分享</tag>
+      </tags>
+  </entry>
 </search>
