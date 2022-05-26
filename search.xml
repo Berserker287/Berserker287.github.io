@@ -12,9 +12,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>基于Spring的旅游景区项目</title>
+    <title>基于SpringBoot的旅游景区项目</title>
     <url>/2022/05/21/Java%E6%99%AF%E5%8C%BA%E6%97%85%E6%B8%B8%E9%A1%B9%E7%9B%AE%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>基于Spring的旅游景区项目.</p>
+    <content><![CDATA[<p>基于SpringBoot的旅游景区项目.</p>
 <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
 <p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
 <p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
@@ -71,7 +71,7 @@
 </tr>
 </tbody></table>
 <h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1S94y1f7Dg/">项目视频：基于Spring的旅游住宿小程序</a></p>
-<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#110;&#49;&#107;&#101;&#50;&#107;&#101;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#102;&#x61;&#110;&#49;&#107;&#101;&#50;&#107;&#101;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#x6e;&#49;&#x6b;&#x65;&#x32;&#x6b;&#x65;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#102;&#x61;&#x6e;&#49;&#x6b;&#x65;&#x32;&#x6b;&#x65;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#109;</a></p>
 <p>WeChat: <code>Storm_Berserker</code></p>
 <h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
 ]]></content>
@@ -170,9 +170,9 @@
       </tags>
   </entry>
   <entry>
-    <title>基于Spring学习论坛系统</title>
+    <title>基于SpringBoot学习论坛系统</title>
     <url>/2022/05/22/Java%E5%AD%A6%E4%B9%A0%E8%AE%BA%E5%9D%9B%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>基于Spring学习论坛系统.</p>
+    <content><![CDATA[<p>基于SpringBoot学习论坛系统.</p>
 <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
 <p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
 <p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
@@ -199,7 +199,7 @@
 <p>[用户]<br>test<br>1234qwer</p>
 <h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
 <h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1RB4y1174A/">项目视频：基于Spring学习论坛系统</a></p>
-<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#x6e;&#x31;&#x6b;&#x65;&#x32;&#x6b;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#x66;&#x61;&#x6e;&#x31;&#x6b;&#x65;&#x32;&#x6b;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#x6e;&#49;&#107;&#x65;&#x32;&#x6b;&#x65;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#102;&#x61;&#x6e;&#49;&#107;&#x65;&#x32;&#x6b;&#x65;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a></p>
 <p>WeChat: <code>Storm_Berserker</code></p>
 <h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
 ]]></content>
@@ -208,9 +208,9 @@
       </tags>
   </entry>
   <entry>
-    <title>基于Spring的学生选课系统</title>
+    <title>基于SpringBoot的学生选课系统</title>
     <url>/2022/05/22/Java%E5%AD%A6%E7%94%9F%E9%80%89%E8%AF%BE%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>基于Spring的学生选课系统.</p>
+    <content><![CDATA[<p>基于SpringBoot的学生选课系统.</p>
 <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
 <p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
 <p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
@@ -233,7 +233,7 @@
 <p>[学生]<br>fkkk<br>1234qwer</p>
 <h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
 <h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1ui4y1Q7oS/">项目视频：基于Spring的学生选课系统</a></p>
-<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#x6e;&#49;&#x6b;&#101;&#50;&#107;&#x65;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#x66;&#x61;&#x6e;&#49;&#x6b;&#101;&#50;&#107;&#x65;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#110;&#x31;&#x6b;&#x65;&#x32;&#x6b;&#101;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#102;&#x61;&#110;&#x31;&#x6b;&#x65;&#x32;&#x6b;&#101;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a></p>
 <p>WeChat: <code>Storm_Berserker</code></p>
 <h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
 ]]></content>
@@ -242,9 +242,9 @@
       </tags>
   </entry>
   <entry>
-    <title>基于Spring的实验室耗材管理系统</title>
+    <title>基于SpringBoot的实验室耗材管理系统</title>
     <url>/2022/05/22/Java%E5%AE%9E%E9%AA%8C%E5%AE%A4%E8%80%97%E6%9D%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>基于Spring的实验室耗材管理系统.</p>
+    <content><![CDATA[<p>基于SpringBoot的实验室耗材管理系统.</p>
 <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
 <p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
 <p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
@@ -264,7 +264,7 @@
 <p>[学生]<br>lisi<br>1234qwer</p>
 <h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
 <h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1y94y1f783/">项目视频：基于Spring的实验室耗材管理系统</a></p>
-<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#97;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#x66;&#97;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#97;&#x6e;&#49;&#107;&#101;&#50;&#x6b;&#x65;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#97;&#x6e;&#49;&#107;&#101;&#50;&#x6b;&#x65;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a></p>
 <p>WeChat: <code>Storm_Berserker</code></p>
 <h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
 ]]></content>
@@ -273,9 +273,9 @@
       </tags>
   </entry>
   <entry>
-    <title>基于Spring的小区物业管理系统</title>
+    <title>基于SpringBoot的小区物业管理系统</title>
     <url>/2022/05/22/Java%E5%B0%8F%E5%8C%BA%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>基于Spring的小区物业管理系统.</p>
+    <content><![CDATA[<p>基于SpringBoot的小区物业管理系统.</p>
 <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
 <p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
 <p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
@@ -294,7 +294,7 @@
 <p>[业主]<br>fank<br>1234qwer</p>
 <h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
 <h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1yu411v7oZ/">项目视频：基于Spring的小区物业管理系统</a></p>
-<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#110;&#x31;&#107;&#x65;&#50;&#107;&#101;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;">&#x66;&#x61;&#110;&#x31;&#107;&#x65;&#50;&#107;&#101;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#97;&#110;&#49;&#107;&#101;&#50;&#x6b;&#x65;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#102;&#97;&#110;&#49;&#107;&#101;&#50;&#x6b;&#x65;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p>WeChat: <code>Storm_Berserker</code></p>
 <h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
 ]]></content>
@@ -303,9 +303,9 @@
       </tags>
   </entry>
   <entry>
-    <title>基于Spring的旅游住宿小程序</title>
+    <title>基于SpringBoot的旅游住宿小程序</title>
     <url>/2022/05/22/Java%E6%97%85%E6%B8%B8%E4%BD%8F%E5%AE%BF%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
-    <content><![CDATA[<p>基于Spring的旅游住宿小程序.</p>
+    <content><![CDATA[<p>基于SpringBoot的旅游住宿小程序.</p>
 <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
 <p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
 <p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
@@ -329,7 +329,7 @@
 <p>[民宿管理员]<br>xierdun<br>1234qwer</p>
 <h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
 <h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1S94y1f7Dg/">项目视频：基于Spring的旅游住宿小程序</a></p>
-<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#x6e;&#x31;&#107;&#101;&#50;&#107;&#101;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x66;&#x61;&#x6e;&#x31;&#107;&#101;&#50;&#107;&#101;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#97;&#x6e;&#49;&#x6b;&#101;&#x32;&#107;&#101;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#109;">&#102;&#97;&#x6e;&#49;&#x6b;&#101;&#x32;&#107;&#101;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a></p>
 <p>WeChat: <code>Storm_Berserker</code></p>
 <h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
 ]]></content>
@@ -338,9 +338,9 @@
       </tags>
   </entry>
   <entry>
-    <title>基于Spring的小程序商城</title>
+    <title>基于SpringBoot的小程序商城</title>
     <url>/2022/05/22/Java%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%95%86%E5%9F%8E/</url>
-    <content><![CDATA[<p>基于Spring的小程序商城.</p>
+    <content><![CDATA[<p>基于SpringBoot的小程序商城.</p>
 <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
 <p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
 <p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
@@ -369,7 +369,7 @@
 <h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
 <h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
 <h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p><a href="https://www.bilibili.com/video/BV1dP4y1N7wp/">项目视频：基于Spring小程序商城</a></p>
-<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#x6e;&#49;&#107;&#101;&#50;&#x6b;&#101;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#102;&#x61;&#x6e;&#49;&#107;&#101;&#50;&#x6b;&#101;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#97;&#x6e;&#49;&#x6b;&#x65;&#50;&#107;&#x65;&#x40;&#103;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;">&#102;&#97;&#x6e;&#49;&#x6b;&#x65;&#50;&#107;&#x65;&#x40;&#103;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;</a></p>
 <p>WeChat: <code>Storm_Berserker</code></p>
 <h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
 ]]></content>
