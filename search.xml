@@ -640,4 +640,16 @@
         <tag>日常记录</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Navicat使用SQL文件将MySQL8.0导入到MySQL5.7</title>
+    <url>/2022/05/26/MYSQL8%E6%96%87%E4%BB%B6%E8%BF%90%E8%A1%8C/</url>
+    <content><![CDATA[<p>utf8mb4替换为utf8</p>
+<p>utf8mb4_0900_ai_ci替换为utf8_general_ci</p>
+<p>utf8_croatian_ci替换为utf8_general_ci</p>
+<p>utf8mb4_general_ci替换为utf8_general_ci</p>
+]]></content>
+      <tags>
+        <tag>技术分享</tag>
+      </tags>
+  </entry>
 </search>
