@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="【基础】1，变量&#x2F;类&#x2F;文件命名要规范（大小写，含义）2，注释适度3，代码整形4，禁止相同处理重复copy 【提高】1，考虑空指针场景2，考虑数据类型精度3，考虑事务的回滚（后端）4，考虑异常时的处理机制 【性能】1，减少无效循环次数2，减少数据库访问次数（后端） 方法名   前缀名 意义 举例    create 创建 createOrder()   delete 删除 deleteOrder()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码规范">
+<meta property="og:url" content="http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/index.html">
+<meta property="og:site_name" content="FanK">
+<meta property="og:description" content="【基础】1，变量&#x2F;类&#x2F;文件命名要规范（大小写，含义）2，注释适度3，代码整形4，禁止相同处理重复copy 【提高】1，考虑空指针场景2，考虑数据类型精度3，考虑事务的回滚（后端）4，考虑异常时的处理机制 【性能】1，减少无效循环次数2，减少数据库访问次数（后端） 方法名   前缀名 意义 举例    create 创建 createOrder()   delete 删除 deleteOrder()">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-27T23:56:24.000Z">
+<meta property="article:modified_time" content="2022-05-28T11:27:59.052Z">
+<meta property="article:author" content="FanK">
+<meta property="article:tag" content="技术分享">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>代码规范</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇 " href="/2022/05/28/APEX5.28/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2022/05/27/Java%E4%B8%A4%E4%B8%AAList%E9%97%B4%E5%8F%96%E5%B9%B6%E9%9B%86%E4%B8%8E%E5%B7%AE%E9%9B%86/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&text=代码规范"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&title=代码规范"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&is_video=false&description=代码规范"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=代码规范&body=Check out this article: http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&title=代码规范"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&title=代码规范"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&title=代码规范"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&title=代码规范"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&name=代码规范&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&t=代码规范"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%90%8D"><span class="toc-number">1.</span> <span class="toc-text">方法名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%8F%E5%B0%91%E4%BB%A3%E7%A0%81%E5%B5%8C%E5%A5%97%E5%B1%82%E6%AC%A1"><span class="toc-number">2.</span> <span class="toc-text">减少代码嵌套层次</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        代码规范
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">FanK</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-05-27T23:56:24.000Z" itemprop="datePublished">2022-05-28</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>【基础】<br>1，变量/类/文件命名要规范（大小写，含义）<br>2，注释适度<br>3，代码整形<br>4，禁止相同处理重复copy</p>
+<p>【提高】<br>1，考虑空指针场景<br>2，考虑数据类型精度<br>3，考虑事务的回滚（后端）<br>4，考虑异常时的处理机制</p>
+<p>【性能】<br>1，减少无效循环次数<br>2，减少数据库访问次数（后端）</p>
+<h2 id="方法名"><a href="#方法名" class="headerlink" title="方法名"></a>方法名</h2><table>
+<thead>
+<tr>
+<th>前缀名</th>
+<th>意义</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>create</td>
+<td>创建</td>
+<td>createOrder()</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>删除</td>
+<td>deleteOrder()</td>
+</tr>
+<tr>
+<td>add</td>
+<td>创建，暗示新创建的对象属于某个集合</td>
+<td>addPaidOrder()</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>删除</td>
+<td>removeOrder()</td>
+</tr>
+<tr>
+<td>init或则initialize</td>
+<td>初始化，暗示会做些诸如获取资源等特殊动作</td>
+<td>initializeObjectPool()</td>
+</tr>
+<tr>
+<td>destroy</td>
+<td>销毁，暗示会做些诸如释放资源的特殊动作</td>
+<td>destroyObjectPool()</td>
+</tr>
+<tr>
+<td>open</td>
+<td>打开</td>
+<td>openConnection()</td>
+</tr>
+<tr>
+<td>close</td>
+<td>关闭</td>
+<td>closeConnection()</td>
+</tr>
+<tr>
+<td>read</td>
+<td>读取</td>
+<td>readUserName()</td>
+</tr>
+<tr>
+<td>write</td>
+<td>写入</td>
+<td>writeUserName()</td>
+</tr>
+<tr>
+<td>get</td>
+<td>获得</td>
+<td>getName()</td>
+</tr>
+<tr>
+<td>set</td>
+<td>设置</td>
+<td>setName()</td>
+</tr>
+<tr>
+<td>prepare</td>
+<td>准备</td>
+<td>prepareOrderList()</td>
+</tr>
+<tr>
+<td>copy</td>
+<td>复制</td>
+<td>copyCustomerList()</td>
+</tr>
+<tr>
+<td>modity</td>
+<td>修改</td>
+<td>modifyActualTotalAmount()</td>
+</tr>
+<tr>
+<td>calculate</td>
+<td>数值计算</td>
+<td>calculateCommission()</td>
+</tr>
+<tr>
+<td>do</td>
+<td>执行某个过程或流程</td>
+<td>doOrderCancelJob()</td>
+</tr>
+<tr>
+<td>dispatch</td>
+<td>判断程序流程转向</td>
+<td>dispatchUserRequest()</td>
+</tr>
+<tr>
+<td>start</td>
+<td>开始</td>
+<td>startOrderProcessing()</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>结束</td>
+<td>stopOrderProcessing()</td>
+</tr>
+<tr>
+<td>send</td>
+<td>发送某个消息或事件</td>
+<td>sendOrderPaidMessage()</td>
+</tr>
+<tr>
+<td>receive</td>
+<td>接受消息或时间</td>
+<td>receiveOrderPaidMessgae()</td>
+</tr>
+<tr>
+<td>respond</td>
+<td>响应用户动作</td>
+<td>responseOrderListItemClicked()</td>
+</tr>
+<tr>
+<td>find</td>
+<td>查找对象</td>
+<td>findNewSupplier()</td>
+</tr>
+<tr>
+<td>update</td>
+<td>更新对象</td>
+<td>updateCommission()</td>
+</tr>
+</tbody></table>
+<h2 id="减少代码嵌套层次"><a href="#减少代码嵌套层次" class="headerlink" title="减少代码嵌套层次"></a>减少代码嵌套层次</h2><p>代码嵌套层次达 3 层以上时，一般人理解起来都会困难</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">        <span class="keyword">if</span> (b &gt; c) &#123;</span><br><span class="line">            doJobA();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (b &lt; c) &#123;</span><br><span class="line">            doJobB()</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (b &gt; c) &#123;</span><br><span class="line">                <span class="keyword">if</span> (a &lt; c) &#123;</span><br><span class="line">                    doJobC();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>减少嵌套的方法</p>
+<ol>
+<li>合并条件</li>
+<li>利用 return 以省略后面的 else</li>
+<li>利用子方法</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b &amp;&amp; b &gt; c) &#123;</span><br><span class="line">        doJobA();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b &amp;&amp; c &gt; b) &#123;</span><br><span class="line">        doJobB();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a &lt;= b &amp;&amp; c &lt; b &amp;&amp; a &lt; c) &#123;</span><br><span class="line">        doJobC();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%90%8D"><span class="toc-number">1.</span> <span class="toc-text">方法名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%8F%E5%B0%91%E4%BB%A3%E7%A0%81%E5%B5%8C%E5%A5%97%E5%B1%82%E6%AC%A1"><span class="toc-number">2.</span> <span class="toc-text">减少代码嵌套层次</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&text=代码规范"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&title=代码规范"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&is_video=false&description=代码规范"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=代码规范&body=Check out this article: http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&title=代码规范"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&title=代码规范"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&title=代码规范"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&title=代码规范"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&name=代码规范&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&t=代码规范"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2022
+    FanK
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

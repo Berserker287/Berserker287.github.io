@@ -663,4 +663,169 @@
         <tag>技术分享</tag>
       </tags>
   </entry>
+  <entry>
+    <title>APEX</title>
+    <url>/2022/05/28/APEX5.28/</url>
+    <content><![CDATA[<blockquote>
+<p>2022.5.28</p>
+</blockquote>
+<p>今天是本年来北京第一次玩APEX，爽！<br><a href="https://imgtu.com/i/XKsbv9"><img src="https://s1.ax1x.com/2022/05/28/XKsbv9.md.png" alt="XKsbv9.md.png"></a></p>
+]]></content>
+      <tags>
+        <tag>APEX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代码规范</title>
+    <url>/2022/05/28/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<p>【基础】<br>1，变量/类/文件命名要规范（大小写，含义）<br>2，注释适度<br>3，代码整形<br>4，禁止相同处理重复copy</p>
+<p>【提高】<br>1，考虑空指针场景<br>2，考虑数据类型精度<br>3，考虑事务的回滚（后端）<br>4，考虑异常时的处理机制</p>
+<p>【性能】<br>1，减少无效循环次数<br>2，减少数据库访问次数（后端）</p>
+<h2 id="方法名"><a href="#方法名" class="headerlink" title="方法名"></a>方法名</h2><table>
+<thead>
+<tr>
+<th>前缀名</th>
+<th>意义</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>create</td>
+<td>创建</td>
+<td>createOrder()</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>删除</td>
+<td>deleteOrder()</td>
+</tr>
+<tr>
+<td>add</td>
+<td>创建，暗示新创建的对象属于某个集合</td>
+<td>addPaidOrder()</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>删除</td>
+<td>removeOrder()</td>
+</tr>
+<tr>
+<td>init或则initialize</td>
+<td>初始化，暗示会做些诸如获取资源等特殊动作</td>
+<td>initializeObjectPool()</td>
+</tr>
+<tr>
+<td>destroy</td>
+<td>销毁，暗示会做些诸如释放资源的特殊动作</td>
+<td>destroyObjectPool()</td>
+</tr>
+<tr>
+<td>open</td>
+<td>打开</td>
+<td>openConnection()</td>
+</tr>
+<tr>
+<td>close</td>
+<td>关闭</td>
+<td>closeConnection()</td>
+</tr>
+<tr>
+<td>read</td>
+<td>读取</td>
+<td>readUserName()</td>
+</tr>
+<tr>
+<td>write</td>
+<td>写入</td>
+<td>writeUserName()</td>
+</tr>
+<tr>
+<td>get</td>
+<td>获得</td>
+<td>getName()</td>
+</tr>
+<tr>
+<td>set</td>
+<td>设置</td>
+<td>setName()</td>
+</tr>
+<tr>
+<td>prepare</td>
+<td>准备</td>
+<td>prepareOrderList()</td>
+</tr>
+<tr>
+<td>copy</td>
+<td>复制</td>
+<td>copyCustomerList()</td>
+</tr>
+<tr>
+<td>modity</td>
+<td>修改</td>
+<td>modifyActualTotalAmount()</td>
+</tr>
+<tr>
+<td>calculate</td>
+<td>数值计算</td>
+<td>calculateCommission()</td>
+</tr>
+<tr>
+<td>do</td>
+<td>执行某个过程或流程</td>
+<td>doOrderCancelJob()</td>
+</tr>
+<tr>
+<td>dispatch</td>
+<td>判断程序流程转向</td>
+<td>dispatchUserRequest()</td>
+</tr>
+<tr>
+<td>start</td>
+<td>开始</td>
+<td>startOrderProcessing()</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>结束</td>
+<td>stopOrderProcessing()</td>
+</tr>
+<tr>
+<td>send</td>
+<td>发送某个消息或事件</td>
+<td>sendOrderPaidMessage()</td>
+</tr>
+<tr>
+<td>receive</td>
+<td>接受消息或时间</td>
+<td>receiveOrderPaidMessgae()</td>
+</tr>
+<tr>
+<td>respond</td>
+<td>响应用户动作</td>
+<td>responseOrderListItemClicked()</td>
+</tr>
+<tr>
+<td>find</td>
+<td>查找对象</td>
+<td>findNewSupplier()</td>
+</tr>
+<tr>
+<td>update</td>
+<td>更新对象</td>
+<td>updateCommission()</td>
+</tr>
+</tbody></table>
+<h2 id="减少代码嵌套层次"><a href="#减少代码嵌套层次" class="headerlink" title="减少代码嵌套层次"></a>减少代码嵌套层次</h2><p>代码嵌套层次达 3 层以上时，一般人理解起来都会困难</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">        <span class="keyword">if</span> (b &gt; c) &#123;</span><br><span class="line">            doJobA();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (b &lt; c) &#123;</span><br><span class="line">            doJobB()</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (b &gt; c) &#123;</span><br><span class="line">                <span class="keyword">if</span> (a &lt; c) &#123;</span><br><span class="line">                    doJobC();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>减少嵌套的方法</p>
+<ol>
+<li>合并条件</li>
+<li>利用 return 以省略后面的 else</li>
+<li>利用子方法</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b &amp;&amp; b &gt; c) &#123;</span><br><span class="line">        doJobA();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b &amp;&amp; c &gt; b) &#123;</span><br><span class="line">        doJobB();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a &lt;= b &amp;&amp; c &lt; b &amp;&amp; a &lt; c) &#123;</span><br><span class="line">        doJobC();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>技术分享</tag>
+      </tags>
+  </entry>
 </search>
