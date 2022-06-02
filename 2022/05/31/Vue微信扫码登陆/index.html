@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="前端Vue 后端SpringBoot  页面加载时声明一个变量state&#x3D;’时间戳+6位随机数’，其中有个state参数需要我们传递，这个参数你传什么，微信回调的时候就会给你返回什么。 我们用之前生成那个state，当用户点击微信登录的按钮，我们就通过以state值为key和后端进行websocket连接 前端设置socket链接1234567891011let wsname &#x3D; &quot;w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前后端分离微信扫码登陆token授权方案">
+<meta property="og:url" content="http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/index.html">
+<meta property="og:site_name" content="FanK">
+<meta property="og:description" content="前端Vue 后端SpringBoot  页面加载时声明一个变量state&#x3D;’时间戳+6位随机数’，其中有个state参数需要我们传递，这个参数你传什么，微信回调的时候就会给你返回什么。 我们用之前生成那个state，当用户点击微信登录的按钮，我们就通过以state值为key和后端进行websocket连接 前端设置socket链接1234567891011let wsname &#x3D; &quot;w">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-31T00:16:24.000Z">
+<meta property="article:modified_time" content="2022-06-02T00:26:06.487Z">
+<meta property="article:author" content="FanK">
+<meta property="article:tag" content="技术分享">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>前后端分离微信扫码登陆token授权方案</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇 " href="/2022/06/01/%E5%B7%A5%E4%BD%9C%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2022/05/29/APEX5.28/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&text=前后端分离微信扫码登陆token授权方案"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&title=前后端分离微信扫码登陆token授权方案"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&is_video=false&description=前后端分离微信扫码登陆token授权方案"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=前后端分离微信扫码登陆token授权方案&body=Check out this article: http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&title=前后端分离微信扫码登陆token授权方案"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&title=前后端分离微信扫码登陆token授权方案"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&title=前后端分离微信扫码登陆token授权方案"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&title=前后端分离微信扫码登陆token授权方案"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&name=前后端分离微信扫码登陆token授权方案&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&t=前后端分离微信扫码登陆token授权方案"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E8%AE%BE%E7%BD%AEsocket%E9%93%BE%E6%8E%A5"><span class="toc-number">1.</span> <span class="toc-text">前端设置socket链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#websocket"><span class="toc-number">2.</span> <span class="toc-text">websocket</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BE%9B%E7%BB%99%E5%89%8D%E7%AB%AF%E5%8F%91%E9%80%81%E4%BF%A1%E6%81%AF%E7%9A%84api"><span class="toc-number">3.</span> <span class="toc-text">提供给前端发送信息的api</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%9B%9E%E8%B0%83%E4%BB%A3%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">微信回调代码</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        前后端分离微信扫码登陆token授权方案
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">FanK</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-05-31T00:16:24.000Z" itemprop="datePublished">2022-05-31</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>前端Vue 后端SpringBoot</p>
+</blockquote>
+<p>页面加载时声明一个变量state=’时间戳+6位随机数’，其中有个state参数需要我们传递，这个参数你传什么，微信回调的时候就会给你返回什么。 我们用之前生成那个state，当用户点击微信登录的按钮，我们就通过以state值为key和后端进行websocket连接</p>
+<h2 id="前端设置socket链接"><a href="#前端设置socket链接" class="headerlink" title="前端设置socket链接"></a>前端设置socket链接</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> wsname = <span class="string">&quot;ws://xxxxx:xxx/socketServer/&quot;</span> + <span class="built_in">this</span>.state;</span><br><span class="line"><span class="built_in">this</span>.ws = <span class="keyword">new</span> WebSocket(wsname);</span><br><span class="line"><span class="comment">//连接成功触发</span></span><br><span class="line"><span class="built_in">this</span>.ws.onopen = <span class="function"><span class="keyword">function</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//这个是接收后台发送信息的方法</span></span><br><span class="line"><span class="built_in">this</span>.ws.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> data = <span class="built_in">JSON</span>.parse(evt.data);</span><br><span class="line">  <span class="built_in">console</span>.log(data)</span><br><span class="line"> <span class="comment">//在这里判断后台给的用户信息和token  并进行相应的操作</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ServerEndpoint(value = &quot;/socketServer/&#123;userid&#125;&quot;)</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SocketServer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> Session session;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String,Session&gt; sessionPool = <span class="keyword">new</span> HashMap&lt;String,Session&gt;();</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String,String&gt; sessionIds = <span class="keyword">new</span> HashMap&lt;String,String&gt;();</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 用户连接时触发</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> session</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> userid</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@OnOpen</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(Session session,<span class="meta">@PathParam(value=&quot;userid&quot;)</span>String userid)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.session = session;</span><br><span class="line">		sessionPool.put(userid, session);</span><br><span class="line">		sessionIds.put(session.getId(), userid);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 收到信息时触发</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> message</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@OnMessage</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMessage</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;当前发送人sessionid为&quot;</span>+session.getId()+<span class="string">&quot;发送内容为&quot;</span>+message);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 连接关闭触发</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@OnClose</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClose</span><span class="params">()</span></span>&#123;</span><br><span class="line">		sessionPool.remove(sessionIds.get(session.getId()));</span><br><span class="line">		sessionIds.remove(session.getId());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 发生错误时触发</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> session</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> error</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="meta">@OnError</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Session session, Throwable error)</span> </span>&#123;</span><br><span class="line">        error.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 *信息发送的方法</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> message</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> userId</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendMessage</span><span class="params">(String message,String userId)</span></span>&#123;</span><br><span class="line">		Session s = sessionPool.get(userId);</span><br><span class="line">		<span class="keyword">if</span>(s!=<span class="keyword">null</span>)&#123;</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				s.getBasicRemote().sendText(message);</span><br><span class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="提供给前端发送信息的api"><a href="#提供给前端发送信息的api" class="headerlink" title="提供给前端发送信息的api"></a>提供给前端发送信息的api</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(value = &quot;/sendpost&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">sendPost</span><span class="params">(<span class="meta">@RequestBody</span> Params params)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (params.getJson() == <span class="keyword">null</span> || params.getUserid() == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;error&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    SocketServer.sendMessage(params.getJson(),params.getUserid());</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="微信回调代码"><a href="#微信回调代码" class="headerlink" title="微信回调代码"></a>微信回调代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/callback&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">(AuthCallback callback)</span> </span>&#123;</span><br><span class="line">    AuthUser authUser = <span class="keyword">null</span>;</span><br><span class="line">    AuthRequest authRequest = getAuthRequest();</span><br><span class="line">    AuthResponse response = authRequest.login(callback);</span><br><span class="line">    UserInfo user = <span class="keyword">new</span> UserInfo();</span><br><span class="line">    <span class="keyword">if</span>(response.getData() <span class="keyword">instanceof</span> AuthUser) &#123;</span><br><span class="line">        authUser =  (AuthUser)response.getData();</span><br><span class="line">        <span class="comment">//插入数据</span></span><br><span class="line">        WechatUserInfo wechatUser = <span class="keyword">new</span> WechatUserInfo();</span><br><span class="line">        wechatUser.setOpenId(authUser.getRawUserInfo().get(<span class="string">&quot;openid&quot;</span>).toString());</span><br><span class="line">        wechatUser.setNickName(authUser.getRawUserInfo().get(<span class="string">&quot;nickname&quot;</span>).toString());</span><br><span class="line">        <span class="keyword">if</span> (authUser.getRawUserInfo().get(<span class="string">&quot;sex&quot;</span>) == <span class="keyword">null</span> || authUser.getRawUserInfo().get(<span class="string">&quot;sex&quot;</span>).toString().equals(<span class="string">&quot;&quot;</span>)) &#123;</span><br><span class="line">            wechatUser.setSex(<span class="number">0</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            wechatUser.setSex(Integer.parseInt(authUser.getRawUserInfo().get(<span class="string">&quot;sex&quot;</span>).toString()));</span><br><span class="line">        &#125;</span><br><span class="line">        wechatUser.setHeadImgUrl(authUser.getRawUserInfo().get(<span class="string">&quot;headimgurl&quot;</span>).toString());</span><br><span class="line">        user = userInfoService.wxCallBack(wechatUser);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 添加访问记录</span></span><br><span class="line">    HttpServletRequest request = HttpContextUtil.getHttpServletRequest();</span><br><span class="line">    String ip = IPUtil.getIpAddr(request);</span><br><span class="line">    accessInfoService.save(<span class="keyword">new</span> AccessInfo(ip, AddressUtil.getCityInfo(ip), DateUtil.formatDateTime(<span class="keyword">new</span> Date())));</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//这里是将结果通过websocket返回给前端</span></span><br><span class="line">        System.out.println(HttpUtil.doPost(“http:<span class="comment">//www.niezhiliang.com:8086/websocket/sendpost”,user));</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E8%AE%BE%E7%BD%AEsocket%E9%93%BE%E6%8E%A5"><span class="toc-number">1.</span> <span class="toc-text">前端设置socket链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#websocket"><span class="toc-number">2.</span> <span class="toc-text">websocket</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BE%9B%E7%BB%99%E5%89%8D%E7%AB%AF%E5%8F%91%E9%80%81%E4%BF%A1%E6%81%AF%E7%9A%84api"><span class="toc-number">3.</span> <span class="toc-text">提供给前端发送信息的api</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%9B%9E%E8%B0%83%E4%BB%A3%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">微信回调代码</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&text=前后端分离微信扫码登陆token授权方案"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&title=前后端分离微信扫码登陆token授权方案"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&is_video=false&description=前后端分离微信扫码登陆token授权方案"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=前后端分离微信扫码登陆token授权方案&body=Check out this article: http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&title=前后端分离微信扫码登陆token授权方案"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&title=前后端分离微信扫码登陆token授权方案"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&title=前后端分离微信扫码登陆token授权方案"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&title=前后端分离微信扫码登陆token授权方案"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&name=前后端分离微信扫码登陆token授权方案&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/05/31/Vue%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%A0%81%E7%99%BB%E9%99%86/&t=前后端分离微信扫码登陆token授权方案"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2022
+    FanK
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
