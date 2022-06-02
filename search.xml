@@ -670,17 +670,21 @@
 <p>2022.5.28</p>
 </blockquote>
 <p>今天是本年来北京第一次玩APEX，爽！</p>
-<p><a href="https://imgtu.com/i/XKsbv9"><img src="https://s1.ax1x.com/2022/05/28/XKsbv9.md.png" alt="XKsbv9.md.png"></a></p>
+<p><img src="https://s1.ax1x.com/2022/05/28/XKsbv9.md.png" alt="XKsbv9.md.png"></p>
 <blockquote>
 <p>2022.5.29</p>
 </blockquote>
-<p><a href="https://imgtu.com/i/XlZap4"><img src="https://s1.ax1x.com/2022/05/30/XlZap4.png" alt="XlZap4.png"></a></p>
-<p><a href="https://imgtu.com/i/XlZNhF"><img src="https://s1.ax1x.com/2022/05/30/XlZNhF.png" alt="XlZNhF.png"></a></p>
+<p><img src="https://s1.ax1x.com/2022/05/30/XlZap4.png" alt="XlZap4.png"></p>
+<p><img src="https://s1.ax1x.com/2022/05/30/XlZNhF.png" alt="XlZNhF.png"></p>
 <blockquote>
 <p>2022.5.30</p>
 </blockquote>
-<p><a href="https://imgtu.com/i/X3kwo8"><img src="https://s1.ax1x.com/2022/05/30/X3kwo8.png" alt="X3kwo8.png"></a></p>
-<p><a href="https://imgtu.com/i/X3kddf"><img src="https://s1.ax1x.com/2022/05/30/X3kddf.png" alt="X3kddf.png"></a></p>
+<p><img src="https://s1.ax1x.com/2022/05/30/X3kwo8.png" alt="X3kwo8.png"></p>
+<p><img src="https://s1.ax1x.com/2022/05/30/X3kddf.png" alt="X3kddf.png"></p>
+<blockquote>
+<p>2022.6.2</p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2022/06/03/XNr9bT.png" alt="XNr9bT.png"></p>
 ]]></content>
       <tags>
         <tag>APEX</tag>
@@ -877,7 +881,9 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BigDecimal totalMoney = appleList.stream().map(Apple::getMoney).reduce(BigDecimal.ZERO, BigDecimal::add);</span><br></pre></td></tr></table></figure>
 
-<h2 id="groupBy-实现的-list-转-map"><a href="#groupBy-实现的-list-转-map" class="headerlink" title="groupBy 实现的 list 转 map"></a>groupBy 实现的 list 转 map</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T, K&gt; <span class="function">Map&lt;K, T&gt; <span class="title">list2Map</span><span class="params">(<span class="meta">@NonNull</span> Collection&lt;T&gt; list, <span class="meta">@NonNull</span> Function&lt;? <span class="keyword">super</span> T, K&gt; keyFunc)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> list.stream().collect(Collectors.toMap(keyFunc, Function.identity(),</span><br><span class="line">                (u, v) -&gt; &#123;</span><br><span class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(String.format(<span class="string">&quot;Multiple entries with same key,%s=%s,%s=%s&quot;</span>,</span><br><span class="line">                            keyFunc.apply(u), u,</span><br><span class="line">                            keyFunc.apply(v), v));</span><br><span class="line">                &#125;,</span><br><span class="line">                HashMap::<span class="keyword">new</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h2 id="groupBy-实现的-list-转-map"><a href="#groupBy-实现的-list-转-map" class="headerlink" title="groupBy 实现的 list 转 map"></a>groupBy 实现的 list 转 map</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T, K&gt; <span class="function">Map&lt;K, T&gt; <span class="title">list2Map</span><span class="params">(<span class="meta">@NonNull</span> Collection&lt;T&gt; list, <span class="meta">@NonNull</span> Function&lt;? <span class="keyword">super</span> T, K&gt; keyFunc)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> list.stream().collect(Collectors.toMap(keyFunc, Function.identity(),</span><br><span class="line">                (u, v) -&gt; &#123;</span><br><span class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(String.format(<span class="string">&quot;Multiple entries with same key,%s=%s,%s=%s&quot;</span>,</span><br><span class="line">                            keyFunc.apply(u), u,</span><br><span class="line">                            keyFunc.apply(v), v));</span><br><span class="line">                &#125;,</span><br><span class="line">                HashMap::<span class="keyword">new</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Player&gt; newList = playerList.stream().collect(Collectors .collectingAndThen( Collectors.toCollection(() -&gt; <span class="keyword">new</span> TreeSet&lt;&gt;(Comparator.comparing(Player::getName))), ArrayList::<span class="keyword">new</span>)); newList.forEach(System.out::println);</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>技术分享</tag>
       </tags>
