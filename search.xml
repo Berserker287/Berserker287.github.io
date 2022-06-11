@@ -685,6 +685,18 @@
 <p>2022.6.2</p>
 </blockquote>
 <p><img src="https://s1.ax1x.com/2022/06/03/XNr9bT.png" alt="XNr9bT.png"></p>
+<blockquote>
+<p>2022.6.5</p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2022/06/11/XcMfeK.png" alt="XcMfeK.png"></p>
+<blockquote>
+<p>2022.6.7</p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2022/06/11/XcM2sx.png" alt="XcM2sx.png"></p>
+<blockquote>
+<p>2022.6.8</p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2022/06/11/XcMRL6.png" alt="XcMRL6.png"></p>
 ]]></content>
       <tags>
         <tag>APEX</tag>
@@ -838,7 +850,144 @@
 <li>利用 return 以省略后面的 else</li>
 <li>利用子方法</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b &amp;&amp; b &gt; c) &#123;</span><br><span class="line">        doJobA();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b &amp;&amp; c &gt; b) &#123;</span><br><span class="line">        doJobB();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a &lt;= b &amp;&amp; c &lt; b &amp;&amp; a &lt; c) &#123;</span><br><span class="line">        doJobC();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b &amp;&amp; b &gt; c) &#123;</span><br><span class="line">        doJobA();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b &amp;&amp; c &gt; b) &#123;</span><br><span class="line">        doJobB();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a &lt;= b &amp;&amp; c &lt; b &amp;&amp; a &lt; c) &#123;</span><br><span class="line">        doJobC();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="接口类中的方法和属性不要加任何修饰符号"><a href="#接口类中的方法和属性不要加任何修饰符号" class="headerlink" title="接口类中的方法和属性不要加任何修饰符号"></a>接口类中的方法和属性不要加任何修饰符号</h2><p>接口类中的方法和属性不要加任何修饰符号（public 也不要加），保持代码的简洁<br>性，并加上有效的 Javadoc 注释。尽量不要在接口里定义变量，如果一定要定义变量，肯定是<br>与接口方法相关，并且是整个应用的基础常量。</p>
+<h2 id="各层命名规约"><a href="#各层命名规约" class="headerlink" title="各层命名规约"></a>各层命名规约</h2><blockquote>
+<p>Service/DAO 层方法命名规约</p>
+</blockquote>
+<p>1） 获取单个对象的方法用 get 做前缀。</p>
+<p>2） 获取多个对象的方法用 list 做前缀。</p>
+<p>3） 获取统计值的方法用 count 做前缀。</p>
+<p>4） 插入的方法用 save/insert 做前缀。</p>
+<p>5） 删除的方法用 remove/delete 做前缀。</p>
+<p>6） 修改的方法用 update 做前缀。</p>
+<blockquote>
+<p>领域模型命名规约</p>
+</blockquote>
+<p>1） 数据对象：xxxDO，xxx 即为数据表名。</p>
+<p>2） 数据传输对象：xxxDTO，xxx 为业务领域相关的名称。</p>
+<p>3） 展示对象：xxxVO，xxx 一般为网页名称。</p>
+<p>4） POJO 是 DO/DTO/BO/VO 的统称，禁止命名成 xxxPOJO。</p>
+<h2 id="常量定义"><a href="#常量定义" class="headerlink" title="常量定义"></a>常量定义</h2><blockquote>
+<p>不允许任何魔法值（即未经定义的常量）直接出现在代码中</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">反例：String key = <span class="string">&quot;Id#taobao_&quot;</span> + tradeId;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>long 或者 Long 初始赋值时，使用大写的 L，不能是小写的 l，小写容易跟数字 1 混<br>淆，造成误解。</p>
+</blockquote>
+<blockquote>
+<p>大括号的使用约定</p>
+</blockquote>
+<p>如果是大括号内为空，则简洁地写成{}即可，不需要换行；如果<br>是非空代码块则</p>
+<p>1.左大括号前不换行。</p>
+<p>2.左大括号后换行。</p>
+<p>3.右大括号前换行。</p>
+<p>4.右大括号后还有 else 等代码则不换行；表示终止的右大括号后必须换行。</p>
+<h2 id="OOP-规约"><a href="#OOP-规约" class="headerlink" title="OOP 规约"></a>OOP 规约</h2><blockquote>
+<p>避免通过一个类的对象引用访问此类的静态变量或静态方法，无谓增加编译器解析成<br>本，直接用类名来访问即可</p>
+</blockquote>
+<blockquote>
+<p>相同参数类型，相同业务含义，才可以使用 Java 的可变参数，避免使用 Object。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">正例：<span class="function"><span class="keyword">public</span> User <span class="title">getUsers</span><span class="params">(String type, Integer... ids)</span> </span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>外部正在调用或者二方库依赖的接口，不允许修改方法签名，避免对接口调用方产生<br>影响。接口过时必须加@Deprecated 注解，并清晰地说明采用的新接口或者新服务是什么。</p>
+</blockquote>
+<blockquote>
+<p>Object 的 equals 方法容易抛空指针异常，应使用常量或确定有值的对象来调用<br>equals。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">正例：<span class="string">&quot;test&quot;</span>.equals(object);</span><br><span class="line">反例：object.equals(<span class="string">&quot;test&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>所有的相同类型的包装类对象之间值的比较，全部使用 equals 方法比较。</p>
+</blockquote>
+<p>对于 Integer var = ? 在-128 至 127 范围内的赋值，Integer 对象是在<br>IntegerCache.cache 产生，会复用已有对象，这个区间内的 Integer 值可以直接使用==进行<br>判断，但是这个区间之外的所有数据，都会在堆上产生，并不会复用已有对象，这是一个大坑，<br>推荐使用 equals 方法进行判断。</p>
+<blockquote>
+<p>关于基本数据类型与包装数据类型的使用标准</p>
+</blockquote>
+<p>1） 【强制】所有的 POJO 类属性必须使用包装数据类型。</p>
+<p>2） 【强制】RPC 方法的返回值和参数必须使用包装数据类型。</p>
+<p>3） 【推荐】所有的局部变量使用基本数据类型。</p>
+<h2 id="集合处理"><a href="#集合处理" class="headerlink" title="集合处理"></a>集合处理</h2><blockquote>
+<p>关于 hashCode 和 equals 的处理</p>
+</blockquote>
+<p>1） 只要重写 equals，就必须重写 hashCode。</p>
+<p>2） 因为 Set 存储的是不重复的对象，依据 hashCode 和 equals 进行判断，所以 Set 存储的<br>对象必须重写这两个方法。</p>
+<p>3） 如果自定义对象做为 Map 的键，那么必须重写 hashCode 和 equals。</p>
+<blockquote>
+<p>使用集合转数组的方法，必须使用集合的 toArray(T[] array)</p>
+</blockquote>
+<p>使用 toArray 带参方法，入参分配的数组空间不够大时，toArray 方法内部将重新分配<br>内存空间，并返回新数组地址；如果数组元素大于实际所需，下标为[ list.size() ]的数组<br>元素将被置为 null，其它数组元素保持原值，因此最好将方法入参数组大小定义与集合元素<br>个数一致。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;(<span class="number">2</span>); </span><br><span class="line">list.add(<span class="string">&quot;guan&quot;</span>); </span><br><span class="line">list.add(<span class="string">&quot;bao&quot;</span>); </span><br><span class="line">String[] array = <span class="keyword">new</span> String[list.size()]; </span><br><span class="line">array = list.toArray(array);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用工具类 Arrays.asList()把数组转换成集合时，不能使用其修改集合相关的方<br>法</p>
+</blockquote>
+<p>asList 的返回对象是一个 Arrays 内部类，并没有实现集合的修改方法。Arrays.asList<br>体现的是适配器模式，只是转换接口，后台的数据仍是数组。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] str = <span class="keyword">new</span> String[] &#123; <span class="string">&quot;you&quot;</span>, <span class="string">&quot;wu&quot;</span> &#125;;</span><br><span class="line"> List list = Arrays.asList(str);</span><br><span class="line">第一种情况：list.add(<span class="string">&quot;yangguanbao&quot;</span>); 运行时异常。</span><br><span class="line">第二种情况：str[<span class="number">0</span>] = <span class="string">&quot;gujin&quot;</span>; 那么 list.get(<span class="number">0</span>)也会随之修改。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>不要在 foreach 循环里进行元素的 remove/add 操作。remove 元素请使用 Iterator<br>方式，如果并发操作，需要对 Iterator 对象加锁</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Iterator&lt;String&gt; iterator = list.iterator(); </span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123; </span><br><span class="line">        String item = iterator.next(); </span><br><span class="line">        <span class="keyword">if</span> (删除元素的条件) &#123; </span><br><span class="line">            iterator.remove(); </span><br><span class="line">        &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>集合初始化时，指定集合初始值大小</p>
+</blockquote>
+<p>HashMap 使用 HashMap(int initialCapacity) 初始化</p>
+<p>initialCapacity = (需要存储的元素个数 / 负载因子) + 1。注意负载因子（即 loader<br>factor）默认为 0.75，如果暂时无法确定初始值大小，请设置为 16（即默认值）</p>
+<blockquote>
+<p>使用 entrySet 遍历 Map 类集合 KV，而不是 keySet 方式进行遍历</p>
+</blockquote>
+<p>keySet 其实是遍历了 2 次，一次是转为 Iterator 对象，另一次是从 hashMap 中取出<br>key 所对应的 value。而 entrySet 只是遍历了一次就把 key 和 value 都放到了 entry 中，效<br>率更高。如果是 JDK8，使用 Map.foreach 方法。</p>
+<blockquote>
+<p>利用 Set 元素唯一的特性，可以快速对一个集合进行去重操作，避免使用 List 的<br>contains 方法进行遍历、对比、去重操作</p>
+</blockquote>
+<h2 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h2><blockquote>
+<p>在一个 switch 块内，每个 case 要么通过 break/return 等来终止，要么注释说明程<br>序将继续执行到哪一个 case 为止；在一个 switch 块内，都必须包含一个 default 语句并且<br>放在最后，即使它什么代码也没有</p>
+</blockquote>
+<blockquote>
+<p>在 if/else/for/while/do 语句中必须使用大括号。即使只有一行代码，避免采用<br>单行的编码方式：if (condition) statements;</p>
+</blockquote>
+<blockquote>
+<p>表达异常的分支时，少用 if-else 方式</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition) &#123; </span><br><span class="line"> ... </span><br><span class="line"> <span class="keyword">return</span> obj; </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 接着写 else 的业务逻辑代码; </span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>循环体中的语句要考量性能，以下操作尽量移至循环体外处理，如定义对象、变量、<br>获取数据库连接，进行不必要的 try-catch 操作（这个 try-catch 是否可以移至循环体外）</p>
+</blockquote>
+<blockquote>
+<p>下列情形，需要进行参数校验</p>
+</blockquote>
+<p>1） 调用频次低的方法。</p>
+<p>2） 执行时间开销很大的方法。此情形中，参数校验时间几乎可以忽略不计，但如果因为参<br>数错误导致中间执行回退，或者错误，那得不偿失。</p>
+<p>3） 需要极高稳定性和可用性的方法。</p>
+<p>4） 对外提供的开放接口，不管是 RPC/API/HTTP 接口。</p>
+<p>5） 敏感权限入口。</p>
+<h2 id="SQL-语句"><a href="#SQL-语句" class="headerlink" title="SQL 语句"></a>SQL 语句</h2><blockquote>
+<p>不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关</p>
+</blockquote>
+<p>count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行</p>
+<blockquote>
+<p>当某一列的值全是 NULL 时，count(col)的返回结果为 0，但 sum(col)的返回结果为<br>NULL，因此使用 sum()时需注意 NPE 问题</p>
+</blockquote>
+<blockquote>
+<p>使用 ISNULL()来判断是否为 NULL 值</p>
+</blockquote>
+<blockquote>
+<p>不得使用外键与级联，一切外键概念必须在应用层解决</p>
+</blockquote>
+<blockquote>
+<p>禁止使用存储过程，存储过程难以调试和扩展，更没有移植性</p>
+</blockquote>
+<blockquote>
+<p>in 操作能避免则避免，若实在避免不了，需要仔细评估 in 后边的集合元素数量，控<br>制在 1000 个之内。</p>
+</blockquote>
+]]></content>
       <tags>
         <tag>技术分享</tag>
       </tags>
@@ -883,7 +1032,22 @@
 
 <h2 id="groupBy-实现的-list-转-map"><a href="#groupBy-实现的-list-转-map" class="headerlink" title="groupBy 实现的 list 转 map"></a>groupBy 实现的 list 转 map</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T, K&gt; <span class="function">Map&lt;K, T&gt; <span class="title">list2Map</span><span class="params">(<span class="meta">@NonNull</span> Collection&lt;T&gt; list, <span class="meta">@NonNull</span> Function&lt;? <span class="keyword">super</span> T, K&gt; keyFunc)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> list.stream().collect(Collectors.toMap(keyFunc, Function.identity(),</span><br><span class="line">                (u, v) -&gt; &#123;</span><br><span class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(String.format(<span class="string">&quot;Multiple entries with same key,%s=%s,%s=%s&quot;</span>,</span><br><span class="line">                            keyFunc.apply(u), u,</span><br><span class="line">                            keyFunc.apply(v), v));</span><br><span class="line">                &#125;,</span><br><span class="line">                HashMap::<span class="keyword">new</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Player&gt; newList = playerList.stream().collect(Collectors .collectingAndThen( Collectors.toCollection(() -&gt; <span class="keyword">new</span> TreeSet&lt;&gt;(Comparator.comparing(Player::getName))), ArrayList::<span class="keyword">new</span>)); newList.forEach(System.out::println);</span><br></pre></td></tr></table></figure>]]></content>
+<h2 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Player&gt; newList = playerList.stream().collect(Collectors .collectingAndThen( Collectors.toCollection(() -&gt; <span class="keyword">new</span> TreeSet&lt;&gt;(Comparator.comparing(Player::getName))), ArrayList::<span class="keyword">new</span>)); newList.forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建空集合"><a href="#创建空集合" class="headerlink" title="创建空集合"></a>创建空集合</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collections.emptyList()</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>技术分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java枚举类的使用</title>
+    <url>/2022/06/11/Java%E6%9E%9A%E4%B8%BE%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="使用枚举类可以帮助我们更方便的获取固定属性值"><a href="#使用枚举类可以帮助我们更方便的获取固定属性值" class="headerlink" title="使用枚举类可以帮助我们更方便的获取固定属性值"></a>使用枚举类可以帮助我们更方便的获取固定属性值</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 季度年度标识枚举</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> FanK</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2022-06-09</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">IndexConfigurationSuffixEnum</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 季度标识</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    SUPPLIER_SCORES_CONFIGURATION_QUARTER_STR(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;季&quot;</span>),</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 年度标识</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    SUPPLIER_SCORES_CONFIGURATION_YEAR_STR(<span class="string">&quot;3&quot;</span>, <span class="string">&quot;年&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String time;</span><br><span class="line">    <span class="keyword">private</span> String indexConfigurationTimeStr;</span><br><span class="line"></span><br><span class="line">    IndexConfigurationSuffixEnum(String time, String indexConfigurationTimeStr) &#123;</span><br><span class="line">        <span class="keyword">this</span>.time = time;</span><br><span class="line">        <span class="keyword">this</span>.indexConfigurationTimeStr = indexConfigurationTimeStr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据数值 获取对应的名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> time 数值</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 名称</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getValueByTime</span><span class="params">(String time)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (IndexConfigurationSuffixEnum categoryEnum : IndexConfigurationSuffixEnum.values()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (categoryEnum.getTime().equals(time)) &#123;</span><br><span class="line">                <span class="keyword">return</span> categoryEnum.getIndexConfigurationTimeStr();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTime</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> time;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTime</span><span class="params">(String time)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.time = time;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getIndexConfigurationTimeStr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> indexConfigurationTimeStr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setIndexConfigurationTimeStr</span><span class="params">(String indexConfigurationTimeStr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.indexConfigurationTimeStr = indexConfigurationTimeStr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>调用</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String suffix = IndexConfigurationSuffixEnum.getValueByTime(time);</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>技术分享</tag>
       </tags>
