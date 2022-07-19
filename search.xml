@@ -1112,4 +1112,35 @@
         <tag>日常记录</tag>
       </tags>
   </entry>
+  <entry>
+    <title>IDEA插件</title>
+    <url>/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<h2 id="Alibaba-Java-Coding-Guidelines"><a href="#Alibaba-Java-Coding-Guidelines" class="headerlink" title="Alibaba Java Coding Guidelines"></a>Alibaba Java Coding Guidelines</h2><p>阿里巴巴 Java 开发规约插件</p>
+<h2 id="CodeGlance"><a href="#CodeGlance" class="headerlink" title="CodeGlance"></a>CodeGlance</h2><p>侧边缩略图</p>
+<h2 id="GitToolBox"><a href="#GitToolBox" class="headerlink" title="GitToolBox"></a>GitToolBox</h2><p>点击的代码行之后显示 git 用户名，commit 等一些信息。</p>
+<h2 id="Mario-Progress-Bar"><a href="#Mario-Progress-Bar" class="headerlink" title="Mario Progress Bar"></a>Mario Progress Bar</h2><p>Mario加载条</p>
+<h2 id="MybatisX"><a href="#MybatisX" class="headerlink" title="MybatisX"></a>MybatisX</h2><p>懂得都懂</p>
+<h2 id="Pokemon-Progress"><a href="#Pokemon-Progress" class="headerlink" title="Pokémon Progress"></a>Pokémon Progress</h2><p>Pokémon加载条</p>
+<h2 id="Rainbow-Brackets"><a href="#Rainbow-Brackets" class="headerlink" title="Rainbow Brackets"></a>Rainbow Brackets</h2><p>智能AI辅助。。。（我的评价是不如Copilot一根）</p>
+<h2 id="RESTfulToolKit"><a href="#RESTfulToolKit" class="headerlink" title="RESTfulToolKit"></a>RESTfulToolKit</h2><p>1.根据 URL 直接跳转到对应的方法定义 ( Ctrl \ or Ctrl Alt N );</p>
+<p>2.提供了一个 Services tree 的显示窗口;</p>
+<p>3.一个简单的 http 请求工具;</p>
+<p>4.在请求方法上添加了有用功能: 复制生成 URL;,复制方法参数…</p>
+<p>5.其他功能: java 类上添加 Convert to JSON 功能，格式化 json 数据 ( Windows: Ctrl + Enter; Mac: Command + Enter )。</p>
+<h2 id="SQL-Param-Setter"><a href="#SQL-Param-Setter" class="headerlink" title="SQL Param Setter"></a>SQL Param Setter</h2><p>A simple tool that helps you to extract a executable sql from mybatis logs like below:<br>    ==&gt; Preparing: select * from table where name = ?<br>    ==&gt; Parameters: Tom(String)</p>
+<p>After selecting these two lines of logs above, you can right click your mouse and select “SQL Params Setter” in the popup menu, then the result executable sql, i.e. “select * from table where name = ‘Tom’” will be copied to your clipboard.</p>
+]]></content>
+      <tags>
+        <tag>技术分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KINGYO</title>
+    <url>/2022/06/29/KINGYO/</url>
+    <content><![CDATA[<p>一开始就这样 接下来会如何？醒醒吧 别再蒙混过关了，上下颠倒的空档里。<br>无法避开的痛处 是在威胁我吗、<br>身无分文 虽然牛仔裤还没破 可是口袋里只有一把辛酸泪、</p>
+]]></content>
+      <tags>
+        <tag>日常记录</tag>
+      </tags>
+  </entry>
 </search>

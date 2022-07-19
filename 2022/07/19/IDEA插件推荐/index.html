@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Alibaba Java Coding Guidelines阿里巴巴 Java 开发规约插件 CodeGlance侧边缩略图 GitToolBox点击的代码行之后显示 git 用户名，commit 等一些信息。 Mario Progress BarMario加载条 MybatisX懂得都懂 Pokémon ProgressPokémon加载条 Rainbow Brackets智能AI辅助。。。（我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IDEA插件">
+<meta property="og:url" content="http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/index.html">
+<meta property="og:site_name" content="FanK">
+<meta property="og:description" content="Alibaba Java Coding Guidelines阿里巴巴 Java 开发规约插件 CodeGlance侧边缩略图 GitToolBox点击的代码行之后显示 git 用户名，commit 等一些信息。 Mario Progress BarMario加载条 MybatisX懂得都懂 Pokémon ProgressPokémon加载条 Rainbow Brackets智能AI辅助。。。（我">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-19T14:04:24.000Z">
+<meta property="article:modified_time" content="2022-07-19T14:12:49.323Z">
+<meta property="article:author" content="FanK">
+<meta property="article:tag" content="技术分享">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>IDEA插件</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2022/06/29/KINGYO/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&text=IDEA插件"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&title=IDEA插件"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&is_video=false&description=IDEA插件"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=IDEA插件&body=Check out this article: http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&title=IDEA插件"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&title=IDEA插件"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&title=IDEA插件"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&title=IDEA插件"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&name=IDEA插件&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&t=IDEA插件"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Alibaba-Java-Coding-Guidelines"><span class="toc-number">1.</span> <span class="toc-text">Alibaba Java Coding Guidelines</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CodeGlance"><span class="toc-number">2.</span> <span class="toc-text">CodeGlance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitToolBox"><span class="toc-number">3.</span> <span class="toc-text">GitToolBox</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mario-Progress-Bar"><span class="toc-number">4.</span> <span class="toc-text">Mario Progress Bar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MybatisX"><span class="toc-number">5.</span> <span class="toc-text">MybatisX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pokemon-Progress"><span class="toc-number">6.</span> <span class="toc-text">Pokémon Progress</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rainbow-Brackets"><span class="toc-number">7.</span> <span class="toc-text">Rainbow Brackets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RESTfulToolKit"><span class="toc-number">8.</span> <span class="toc-text">RESTfulToolKit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL-Param-Setter"><span class="toc-number">9.</span> <span class="toc-text">SQL Param Setter</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        IDEA插件
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">FanK</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-07-19T14:04:24.000Z" itemprop="datePublished">2022-07-19</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Alibaba-Java-Coding-Guidelines"><a href="#Alibaba-Java-Coding-Guidelines" class="headerlink" title="Alibaba Java Coding Guidelines"></a>Alibaba Java Coding Guidelines</h2><p>阿里巴巴 Java 开发规约插件</p>
+<h2 id="CodeGlance"><a href="#CodeGlance" class="headerlink" title="CodeGlance"></a>CodeGlance</h2><p>侧边缩略图</p>
+<h2 id="GitToolBox"><a href="#GitToolBox" class="headerlink" title="GitToolBox"></a>GitToolBox</h2><p>点击的代码行之后显示 git 用户名，commit 等一些信息。</p>
+<h2 id="Mario-Progress-Bar"><a href="#Mario-Progress-Bar" class="headerlink" title="Mario Progress Bar"></a>Mario Progress Bar</h2><p>Mario加载条</p>
+<h2 id="MybatisX"><a href="#MybatisX" class="headerlink" title="MybatisX"></a>MybatisX</h2><p>懂得都懂</p>
+<h2 id="Pokemon-Progress"><a href="#Pokemon-Progress" class="headerlink" title="Pokémon Progress"></a>Pokémon Progress</h2><p>Pokémon加载条</p>
+<h2 id="Rainbow-Brackets"><a href="#Rainbow-Brackets" class="headerlink" title="Rainbow Brackets"></a>Rainbow Brackets</h2><p>智能AI辅助。。。（我的评价是不如Copilot一根）</p>
+<h2 id="RESTfulToolKit"><a href="#RESTfulToolKit" class="headerlink" title="RESTfulToolKit"></a>RESTfulToolKit</h2><p>1.根据 URL 直接跳转到对应的方法定义 ( Ctrl \ or Ctrl Alt N );</p>
+<p>2.提供了一个 Services tree 的显示窗口;</p>
+<p>3.一个简单的 http 请求工具;</p>
+<p>4.在请求方法上添加了有用功能: 复制生成 URL;,复制方法参数…</p>
+<p>5.其他功能: java 类上添加 Convert to JSON 功能，格式化 json 数据 ( Windows: Ctrl + Enter; Mac: Command + Enter )。</p>
+<h2 id="SQL-Param-Setter"><a href="#SQL-Param-Setter" class="headerlink" title="SQL Param Setter"></a>SQL Param Setter</h2><p>A simple tool that helps you to extract a executable sql from mybatis logs like below:<br>    ==&gt; Preparing: select * from table where name = ?<br>    ==&gt; Parameters: Tom(String)</p>
+<p>After selecting these two lines of logs above, you can right click your mouse and select “SQL Params Setter” in the popup menu, then the result executable sql, i.e. “select * from table where name = ‘Tom’” will be copied to your clipboard.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Alibaba-Java-Coding-Guidelines"><span class="toc-number">1.</span> <span class="toc-text">Alibaba Java Coding Guidelines</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CodeGlance"><span class="toc-number">2.</span> <span class="toc-text">CodeGlance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitToolBox"><span class="toc-number">3.</span> <span class="toc-text">GitToolBox</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mario-Progress-Bar"><span class="toc-number">4.</span> <span class="toc-text">Mario Progress Bar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MybatisX"><span class="toc-number">5.</span> <span class="toc-text">MybatisX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pokemon-Progress"><span class="toc-number">6.</span> <span class="toc-text">Pokémon Progress</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rainbow-Brackets"><span class="toc-number">7.</span> <span class="toc-text">Rainbow Brackets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RESTfulToolKit"><span class="toc-number">8.</span> <span class="toc-text">RESTfulToolKit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL-Param-Setter"><span class="toc-number">9.</span> <span class="toc-text">SQL Param Setter</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&text=IDEA插件"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&title=IDEA插件"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&is_video=false&description=IDEA插件"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=IDEA插件&body=Check out this article: http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&title=IDEA插件"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&title=IDEA插件"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&title=IDEA插件"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&title=IDEA插件"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&name=IDEA插件&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/07/19/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/&t=IDEA插件"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2022
+    FanK
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
