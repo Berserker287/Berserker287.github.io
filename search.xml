@@ -1118,7 +1118,8 @@
     <content><![CDATA[<h2 id="Alibaba-Java-Coding-Guidelines"><a href="#Alibaba-Java-Coding-Guidelines" class="headerlink" title="Alibaba Java Coding Guidelines"></a>Alibaba Java Coding Guidelines</h2><p>阿里巴巴 Java 开发规约插件</p>
 <h2 id="CodeGlance"><a href="#CodeGlance" class="headerlink" title="CodeGlance"></a>CodeGlance</h2><p>侧边缩略图</p>
 <h2 id="GitToolBox"><a href="#GitToolBox" class="headerlink" title="GitToolBox"></a>GitToolBox</h2><p>点击的代码行之后显示 git 用户名，commit 等一些信息。</p>
-<h2 id="Mario-Progress-Bar"><a href="#Mario-Progress-Bar" class="headerlink" title="Mario Progress Bar"></a>Mario Progress Bar</h2><p>Mario加载条</p>
+<h2 id="Mario-Progress-Bar"><a href="#Mario-Progress-Bar" class="headerlink" title="Mario Progress Bar"></a>Mario Progress Bar</h2><p>NyanProgressBar</p>
+<p>Mario加载条</p>
 <h2 id="MybatisX"><a href="#MybatisX" class="headerlink" title="MybatisX"></a>MybatisX</h2><p>懂得都懂</p>
 <h2 id="Pokemon-Progress"><a href="#Pokemon-Progress" class="headerlink" title="Pokémon Progress"></a>Pokémon Progress</h2><p>Pokémon加载条</p>
 <h2 id="Rainbow-Brackets"><a href="#Rainbow-Brackets" class="headerlink" title="Rainbow Brackets"></a>Rainbow Brackets</h2><p>智能AI辅助。。。（我的评价是不如Copilot一根）</p>
@@ -1129,7 +1130,9 @@
 <p>5.其他功能: java 类上添加 Convert to JSON 功能，格式化 json 数据 ( Windows: Ctrl + Enter; Mac: Command + Enter )。</p>
 <h2 id="SQL-Param-Setter"><a href="#SQL-Param-Setter" class="headerlink" title="SQL Param Setter"></a>SQL Param Setter</h2><p>A simple tool that helps you to extract a executable sql from mybatis logs like below:<br>    ==&gt; Preparing: select * from table where name = ?<br>    ==&gt; Parameters: Tom(String)</p>
 <p>After selecting these two lines of logs above, you can right click your mouse and select “SQL Params Setter” in the popup menu, then the result executable sql, i.e. “select * from table where name = ‘Tom’” will be copied to your clipboard.</p>
-]]></content>
+<h2 id="Rainbow-brackets"><a href="#Rainbow-brackets" class="headerlink" title="Rainbow brackets"></a>Rainbow brackets</h2><p>它为每组左中括号和右中括号提供了各自的颜色，使跟踪代码块的起始和结束位置更加容易</p>
+<h2 id="Extra-Icons"><a href="#Extra-Icons" class="headerlink" title="Extra Icons"></a>Extra Icons</h2><p>它增加了一组默认情况下 IntelliJ IDEA 不支持的图标。 这些图标不仅美观，还将简化文件之间的导航，因为您可以更直观地识别文件类型</p>
+<h2 id="Activate-power-mode"><a href="#Activate-power-mode" class="headerlink" title="Activate-power-mode"></a>Activate-power-mode</h2>]]></content>
       <tags>
         <tag>技术分享</tag>
       </tags>
@@ -1141,6 +1144,48 @@
 ]]></content>
       <tags>
         <tag>日常记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>10KM跑步经验</title>
+    <url>/2022/08/31/10KM%E8%B7%91%E6%AD%A5%E7%BB%8F%E9%AA%8C/</url>
+    <content><![CDATA[<h2 id="大体重跑步伤膝盖吗？"><a href="#大体重跑步伤膝盖吗？" class="headerlink" title="大体重跑步伤膝盖吗？"></a>大体重跑步伤膝盖吗？</h2><p>只要你不是先天性的膝关节弯曲，或者半月板问题等等，正常是不会对膝盖造成多大损伤的。可以参考大多数马拉松运动员，很少出现严重的膝关节问题。很多业余马拉松爱好者，都是大体重入门，刷脂成功再进阶，他们都没有严重的膝伤问题，所以如果你想刷脂，想跑步，跑就完事了，不要整天操心伤不伤膝盖。如果你的 BMI 比我的低，放心，你跑起来应该也没问题。</p>
+<p>如果你实在害怕，可以挂号看看运动康复科目之类的医生，检查下自己的关节是不是可以进行跑步。</p>
+<h2 id="运动损伤自测"><a href="#运动损伤自测" class="headerlink" title="运动损伤自测"></a>运动损伤自测</h2><p>刚跑步肯定会出现各种不舒服，小腿酸痛，大腿酸痛，膝盖酸痛，踝关节酸痛，足底酸痛等等。只要不是静息疼痛，也就是坐着不动，躺着不动都疼，就说明不严重，继续跑就完事了。如果出现严重的静息疼痛，你真的需要去看医生。</p>
+<p>我刚开始跑步，膝盖酸痛明显，我也是真的害怕，所以都打算放弃了。</p>
+<p>但是我的膝盖不是静息疼痛，而是跑到 3-5km 的时候，开始疼痛的。</p>
+<p>我开始找寻解决办法，索性我的身体还行，改变了跑姿，我从后掌跑法，切换到了前掌。（我不建议大家尝试，正常跑步什么姿势，就什么姿势），我的膝盖确实减轻了很多。</p>
+<p>但是陆续出现了小腿严重酸痛，大腿酸痛，伤痛又一次让我想要放弃。</p>
+<p>强忍着，进行了一次又一次 3KM ，5KM ，减轻了很多，到现在 10KM 也很轻松，酸痛感逐渐逐渐消失了。</p>
+<h2 id="跑步需要热身和拉伸吗"><a href="#跑步需要热身和拉伸吗" class="headerlink" title="跑步需要热身和拉伸吗"></a>跑步需要热身和拉伸吗</h2><p>很需要，怎么拉伸和热身，建议去搜寻专业的视频。</p>
+<p>当然，力量锻炼也很重要。不过如果，你没怎么跑过步，可能更不会去锻炼了</p>
+<h2 id="跑步需要哪些装备"><a href="#跑步需要哪些装备" class="headerlink" title="跑步需要哪些装备"></a>跑步需要哪些装备</h2><p>如果你想要跑的快乐，跑步是需要装备的。</p>
+<ul>
+<li>一块手表，或者手环，有 GPS ，可以检测实时心率。</li>
+<li>T 恤短裤，我只推荐 Nike dri fit adv ，在炎热的夏天，其他 T 恤出汗非常黏，adv 相对好一点。驮着几斤的衣服黏在身上，是真的很难受。</li>
+<li>跑鞋，真的很重要！！！！如果你是入门跑者，不要考虑，线下你能买到的跑鞋，尤其是国产的碳板跑鞋，多半是竞速的，稳定性都很差。</li>
+</ul>
+<h2 id="如何进行-5KM-慢跑"><a href="#如何进行-5KM-慢跑" class="headerlink" title="如何进行 5KM 慢跑"></a>如何进行 5KM 慢跑</h2><p>如果你是小白，我相信你可能这辈子都没跑过 5KM 的距离。如何突破，有以下几点</p>
+<ul>
+<li>掌握呼吸节奏，比如 3 步呼吸法，就是每跑三步就呼吸一次，如果你发现喘不过来，就降速</li>
+<li>适当走路，慢跑是个枯燥难熬的运动，并不是竞速，顶不住了，可以适当停下来走路缓缓</li>
+<li>不断的练习跑步。跑步虽然说是人类的天性，但是不锻炼，很难突破</li>
+<li>压好心率，慢跑不是竞速，把心率控制在自己能自由说话的区间，就算 8 分配也没关系</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>日常记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java8的几个实用新特性</title>
+    <url>/2022/08/20/Java8%E7%9A%84%E5%87%A0%E4%B8%AA%E5%AE%9E%E7%94%A8%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="延迟队列-【Delay-Queue】"><a href="#延迟队列-【Delay-Queue】" class="headerlink" title="延迟队列 【Delay Queue】"></a>延迟队列 【Delay Queue】</h2><p><code>它是一种特定类型的 Java 集合，它允许我们根据元素的延迟时间对元素进行排序。老实说，这是一门非常有趣的课。尽管 DelayQueue该类是 Java 集合的成员，但它属于 java.util.concurrent 包。它实现了BlockingQueue接口。只有当元素的时间到期时，才能从队列中取出元素</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> record <span class="title">DelayedEvent</span><span class="params">(<span class="keyword">long</span> startTime, String msg)</span> implements Delayed </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getDelay</span><span class="params">(TimeUnit unit)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> diff = startTime - System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">return</span> unit.convert(diff, TimeUnit.MILLISECONDS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Delayed o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) (<span class="keyword">this</span>.startTime - ((DelayedEvent) o).startTime);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>假设我们想推迟元素10秒。我们只需要设置当前时间增加了10秒DelayedEvent类</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> DelayQueue&lt;DelayedEvent&gt; delayQueue = <span class="keyword">new</span> DelayQueue&lt;&gt;();</span><br><span class="line"><span class="keyword">final</span> <span class="keyword">long</span> timeFirst = System.currentTimeMillis() + <span class="number">10000</span>;</span><br><span class="line">delayQueue.offer(<span class="keyword">new</span> DelayedEvent(timeFirst, <span class="string">&quot;1&quot;</span>));</span><br><span class="line">log.info(<span class="string">&quot;Done&quot;</span>);</span><br><span class="line">log.info(delayQueue.take().msg());</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>技术分享</tag>
       </tags>
   </entry>
 </search>
