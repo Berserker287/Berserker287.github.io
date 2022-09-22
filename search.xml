@@ -1044,7 +1044,9 @@
 
 <h2 id="创建空集合"><a href="#创建空集合" class="headerlink" title="创建空集合"></a>创建空集合</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collections.emptyList()</span><br></pre></td></tr></table></figure>
 
-<h2 id="获取集合最小值-为空添加默认值"><a href="#获取集合最小值-为空添加默认值" class="headerlink" title="获取集合最小值(为空添加默认值)"></a>获取集合最小值(为空添加默认值)</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">evaluateBaseEntry.getValue().stream()</span><br><span class="line">        .map(SupplierEvaluateBaseinfo::getSecretLevel)</span><br><span class="line">        .filter(Objects::nonNull)</span><br><span class="line">        .min(Comparator.comparing(Integer::valueOf)).orElse(<span class="string">&quot;5&quot;</span>);</span><br></pre></td></tr></table></figure>]]></content>
+<h2 id="获取集合最小值-为空添加默认值"><a href="#获取集合最小值-为空添加默认值" class="headerlink" title="获取集合最小值(为空添加默认值)"></a>获取集合最小值(为空添加默认值)</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">evaluateBaseEntry.getValue().stream()</span><br><span class="line">        .map(SupplierEvaluateBaseinfo::getSecretLevel)</span><br><span class="line">        .filter(Objects::nonNull)</span><br><span class="line">        .min(Comparator.comparing(Integer::valueOf)).orElse(<span class="string">&quot;5&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="list对象两个属性相乘在相加"><a href="#list对象两个属性相乘在相加" class="headerlink" title="list对象两个属性相乘在相加"></a>list对象两个属性相乘在相加</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">item.stream().map(p -&gt; p.getQuantity().multiply(p.getUnitPrice())).reduce(BigDecimal::add).orElse(BigDecimal.ZERO)</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>技术分享</tag>
       </tags>
@@ -1205,7 +1207,7 @@
   <entry>
     <title>运动燃脂</title>
     <url>/2022/09/05/%E8%BF%90%E5%8A%A8%E7%87%83%E8%84%82/</url>
-    <content><![CDATA[<h3 id="运动燃脂"><a href="#运动燃脂" class="headerlink" title="运动燃脂"></a>运动燃脂</h3><p>增加耐力训练。研究表明，与传统运动相比，间歇性锻炼或者交替进行短暂的爆发与休息可以改善肌肉并增强耐力</p>
+    <content><![CDATA[<h2 id="运动燃脂"><a href="#运动燃脂" class="headerlink" title="运动燃脂"></a>运动燃脂</h2><p>增加耐力训练。研究表明，与传统运动相比，间歇性锻炼或者交替进行短暂的爆发与休息可以改善肌肉并增强耐力</p>
 <p>燃烧卡路里。有氧运动能够提高心率，加快燃烧卡路里，有益于全身减脂。只去做某项腹部运动来减掉肚子上的赘肉是不可能的，但是当你做全身有氧运动时，最先消耗的就是腹部的脂肪。</p>
 <ul>
 <li>记录运动的时间。记录跑1000米需要多长时间。随着耐力的增加，你花费的时间会越来越少。</li>
@@ -1214,7 +1216,7 @@
 </ul>
 <p>增加阻力训练。2006年《国际体育营养与运动代谢杂志》上发表的一项研究表明，在腹部减脂方面，心血管（有氧）运动与阻力训练相结合比单独进行心血管运动更为有效。你可以通过力量训练器、健身器或阻力带来进行阻力训练，训练时让身体保持不稳定的姿势也很有用，因为这样会进一步提高肌肉的运动强度。</p>
 <p>别再做仰卧起坐——至少暂时不要做。仰卧起坐的作用是增加肌肉，但是在增加肌肉前，你先需要减去腹部的脂肪。其实，仰卧起坐增加了大块肌肉，反而会让你的肚子看起来更大。</p>
-<h3 id="保证正常的新陈代谢"><a href="#保证正常的新陈代谢" class="headerlink" title="保证正常的新陈代谢"></a>保证正常的新陈代谢</h3><p>减轻压力。科学研究表明皮质醇（一种人们在面临压力时分泌的荷尔蒙）会导致肚子上的赘肉增加</p>
+<h2 id="保证正常的新陈代谢"><a href="#保证正常的新陈代谢" class="headerlink" title="保证正常的新陈代谢"></a>保证正常的新陈代谢</h2><p>减轻压力。科学研究表明皮质醇（一种人们在面临压力时分泌的荷尔蒙）会导致肚子上的赘肉增加</p>
 <ul>
 <li>正常的成年人需要每天至少7小时以上的睡眠来保证身体各项功能正常运转。</li>
 <li>制定放松时间。哪怕仅仅是午饭后放松15分钟，闭上眼睛深呼吸一下，试着不去想那些生活琐事，也是有帮助的。</li>
@@ -1234,7 +1236,7 @@
 <li>大幅减少酒精、含糖饮料（如甜茶、酷爱、果汁饮料、果汁、可乐、七喜和百事可乐）以及碳酸饮料的摄入。</li>
 </ul>
 <p>保证按时吃早餐。你可能会觉得，我要减肥的话，为什么还要吃呢？但是科学研究表明，在起床后1小时内吃早餐，能够保持胰岛素的稳定，并降低LDL-胆固醇（俗称坏胆固醇）的含量。</p>
-<h3 id="准备健康早餐"><a href="#准备健康早餐" class="headerlink" title="准备健康早餐"></a>准备健康早餐</h3><ul>
+<h2 id="准备健康早餐"><a href="#准备健康早餐" class="headerlink" title="准备健康早餐"></a>准备健康早餐</h2><ul>
 <li>选择一种蛋白质：鸡蛋、豆类、花生酱、坚果、瘦肉</li>
 <li>选择一种纤维：燕麦、新鲜水果、绿叶蔬菜</li>
 <li>尽量减少精制糖：避开含糖的谷物、煎饼、糕点、速食燕麦片</li>
@@ -1262,13 +1264,22 @@
 <p>用眼睛画8字，增强眼部肌肉</p>
 <p>交替注视大拇指和远方的某个物体，以改善视力</p>
 <p>用手掌捂住双眼5秒，让眼睛放松。这个方法有助于放松疲劳的双眼。双掌互相揉搓5-10秒，让它们变得温暖，然后轻轻地捂住紧闭的双眼。捂1分钟，保持深呼吸。每天重复2-3次，帮助缓解眼睛疲劳</p>
-<h3 id="调整饮食"><a href="#调整饮食" class="headerlink" title="调整饮食"></a>调整饮食</h3><p>多吃深绿叶蔬菜，摄取维生素A。新鲜的绿叶蔬菜富含维生素A和叶黄素。叶黄素是一种抗氧化剂，有助于促进眼睛健康。将羽衣甘蓝、菠菜、西兰花和甘蓝菜叶等蔬菜纳入饮食中，每周至少吃3-4次，改善眼睛健康</p>
+<h2 id="调整饮食"><a href="#调整饮食" class="headerlink" title="调整饮食"></a>调整饮食</h2><p>多吃深绿叶蔬菜，摄取维生素A。新鲜的绿叶蔬菜富含维生素A和叶黄素。叶黄素是一种抗氧化剂，有助于促进眼睛健康。将羽衣甘蓝、菠菜、西兰花和甘蓝菜叶等蔬菜纳入饮食中，每周至少吃3-4次，改善眼睛健康</p>
 <p>吃柑橘类水果和其它维生素C来源。维生素C有助于降低罹患白内障的风险，同时促进眼部血液循环。将橙、葡萄柚、番茄、苹果等蔬果纳入饮食中，建议每天摄取75-90毫克维生素C。</p>
 <p>吃富含脂肪酸和维生素D的食物，缓解眼睛干涩。欧米茄-3脂肪酸和维生素D有助于对抗视网膜黄斑变性，避免日后失明。每周吃三文鱼、鱼、核桃、亚麻籽、奇亚籽等食物3-4次，确保饮食均衡</p>
-<h3 id="改变生活方式"><a href="#改变生活方式" class="headerlink" title="改变生活方式"></a>改变生活方式</h3><p>视线偶尔离开电视或电脑屏幕，让眼睛休息一下。长时间盯着电脑和电视屏幕，它们释放的蓝光会让眼睛感觉疲劳和干涩。如果你对着电脑工作，尽量每小时休息10分钟，让视线离开屏幕</p>
+<h2 id="改变生活方式"><a href="#改变生活方式" class="headerlink" title="改变生活方式"></a>改变生活方式</h2><p>视线偶尔离开电视或电脑屏幕，让眼睛休息一下。长时间盯着电脑和电视屏幕，它们释放的蓝光会让眼睛感觉疲劳和干涩。如果你对着电脑工作，尽量每小时休息10分钟，让视线离开屏幕</p>
 <p>在强光下戴墨镜，减轻眼睛疲劳。阳光会损伤眼睛，可能导致失明，并使眼睛慢慢变弱。外出时，如果阳光很强，不妨戴上墨镜。不管去哪里都随身携带墨镜，以便随时派上用场。如果你需要更多保护，选择可同时保护眼睛两侧的环绕包裹式墨镜</p>
 <p>不要抽烟，避免眼睛损伤。抽烟会引起许多视力相关问题，比如视网膜黄斑变性、白内障和眼睛神经损伤。如果你没有抽烟，那就不要碰任何烟草产品。如果你有抽烟，减少每天的抽烟数量，慢慢把它彻底戒掉。</p>
 <p>获取充足睡眠，好让眼睛休息。晚上没有获取充分休息，眼睛一整天都会酸痛、干涩。每晚至少睡6-8小时，让眼睛有时间放松和恢复。睡前至少30-60分钟停止看任何电子屏幕，否则你会更难入睡</p>
+]]></content>
+      <tags>
+        <tag>日常记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>让我倍感煎熬的9.29</title>
+    <url>/2022/09/29/%E8%AE%A9%E6%88%91%E5%80%8D%E6%84%9F%E7%85%8E%E7%86%AC%E7%9A%849.29/</url>
+    <content><![CDATA[<p>今天我才深刻的意识到自己是多么的无能，多么的渺小，像一只蜷缩在下水道又油又臭的老鼠，终日不见阳光,看不到美丽的天空,闻不到鲜花的芬芳,终日在臭水沟里与那些可恶的老鼠们争抢那点可怜的食物,什么是什么?什么是什么?什么是什么?我不明白,从我离开象牙塔的那天起我就掉进了下水道里,再也没有爬出来过．</p>
 ]]></content>
       <tags>
         <tag>日常记录</tag>
