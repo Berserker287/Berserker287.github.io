@@ -1629,4 +1629,42 @@
         <tag>日常记录</tag>
       </tags>
   </entry>
+  <entry>
+    <title>2023装机心得</title>
+    <url>/2023/01/08/2023%E8%A3%85%E6%9C%BA%E5%BF%83%E5%BE%97/</url>
+    <content><![CDATA[<blockquote>
+<p>旧主机性能跟不上了，这几天一直看视频选了一套总价2k出头跑分百万的主机，来一起看看吧</p>
+</blockquote>
+<h2 id="硬件参数"><a href="#硬件参数" class="headerlink" title="硬件参数"></a>硬件参数</h2><p>CPU: AMD 锐龙 R5 5500 全新盒装 ￥509</p>
+<p>主板:华硕 B450M-K 全新工包￥349</p>
+<p>内存: 金百达 银爵 DDR4 3200 8G*2 全新盒装 ￥247</p>
+<p>显卡: 撼讯 RX 5600 XT 6G 竟技版 二手矿卡 ￥616</p>
+<p>硬盘:西部数据 SN570 500G NVME m.2 固态硬盘 全新盒装 ￥223</p>
+<p>电源: 九州风神 PF500 额定 500W 白牌 全新盒装 ￥172.9</p>
+<p>散热:冰曼 6热管 双塔 单风扇 全新盒装 ￥61.9</p>
+<p>配件总计: ￥2,177.9</p>
+<p>机箱: 先马黑洞 二手 ￥88</p>
+<p>显示器: DELL 2k ￥650</p>
+<p>显示器机械臂: 双频支架 ￥120</p>
+<p>总计: ￥3035</p>
+<h2 id="说说问题"><a href="#说说问题" class="headerlink" title="说说问题"></a>说说问题</h2><blockquote>
+<p>B450M-K只有VGA、DVI接口，没有HDMI接口，HDMI线和DP线只能插在显卡上</p>
+</blockquote>
+<blockquote>
+<p>在进行CPU超频，设置不了手动电压，超到43，自动电压直接升到1.5以上了，用aida64测试fpu，温度跑100，我见人家5500电压都能压到1.3~1.35，而且温度也才九十度左右。也可能是我哪里没有设置好的原因</p>
+</blockquote>
+<blockquote>
+<p>5600xt的矿卡，暂时看起来没有什么问题，烤机也是正常</p>
+</blockquote>
+<blockquote>
+<p>其他问题：2k屏幕进bios显示输入不支援，我查了一下说是要把显卡驱动删掉重新装，但是试了下没用，1080的没有问题</p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2023/01/10/pSmBwo8.jpg" alt="pSmBwo8.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/01/10/pSmBBFS.png" alt="pSmBBFS.png"></p>
+<p><img src="https://s1.ax1x.com/2023/01/10/pSmBddf.jpg" alt="pSmBddf.jpg"></p>
+]]></content>
+      <tags>
+        <tag>日常记录</tag>
+      </tags>
+  </entry>
 </search>
