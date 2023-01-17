@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="MYSQL迁移数据库到另一台机器 mysqldump  12# windowsmysqlddump -u root -p -all-databases &gt; &#x2F;d&#x2F;databases.sql  12# linuxmysqldump -u root --all-databases &gt; &#x2F;home&#x2F;databases.sql   或者直接复制数据目录到新机器  Linux服务启动脚本  1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="企业问题清单">
+<meta property="og:url" content="http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/index.html">
+<meta property="og:site_name" content="FanK">
+<meta property="og:description" content="MYSQL迁移数据库到另一台机器 mysqldump  12# windowsmysqlddump -u root -p -all-databases &gt; &#x2F;d&#x2F;databases.sql  12# linuxmysqldump -u root --all-databases &gt; &#x2F;home&#x2F;databases.sql   或者直接复制数据目录到新机器  Linux服务启动脚本  1">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-17T12:17:24.000Z">
+<meta property="article:modified_time" content="2023-01-17T12:21:26.158Z">
+<meta property="article:author" content="FanK">
+<meta property="article:tag" content="技术分享">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>企业问题清单</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2023/01/10/Java%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&text=企业问题清单"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&title=企业问题清单"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&is_video=false&description=企业问题清单"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=企业问题清单&body=Check out this article: http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&title=企业问题清单"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&title=企业问题清单"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&title=企业问题清单"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&title=企业问题清单"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&name=企业问题清单&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&t=企业问题清单"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        企业问题清单
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">FanK</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-01-17T12:17:24.000Z" itemprop="datePublished">2023-01-17</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>MYSQL迁移数据库到另一台机器 mysqldump</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># windows</span></span><br><span class="line">mysqlddump -u root -p -all-databases &gt; /d/databases.sql</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># linux</span></span><br><span class="line">mysqldump -u root --all-databases &gt; /home/databases.sql</span><br></pre></td></tr></table></figure>
+
+
+<p>或者直接复制数据目录到新机器</p>
+<blockquote>
+<p>Linux服务启动脚本</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">###</span></span><br><span class="line"> <span class="comment"># @Descripttion: </span></span><br><span class="line"> <span class="comment"># @Author: wangzn</span></span><br><span class="line"> <span class="comment"># @Date: 2022-11-30 17:14:00</span></span><br><span class="line"> <span class="comment"># @LastEditors: wangzn</span></span><br><span class="line"> <span class="comment"># @LastEditTime: 2022-11-30 17:24:36</span></span><br><span class="line"><span class="comment">### </span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;  =====关闭isup应用======&quot;</span></span><br><span class="line">ids=`ps -ef | grep <span class="string">&quot;uap-modules-isup-2.2.0.jar&quot;</span> | grep -v <span class="string">&quot;grep&quot;</span> | awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;当前服务进程id:&quot;</span> <span class="variable">$ids</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="variable">$ids</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;Kill ID--&gt; the process [ <span class="variable">$i</span> ]&quot;</span></span><br><span class="line">  <span class="built_in">kill</span> -9 <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;  =====&gt;启动isup应用中....&quot;</span></span><br><span class="line">nohup java -jar -Xms128m  -Xmx512m -XX:PermSize=128M -XX:MaxPermSize=512M uap-modules-isup-2.2.0.jar --server.port=9209 --spring.profiles.active=<span class="built_in">test</span> --spring.cloud.nacos.discovery.server-addr=10.129.138.144:8848 --spring.cloud.nacos.discovery.group=yun-144 --spring.cloud.nacos.config.namespace=090d6ad3-0fc5-4411-9dab-7c144c128add &gt; <span class="built_in">log</span>/isup.log 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;  =====&gt;启动isup应用完成OK&quot;</span></span><br><span class="line">tail -f <span class="built_in">log</span>/isup.log</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>分段批量入库</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> limit = <span class="number">500</span>;</span><br><span class="line"><span class="keyword">int</span> size = filter.size();</span><br><span class="line"><span class="keyword">int</span> checkTimes = ((size - <span class="number">1</span>) / limit) + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= checkTimes - <span class="number">1</span>; i++) &#123;</span><br><span class="line">   <span class="keyword">int</span> aa = i * limit;</span><br><span class="line">   <span class="keyword">int</span> bb = (i + <span class="number">1</span>) * limit;</span><br><span class="line">   <span class="keyword">if</span> (i == checkTimes - <span class="number">1</span>) &#123;</span><br><span class="line">        bb = size;</span><br><span class="line">   &#125;</span><br><span class="line">   List&lt;SupplierEvaluationYear&gt; subList = filter.subList(aa, bb);</span><br><span class="line">   saveBatch(subList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>java stream 多属性过滤</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;SupplierEvaluationYear&gt; filter = supEvaluationYearList.stream()</span><br><span class="line">        .distinct()</span><br><span class="line">        .filter(e -&gt; !(supplierEvaluationYears.stream()</span><br><span class="line">                .map(y -&gt; y.getSupplierId() + <span class="string">&quot;:&quot;</span> + y.getPurchaseId() + <span class="string">&quot;:&quot;</span> + y.getProductType() + <span class="string">&quot;:&quot;</span> + y.getYear())</span><br><span class="line">                .collect(toList())</span><br><span class="line">                .contains(e.getSupplierId() + <span class="string">&quot;:&quot;</span> + e.getPurchaseId() + <span class="string">&quot;:&quot;</span> + e.getProductType() + <span class="string">&quot;:&quot;</span> + e.getYear())))</span><br><span class="line">        .collect(toList());</span><br></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&text=企业问题清单"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&title=企业问题清单"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&is_video=false&description=企业问题清单"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=企业问题清单&body=Check out this article: http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&title=企业问题清单"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&title=企业问题清单"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&title=企业问题清单"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&title=企业问题清单"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&name=企业问题清单&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/&t=企业问题清单"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    FanK
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

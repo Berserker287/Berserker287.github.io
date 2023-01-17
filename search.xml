@@ -162,6 +162,7 @@
 <h2 id="findAny"><a href="#findAny" class="headerlink" title="findAny"></a>findAny</h2><p>findAny方法用于获取流中的任意一个元素，如果流是空的，则返回Optional.empty，因为可能会使用多线程，所以不保证每次返回的是同一个元素</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Stream&lt;Integer&gt; numStream = Stream.of(-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">Optional&lt;Integer&gt; anyNum = numStream.findAny();</span><br></pre></td></tr></table></figure>
 
+<h2 id="多属性过滤"><a href="#多属性过滤" class="headerlink" title="多属性过滤"></a>多属性过滤</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;SupplierEvaluationYear&gt; filter = supEvaluationYearList.stream()</span><br><span class="line">        .distinct()</span><br><span class="line">        .filter(e -&gt; !(supplierEvaluationYears.stream()</span><br><span class="line">                .map(y -&gt; y.getSupplierId() + <span class="string">&quot;:&quot;</span> + y.getPurchaseId() + <span class="string">&quot;:&quot;</span> + y.getProductType() + <span class="string">&quot;:&quot;</span> + y.getYear())</span><br><span class="line">                .collect(toList())</span><br><span class="line">                .contains(e.getSupplierId() + <span class="string">&quot;:&quot;</span> + e.getPurchaseId() + <span class="string">&quot;:&quot;</span> + e.getProductType() + <span class="string">&quot;:&quot;</span> + e.getYear())))</span><br><span class="line">        .collect(toList());</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://segmentfault.com/a/1190000022791696">MartinDai</a></p>
 ]]></content>
@@ -1739,6 +1740,37 @@
 ]]></content>
       <tags>
         <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>企业问题清单</title>
+    <url>/2023/01/17/%E4%BC%81%E4%B8%9A%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[<blockquote>
+<p>MYSQL迁移数据库到另一台机器 mysqldump</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># windows</span></span><br><span class="line">mysqlddump -u root -p -all-databases &gt; /d/databases.sql</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># linux</span></span><br><span class="line">mysqldump -u root --all-databases &gt; /home/databases.sql</span><br></pre></td></tr></table></figure>
+
+
+<p>或者直接复制数据目录到新机器</p>
+<blockquote>
+<p>Linux服务启动脚本</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">###</span></span><br><span class="line"> <span class="comment"># @Descripttion: </span></span><br><span class="line"> <span class="comment"># @Author: wangzn</span></span><br><span class="line"> <span class="comment"># @Date: 2022-11-30 17:14:00</span></span><br><span class="line"> <span class="comment"># @LastEditors: wangzn</span></span><br><span class="line"> <span class="comment"># @LastEditTime: 2022-11-30 17:24:36</span></span><br><span class="line"><span class="comment">### </span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;  =====关闭isup应用======&quot;</span></span><br><span class="line">ids=`ps -ef | grep <span class="string">&quot;uap-modules-isup-2.2.0.jar&quot;</span> | grep -v <span class="string">&quot;grep&quot;</span> | awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;当前服务进程id:&quot;</span> <span class="variable">$ids</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="variable">$ids</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;Kill ID--&gt; the process [ <span class="variable">$i</span> ]&quot;</span></span><br><span class="line">  <span class="built_in">kill</span> -9 <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;  =====&gt;启动isup应用中....&quot;</span></span><br><span class="line">nohup java -jar -Xms128m  -Xmx512m -XX:PermSize=128M -XX:MaxPermSize=512M uap-modules-isup-2.2.0.jar --server.port=9209 --spring.profiles.active=<span class="built_in">test</span> --spring.cloud.nacos.discovery.server-addr=10.129.138.144:8848 --spring.cloud.nacos.discovery.group=yun-144 --spring.cloud.nacos.config.namespace=090d6ad3-0fc5-4411-9dab-7c144c128add &gt; <span class="built_in">log</span>/isup.log 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;  =====&gt;启动isup应用完成OK&quot;</span></span><br><span class="line">tail -f <span class="built_in">log</span>/isup.log</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>分段批量入库</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> limit = <span class="number">500</span>;</span><br><span class="line"><span class="keyword">int</span> size = filter.size();</span><br><span class="line"><span class="keyword">int</span> checkTimes = ((size - <span class="number">1</span>) / limit) + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= checkTimes - <span class="number">1</span>; i++) &#123;</span><br><span class="line">   <span class="keyword">int</span> aa = i * limit;</span><br><span class="line">   <span class="keyword">int</span> bb = (i + <span class="number">1</span>) * limit;</span><br><span class="line">   <span class="keyword">if</span> (i == checkTimes - <span class="number">1</span>) &#123;</span><br><span class="line">        bb = size;</span><br><span class="line">   &#125;</span><br><span class="line">   List&lt;SupplierEvaluationYear&gt; subList = filter.subList(aa, bb);</span><br><span class="line">   saveBatch(subList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>java stream 多属性过滤</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;SupplierEvaluationYear&gt; filter = supEvaluationYearList.stream()</span><br><span class="line">        .distinct()</span><br><span class="line">        .filter(e -&gt; !(supplierEvaluationYears.stream()</span><br><span class="line">                .map(y -&gt; y.getSupplierId() + <span class="string">&quot;:&quot;</span> + y.getPurchaseId() + <span class="string">&quot;:&quot;</span> + y.getProductType() + <span class="string">&quot;:&quot;</span> + y.getYear())</span><br><span class="line">                .collect(toList())</span><br><span class="line">                .contains(e.getSupplierId() + <span class="string">&quot;:&quot;</span> + e.getPurchaseId() + <span class="string">&quot;:&quot;</span> + e.getProductType() + <span class="string">&quot;:&quot;</span> + e.getYear())))</span><br><span class="line">        .collect(toList());</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>技术分享</tag>
       </tags>
   </entry>
 </search>
