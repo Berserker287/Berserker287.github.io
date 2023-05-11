@@ -1797,7 +1797,17 @@
 <blockquote>
 <p>过滤重复分组</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TreeMap&lt;Integer, SupplierRuleGrade&gt; levelRuleMap = levelRulesList.stream().collect(</span><br><span class="line">                Collectors.toMap(SupplierRuleGrade::getLevel, Function.identity(), (o1, o2) -&gt; o1, TreeMap::<span class="keyword">new</span>));</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TreeMap&lt;Integer, SupplierRuleGrade&gt; levelRuleMap = levelRulesList.stream().collect(</span><br><span class="line">                Collectors.toMap(SupplierRuleGrade::getLevel, Function.identity(), (o1, o2) -&gt; o1, TreeMap::<span class="keyword">new</span>));</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>计算出现次数</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;String, Long&gt; nameMap = unitList.stream().collect(Collectors.groupingBy(p -&gt; p, Collectors.counting()));</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>倒叙</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">dataMap.keySet().stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>技术分享</tag>
       </tags>
@@ -1894,6 +1904,30 @@
 <p><img src="https://s1.ax1x.com/2023/04/09/ppbYfLd.jpg" alt="ppbYfLd.jpg"></p>
 <p><img src="https://s1.ax1x.com/2023/04/09/ppbY4eA.jpg" alt="ppbY4eA.jpg"></p>
 <p><img src="https://s1.ax1x.com/2023/04/09/ppbYIot.jpg" alt="ppbYIot.jpg"></p>
+]]></content>
+      <tags>
+        <tag>日常记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日常</title>
+    <url>/2023/05/05/%E6%97%A5%E5%B8%B80505/</url>
+    <content><![CDATA[<blockquote>
+<p>失眠为间断房间一片死寂，时间不间断逝去浪费在自怨自艾，每天睁眼不知意义那我宁愿自缢，而不是骗自己，There’s always plan B Instead of planning to be</p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s6NF0.jpg" alt="p9s6NF0.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s6UYV.jpg" alt="p9s6UYV.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s6sm9.jpg" alt="p9s6sm9.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s6DOJ.jpg" alt="p9s6DOJ.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s6Yoq.jpg" alt="p9s6Yoq.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s6aWT.jpg" alt="p9s6aWT.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s6wSU.png" alt="p9s6wSU.png"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s60lF.jpg" alt="p9s60lF.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s6By4.jpg" alt="p9s6By4.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s62Y6.jpg" alt="p9s62Y6.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s6ywR.jpg" alt="p9s6ywR.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s6gFx.jpg" alt="p9s6gFx.jpg"></p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9s66T1.jpg" alt="p9s66T1.jpg"></p>
 ]]></content>
       <tags>
         <tag>日常记录</tag>
