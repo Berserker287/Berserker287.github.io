@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="初始化Spread实例  1let spread &#x3D; new GC.Spread.Sheets.Workbook(document.getElementById(&amp;#x27;spread&amp;#x27;))   读取JSON模板 导入到spread里  1spread.fromJSON(require(&#96;..&#x2F;..&#x2F;static&#x2F;file&#x2F;$&amp;#123;fileNameData[tableName]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpreadJs使用">
+<meta property="og:url" content="http://example.com/2023/05/14/SpreadJs/index.html">
+<meta property="og:site_name" content="FanK">
+<meta property="og:description" content="初始化Spread实例  1let spread &#x3D; new GC.Spread.Sheets.Workbook(document.getElementById(&amp;#x27;spread&amp;#x27;))   读取JSON模板 导入到spread里  1spread.fromJSON(require(&#96;..&#x2F;..&#x2F;static&#x2F;file&#x2F;$&amp;#123;fileNameData[tableName]">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-14T14:13:24.000Z">
+<meta property="article:modified_time" content="2023-05-13T15:13:28.541Z">
+<meta property="article:author" content="FanK">
+<meta property="article:tag" content="技术分享">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>SpreadJs使用</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2023/05/13/DelayQueue%E5%BB%B6%E8%BF%9F%E9%98%9F%E5%88%97/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/05/14/SpreadJs/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/05/14/SpreadJs/&text=SpreadJs使用"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/05/14/SpreadJs/&title=SpreadJs使用"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/05/14/SpreadJs/&is_video=false&description=SpreadJs使用"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SpreadJs使用&body=Check out this article: http://example.com/2023/05/14/SpreadJs/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/05/14/SpreadJs/&title=SpreadJs使用"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/05/14/SpreadJs/&title=SpreadJs使用"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/05/14/SpreadJs/&title=SpreadJs使用"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/05/14/SpreadJs/&title=SpreadJs使用"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/05/14/SpreadJs/&name=SpreadJs使用&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/05/14/SpreadJs/&t=SpreadJs使用"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        SpreadJs使用
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">FanK</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-05-14T14:13:24.000Z" itemprop="datePublished">2023-05-14</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>初始化Spread实例</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> spread = <span class="keyword">new</span> GC.Spread.Sheets.Workbook(<span class="built_in">document</span>.getElementById(<span class="string">&#x27;spread&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>读取JSON模板 导入到spread里</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spread.fromJSON(<span class="built_in">require</span>(<span class="string">`../../static/file/<span class="subst">$&#123;fileNameData[tableName]&#125;</span>`</span>))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>浮动模式插入数据</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> floatForm = <span class="function">(<span class="params">spread, tableName, dataSource</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> sheet = spread.getActiveSheet()</span><br><span class="line">  sheet.suspendPaint()</span><br><span class="line">  <span class="keyword">let</span> startRow = startRowData[tableName] <span class="comment">// startRowData里记录的是编号 index为 编号减1</span></span><br><span class="line">  sheet.addRows(startRow, dataSource.length - <span class="number">1</span>) <span class="comment">// length - 1 是因为原本就有一行</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = dataSource.length - <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">    sheet.copyTo(startRow - <span class="number">1</span>, <span class="number">1</span>, startRow + i, <span class="number">1</span>, <span class="number">1</span>, sheet.getColumnCount() - <span class="number">1</span>, GC.Spread.Sheets.CopyToOptions.all)</span><br><span class="line">    sheet.setRowHeight(startRow + i, sheet.getRowHeight(startRow - <span class="number">1</span>))</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 这里开始插入数据</span></span><br><span class="line">  sheet.setArray(startRow - <span class="number">1</span>, <span class="number">1</span>, dataSource)</span><br><span class="line">  sheet.resumePaint()</span><br><span class="line">  <span class="keyword">return</span> spread</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>事件绑定</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spread.bind(spreadNS.Events.CellClick, <span class="function"><span class="keyword">function</span> (<span class="params">e, args</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">let</span> sheetArea = args.sheetArea === <span class="number">0</span> ? <span class="string">&#x27;sheetCorner&#x27;</span> : args.sheetArea === <span class="number">1</span> ? <span class="string">&#x27;columnHeader&#x27;</span> : args.sheetArea === <span class="number">2</span> ? <span class="string">&#x27;rowHeader&#x27;</span> : <span class="string">&#x27;viewPort&#x27;</span>;</span><br><span class="line">                self.eventLog =</span><br><span class="line">                    <span class="string">&#x27;SpreadEvent: &#x27;</span> + GC.Spread.Sheets.Events.CellClick + <span class="string">&#x27; event called&#x27;</span> + <span class="string">&#x27;\n&#x27;</span> +</span><br><span class="line">                    <span class="string">&#x27;sheetArea: &#x27;</span> + sheetArea + <span class="string">&#x27;\n&#x27;</span> +</span><br><span class="line">                    <span class="string">&#x27;row: &#x27;</span> + args.row + <span class="string">&#x27;\n&#x27;</span> +</span><br><span class="line">                    <span class="string">&#x27;col: &#x27;</span> + args.col;</span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>所有单元格都不能编辑</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sheet.setIsProtected(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>导出操作</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> saveExcel = <span class="function">(<span class="params">spread, fileName</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> excelIo = <span class="keyword">new</span> GC.Spread.Excel.IO()</span><br><span class="line">  excelIo.save(spread.toJSON(), <span class="function"><span class="params">blob</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> link = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">    link.download = fileName</span><br><span class="line">    link.style.display = <span class="string">&#x27;none&#x27;</span></span><br><span class="line">    link.href = URL.createObjectURL(blob)</span><br><span class="line">    link.click()</span><br><span class="line">    URL.revokeObjectURL(link.href)</span><br><span class="line">  &#125;, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>设置表格样式</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 表格设置样式</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*&#125;</span> <span class="variable">spread</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*&#125;</span> </span>rowCount 行数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*&#125;</span> </span>columnCount 列数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">spreadUtil.setStyle = <span class="function">(<span class="params">spread, rowCount, columnCount</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> sheet = spread.getSheet(<span class="number">0</span>);</span><br><span class="line">  sheet</span><br><span class="line">    .getRange(<span class="number">0</span>, <span class="number">0</span>, rowCount, columnCount)</span><br><span class="line">    .setBorder(</span><br><span class="line">      <span class="keyword">new</span> GC.Spread.Sheets.LineBorder(<span class="string">&quot;Black&quot;</span>, GC.Spread.Sheets.LineStyle.thin),</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">all</span>: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> style = <span class="keyword">new</span> GC.Spread.Sheets.Style();</span><br><span class="line">  style.font = <span class="string">&quot;bold 14.7px Calibri&quot;</span>;</span><br><span class="line">  style.hAlign = GC.Spread.Sheets.HorizontalAlign.center;</span><br><span class="line">  style.vAlign = GC.Spread.Sheets.VerticalAlign.center;</span><br><span class="line">  sheet.setStyle(-<span class="number">1</span>, -<span class="number">1</span>, style, GC.Spread.Sheets.SheetArea.viewport);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>浮动绘制</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">spreadUtil.dataRender = <span class="function">(<span class="params">spread, tableName, dataSource, sheetVal</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> sheet = spread.getActiveSheet();</span><br><span class="line">  <span class="keyword">if</span> (sheetVal !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">    sheet = spread.getSheet(sheetVal);</span><br><span class="line">  &#125;</span><br><span class="line">  sheet.suspendPaint();</span><br><span class="line">  <span class="keyword">let</span> startRow = startRowData[tableName]; <span class="comment">// startRowData里记录的是编号 index为 编号减1</span></span><br><span class="line">  sheet.addRows(startRow, dataSource.length - <span class="number">1</span>); <span class="comment">// length - 1 是因为原本就有一行</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = dataSource.length - <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">    sheet.copyTo(</span><br><span class="line">      startRow - <span class="number">1</span>,</span><br><span class="line">      <span class="number">1</span>,</span><br><span class="line">      startRow + i,</span><br><span class="line">      <span class="number">1</span>,</span><br><span class="line">      <span class="number">1</span>,</span><br><span class="line">      sheet.getColumnCount() - <span class="number">1</span>,</span><br><span class="line">      GC.Spread.Sheets.CopyToOptions.all</span><br><span class="line">    );</span><br><span class="line">    sheet.setRowHeight(startRow + i, sheet.getRowHeight(startRow - <span class="number">1</span>));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 这里开始插入数据</span></span><br><span class="line">  sheet.setArray(startRow - <span class="number">1</span>, <span class="number">0</span>, dataSource);</span><br><span class="line">  sheet.resumePaint();</span><br><span class="line">  <span class="keyword">return</span> spread;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>spread对象转json</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spread.toJSON()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>获取单元格数据</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sheet.getValue(<span class="number">7</span>,<span class="number">7</span>);</span><br><span class="line"></span><br><span class="line">sheet.getArray(<span class="number">7</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>单元格删除数据</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sheet.clear(<span class="number">0</span>, <span class="number">0</span>, <span class="number">10</span>, <span class="number">10</span>, GC.Spread.Sheets.SheetArea.viewport, GC.Spread.Sheets.StorageType.data);</span><br><span class="line">all: 工作表所有使用的范围类型。</span><br><span class="line"><span class="attr">axis</span>: 工作表标题使用范围。</span><br><span class="line"><span class="attr">style</span>: 工作表单元格样式使用的范围。</span><br><span class="line"><span class="attr">rowStyle</span>: 工作表行样式使用范围。</span><br><span class="line"><span class="attr">colStyle</span>: 工作表列样式使用范围。</span><br><span class="line"><span class="attr">data</span>: 工作表数据使用范围。</span><br><span class="line"><span class="attr">formula</span>: 工作表公式使用范围。</span><br><span class="line"><span class="attr">span</span>: 工作表跨度使用范围。</span><br><span class="line"><span class="attr">shape</span>: 工作表形状使用范围。</span><br><span class="line"><span class="attr">table</span>: 工作表表格使用范围。</span><br><span class="line"><span class="attr">sparkLine</span>: 工作表迷你图使用范围。</span><br><span class="line"><span class="attr">comment</span>: 工作表注释使用范围。</span><br><span class="line"><span class="attr">slicer</span>: 切片器使用范围。</span><br><span class="line"><span class="attr">pivottable</span>: 工作表数据透视表使用范围。</span><br><span class="line"><span class="attr">filter</span>: 工作表过滤器使用范围。</span><br><span class="line"><span class="attr">dataValidation</span>: 工作表数据验证使用的范围。</span><br><span class="line"><span class="attr">conditionFormat</span>: 工作表条件格式使用范围。</span><br><span class="line"><span class="attr">chart</span>: 工作表图表使用范围。</span><br><span class="line"><span class="attr">picture</span>: 工作表图片使用范围。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>移动操作</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sheet.moveTo(<span class="number">0</span>, <span class="number">0</span>, <span class="number">14</span>, <span class="number">14</span>, <span class="number">7</span>, <span class="number">7</span>, GC.Spread.Sheets.CopyToOptions.all);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/05/14/SpreadJs/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/05/14/SpreadJs/&text=SpreadJs使用"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/05/14/SpreadJs/&title=SpreadJs使用"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/05/14/SpreadJs/&is_video=false&description=SpreadJs使用"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SpreadJs使用&body=Check out this article: http://example.com/2023/05/14/SpreadJs/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/05/14/SpreadJs/&title=SpreadJs使用"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/05/14/SpreadJs/&title=SpreadJs使用"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/05/14/SpreadJs/&title=SpreadJs使用"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/05/14/SpreadJs/&title=SpreadJs使用"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/05/14/SpreadJs/&name=SpreadJs使用&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/05/14/SpreadJs/&t=SpreadJs使用"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    FanK
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
