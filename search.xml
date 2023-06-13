@@ -2059,4 +2059,479 @@
         <tag>日常记录</tag>
       </tags>
   </entry>
+  <entry>
+    <title>50个高频答辩问题-技术篇</title>
+    <url>/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/</url>
+    <content><![CDATA[<h3 id="提要"><a href="#提要" class="headerlink" title="提要"></a>提要</h3><p>答辩过程中，老师间的问题一般都和你的设计有关，特别是设计中的一些关键技术，比如:数据库链接方式，数据库设计中的 ER 图、范式等。一般不会太难，都是一些学过的知识。</p>
+<p>(回答一定要温柔，<code>不要顶嘴</code>)！</p>
+<p><code>遇到不会的问题 坚定原则:“只答不辩，问就道歉”</code></p>
+<h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><p><a href="https://berserker287.github.io/tags/%E6%AF%95%E8%AE%BE%E6%BA%90%E7%A0%81/">项目源码（前后端）+ 数据库 + 论文PPT等文档 点我查看</a></p>
+<p><code>TIP：项目非免费，谢谢理解</code></p>
+<h3 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h3><p>计算机答辩问题及答案</p>
+<h2 id="正片"><a href="#正片" class="headerlink" title="正片"></a>正片</h2><blockquote>
+<p>dto层是什么</p>
+</blockquote>
+<p>dto 层（也称为 model、entity 层）作用就是定义实体类，对数据表中的对象的映射，包含实体类的属性和对应属性的 get、set 方法；</p>
+<blockquote>
+<p>dao层是什么<br>（也称为 mapper 层）dao 层会调用 dto 层，dao 层会定义方法对数据库进行增删改查。一般会有一个放xml 文件的文件夹，xml 文件下就是写 sql 语句。</p>
+</blockquote>
+<blockquote>
+<p>service层是什么</p>
+</blockquote>
+<p>做相应的业务逻辑处理，service 层会调用 dao 层和 dto 层，service 层也会对数据进行一定的处理，比如条件判断和数据筛选等等。</p>
+<blockquote>
+<p>controller层是什么</p>
+</blockquote>
+<p>controller 会调用前面 3 层，一般会和前端的 js 文件进行数据的交互，前端调用对应接口，controller 层接受前端传来的参数，处理好的数据也是通过controller 层传递到前端显示的。</p>
+<blockquote>
+<p>项目架构以及项目技术选型</p>
+</blockquote>
+<p>我是选择了 springboot 技术，然后前台采用了 vue 和 uniapp 技术，加上 mysql 数据库做的数据存储。</p>
+<blockquote>
+<p>软件测试有哪些方法?你采用了什么方法?</p>
+</blockquote>
+<p>我是采用了单元测试和功能测试两种测试的方法对该系统做了功能做了测试，使用单元测试时，对该某些类进行了测试，比如一些获取前台登录信息，查看数据库等，还做了一些功能测试，主要是系统的增删改查进行了简单的测试。</p>
+<blockquote>
+<p>如何设计的数据库?设计数据库时你又如何考虑的?</p>
+</blockquote>
+<p>首先我是先采用问卷调查方法，对本设计确定需求后，再结合参考文献，从而确定需求后设计的数据库，在设计时候我根据数据库的三要素数据结构、数据操作、数据的完整性约束，还根据三范式结合,减少代码冗余性，第一范式(确保每列保持原子性）、第二范式(确保表中的每列都和主键相关)、第三范式(确保每列都和主键列直接相关,而不是间接相关)</p>
+<blockquote>
+<p>请解释主键和外键的作用并说明它们的区别?</p>
+</blockquote>
+<p>主键是必不可少的键，如 id 键。外键就是需要联合的键，比如一个图书管理系统，我查询我的订单时，在订单表里查询订单的同时，要关联我的外键 user 表里的 id 键。</p>
+<blockquote>
+<p>某个功能是怎么实现的？</p>
+</blockquote>
+<p>首先我采用 mvc 设计模式，在前端视图层留有响应路径，request 发送给后端 Controller 后–&gt;Service 层处理数据–&gt;mapper&gt;&gt;Dao-&gt;MySQL，请求到数据后：Dao-&gt;Service-&gt;Controller</p>
+<blockquote>
+<p>你采用了哪些功能进行测试？</p>
+</blockquote>
+<p>我才用了单元测试，对软件中的最小可测试单元进行检查和验证。对于单元测试中单元的含义，一般来说，要根据实际情况去判定其具体含义，如 Java 里单元指一个类，总的来说，单元就是人为规定的最小的被测功能模块。单元测试是在软件开发过程中要进行的最低级别的测试活动，软件的独立单元将在与程序的其他部分相隔离的情况下进行测试。</p>
+<blockquote>
+<p>黑白盒子测试是什么？</p>
+</blockquote>
+<p>白盒测试也称为结构测试，主要用于检测软件编码过程中的错误。程序员的编程经验、对编程软件的掌握程度、工作状态等因素都会影响到编程质量，导致代码错误。</p>
+<p>黑盒测试又称为功能测试，主要检测软件的每一个功能是否能够正常使用。在测试过程中，将程序看成不能打开的黑盒子，不考虑程序内部结构和特性的基础上通过程序接口进行测试，检查程序功能是否按照设计需求以及说明书的规定能够正常打开使用。</p>
+<blockquote>
+<p>数据库？你的数据为什么选用此数据库？</p>
+</blockquote>
+<p>体积小，易安装，速度快，Mysql 性能卓越，服务稳定</p>
+<blockquote>
+<p>为什么要进行答辩？</p>
+</blockquote>
+<p>首先是毕业设计，是我为时三个月写的毕业设计，论文是自己熬夜至三点加班加点写出来的，首次查重率是 4.9 后来又修改了写东西，我觉得自己可以胜任此次一辩，其次是很荣幸遇见各位答辩老师，聆听我的毕业设计，并给予指导和建议，使我的毕业论文更加完善清晰。</p>
+<blockquote>
+<p>你觉得你的毕业设计创新点是什么？（从人力物力财力考虑）</p>
+</blockquote>
+<p>1 无人自助购买，节省人力，降低管理成本<br>2 面向学生群体，安全系数高<br>3 线上线下相结合，节约时间成本<br>4 方便快捷，省去大量时间成本</p>
+<blockquote>
+<p>ssm 和 Springboot 区别？</p>
+</blockquote>
+<p>SSM：面相 XML 编程。SpringBoot：面相注解编程<br>1、SpringBoot 提供极其快速和简化的操作，让 Spring 开发者快速上手。<br>2、SpringBoot 提供了 Spring 运行的默认配置。<br>3、SpringBoot 为通用 Spring 项目提供了很多非功能性特性，例如：嵌入式 Serve、Security、统计、外部配置</p>
+<blockquote>
+<p>在项⽬中使⽤的安全措施以及其作⽤？</p>
+</blockquote>
+<p>使⽤Spring Security 等认证和授权框架进⾏⽤户身份认证和权限控制，保证只有合法的⽤户能够访问系统的资源，避免未授权的访问还有就是数据库加密的方式进行注册时用户的密码进行 MD5 加密功能，在登录时再实现 MD5 解密功能。</p>
+<blockquote>
+<p>你对自己项目有哪些优化建议？</p>
+</blockquote>
+<blockquote>
+<p>前后端异常处理⽅式？</p>
+</blockquote>
+<p>1 后端异常处理：在后端使⽤Spring Boot 的异常处理机制，例如使⽤@ControllerAdvice和@ExceptionHandler 注解，捕获全局异常，并返回相应的错误信息给前端。后端还可以通过⽇志记录异常信息，便于后续的排查和处理。<br>2 前端异常处理：前端通过 Vue 的错误处理机制，例如使⽤try-catch 语句捕获前端请求程中的异常，通过弹窗 500 或者错误提示展示给⽤户，帮助⽤户理解异常情况并进⾏相应操作</p>
+<blockquote>
+<p>如何在 Spring Boot 中处理⽂件上传？</p>
+</blockquote>
+<p>通过调用 uploadFile 类里的方法，获取文件扩展名，重新生成文件名，判断是否存在<br>返回文件访问路径。</p>
+<blockquote>
+<p>分页是如何实现的？</p>
+</blockquote>
+<p>分页是如何实的首先从数据库中查询时用 limt 限制 10 条数据，出相应的数据的总数量，在代码中设定每页显示的数据数量 pagesize.就能计算出总共的页码，通过在点击下一页、上一页、首页、尾页时携带页码变量滚动数据进行相应的判断完成分页显示</p>
+<blockquote>
+<p>前如何支付页面?（适合所有支付页面说）</p>
+</blockquote>
+<p>因为我这个是本地运行的项目，所以就默认支付了，但是我在这里留有 api 接口，到时候如果上线了，可以加上微信支付功能。</p>
+<blockquote>
+<p>首页的轮播图图片会动态的变化,这是什么技术?如何实现的?</p>
+</blockquote>
+<p>通过 js 脚本和 样式控制实现图片的循环播放，图片的轮播使用定时器，通过定时器改变 list 的 Left 值使得图片循环展示。或者说 Swiper 控件构成的。</p>
+<blockquote>
+<p>服务器是哪个，如何配置的?</p>
+</blockquote>
+<p>服务器本地运行的，因为 springboot 是封装 tomacat 所以不用再配置 tommcat，直接启动main 类运行即可。</p>
+<blockquote>
+<p>数据库设计分为几个阶段</p>
+</blockquote>
+<p>1、需求分析:了解用户的数据需求、处理需求、安全性及完整性要求<br>2、概念设计:通过数据抽象，设计系统概念模型，一般为 E-R 模型<br>3、逻辑结构设计:设计系统的模式和外模式，对于关系模型主要是基本表和视图<br>4、物理结构设计:设计数据的存储结构和存取方法，如索引的设计<br>5、数据库实施:组织数据入岸、编制应用程序、试运行<br>6、数据库运行维护:系统投入运行，长期的维护工作</p>
+<blockquote>
+<p>程序和数据库怎么连接的</p>
+</blockquote>
+<p>通过配置 ymal 文件连(“com.mysqljdbc.Driver”)实现 JDBC 连接数据库，利用了微软提供的mysqloonnectorjava-5.0.4-bin.jar 包完成连接数据库。通过 3306 端口访问数据库，同时通过在配置文件设置数据库的账户和密码完成数据库的访问</p>
+<blockquote>
+<p>批量删除是如何实现的？</p>
+</blockquote>
+<p>前端按钮获取 id 数组，后台通过 String id 取到 d 组后遍历数组，在循环遍历的时候进行修改或者删除操作</p>
+<blockquote>
+<p>用户怎么查看历史订单?</p>
+</blockquote>
+<p>首先获取这个用户的 id，然后右链接订单表里 id 查询此 id 在订单表里的 id，索引后返还给前台。</p>
+<blockquote>
+<p>日期如何显示在窗口上？</p>
+</blockquote>
+<p>@JsonFormat(),并且通过参数 pattern,来格式化我们的想要的格式实例，是固定的方法类，获取本地时间，存入数据库</p>
+<blockquote>
+<p>数据库密码加密功能如何实现？</p>
+</blockquote>
+<p>合法的⽤户能够访问系统的资源，避免未授权的访问还有就是数据库加密的方式进行注册时用户的密码进行 MD5 加密功能，在登录时再实现 MD5 解密功能</p>
+<blockquote>
+<p>varchar 和 char 的区别？</p>
+</blockquote>
+<p>char 的长度是不可变的，而 varchar 的长度是可变的，也就是说，定义一个 char[10]和varchar[10],如果存进去的是‘csdn’,那么 char 所占的长度依然为 10，除了字符‘csdn’外，后面跟六个空格，而 varchar 就立马把长度变为 4 了，取数据的时候，char 类型的要用 trim()去掉多余的空格，而 varchar 是不需要的。</p>
+<blockquote>
+<p>验证码如何实现?</p>
+</blockquote>
+<p>输出流，写到 servlet 里面，哪里需要就直接调用这个 servlet</p>
+<blockquote>
+<p>怎么确保点击一次更换一张验证码？</p>
+</blockquote>
+<p>每次点击事件后更换 src 的地址值，要确保每次地址值都不一样还需要加上时间的毫秒值。在 servlet 中拼接其他字符需要加上英文状态下的?。</p>
+<blockquote>
+<p>如何进行判断用户输入的验证码是否正确？</p>
+</blockquote>
+<p>保存返回值就可以了，保存到 session 中，再比对用户输入的就可以。</p>
+<blockquote>
+<p>阐述系统中的搜索功能是如何实现的？</p>
+</blockquote>
+<p>通过 search 控件按钮绑定数据，然后调用 api/book 里的 getBookPage 传输给后台获取模糊查询中的数据返还给前台界面</p>
+<blockquote>
+<p>什么是 MVC？</p>
+</blockquote>
+<p>M：Model，模型。 JavaBean 完成具体的业务操作，如：查询数据库，封装对象<br>V：view 视图。JSP、HTML 等来进行数据展示<br>C：Controller 控制器。 Servlet 获取 View 的请求调用模型将数据交给视图进行展示</p>
+<blockquote>
+<p>如何实现页面效果的？</p>
+</blockquote>
+<p>我的主体开源框架是使用了若依框架，其次时 VUE、和 element 样式。</p>
+<blockquote>
+<p>分页是如何实现的？</p>
+</blockquote>
+<p>分页是如何实的首先从数据库中查询出相应的数据的总数量，在代码中设定每页显示的数据数量pagesize.就能计算出总共的页码，通过在点击下一页、上一页、首页、尾页时携带页码变量滚动数据进行相应的判断完成分页显示。</p>
+<blockquote>
+<p>系统用的什么框架</p>
+</blockquote>
+<p>后台使用了 springboot 框架，采用 springboot 框架，使其能够快速的创建 jar 包并实现以 jar 包的形式独立运行，从而减少了 spring 配置，极大的提高了开发、部署的效率。<br>前台使用了 element 是一个针对前端的、免费的框架，提供了按钮、导航、下拉菜单、折叠、翻页等组件功能 。</p>
+<blockquote>
+<p>前台和后台怎么连接的</p>
+</blockquote>
+<p>利用 axios 是由 promise 封装的一个 http 的库。 进行异步数据请求(得到的数据可以以 json格式返回，便于处理)用 json 格式进行数据传输，前台传递 json 格式的数据，我给前台发送 json 格式的数据响应</p>
+<blockquote>
+<p>JAVA 类就是具备某些共同特征的实体的集合？</p>
+</blockquote>
+<p>@控制层，也就是 Controller@业务层，也就是 service，图持久层，也就是 dao 层，而且包括实体类，由 MyBatis 来管理，通过 spring 来管理 mapper 接口，使用 mapper 的扫描</p>
+<blockquote>
+<p>#{ }和${ }的区别是什么</p>
+</blockquote>
+<p>#{}是预编译处理，${}是字符串替换。<br>Mybatis 在处理#{}时，会将 sql 中的#{}替换为?号，调用PreparedStatement 的 set 方法来赋值；<br>Mybatis 在处理${}时，就是把${}替换成变量的值。<br>使用#{}可以有效的防止 SQL 注入，提高系统安全性</p>
+<blockquote>
+<p>模糊查询 like 语句该怎么写?</p>
+</blockquote>
+<p>在 Java 代码中添加 sql 通配符<br>select * from foo where bar like #{value}</p>
+<blockquote>
+<p>谈谈你对 spring 的理解</p>
+</blockquote>
+<p>Spring 是一个轻量级 Java 开发框架，目的是为了解决企业级应用开发的业务逻辑层和其他各层的耦合问题 。</p>
+<blockquote>
+<p>为什么要使用 spring?</p>
+</blockquote>
+<p>spring 提供 ioc 技术，容器会帮你管理依赖的对象，从而不需要自己创建和管理依赖对象了，更轻松的实现了程序的解耦。<br>spring 提供了事务支持，使得事务操作变的更加方便。<br>spring 提供了面向切片编程，这样可以更方便的处理某一类的问题</p>
+<blockquote>
+<p>springmvc 谈一下你对 SpringMVC 框架的理解</p>
+</blockquote>
+<p>SpringMVC 是一个基于 Java 的实现了 MVC 设计模式的 请求驱动类型的轻量级 Web框架，通过把 Model，View，Controller 分离，将 web 层进行职责解耦，把复杂的 web应用分成逻辑清晰 的几部分，简化开发，减少出错，方便组内开发人员之间的配合。 在我看来,SpringMVC 就是将我们原来开发在 servlet 中的 代码拆分了,一部分 SpringMVC完成,一部分由我们自己完成</p>
+<blockquote>
+<p>SpringMVC 的常用注解</p>
+</blockquote>
+<ol>
+<li>@RequestMapping：用于处理请求 url 映射的注解，可用于类或方法上。用于类<br>上，则表示类中的所有响应请求的方法都是以该地址作为父路径。</li>
+<li>@RequestBody：注解实现接收 http 请求的 json 数据，将 json 转换为 java 对<br>象。</li>
+<li>@ResponseBody：注解实现将 conreoller 方法返回对象转化为 json 对象响应给<br>客 户</li>
+<li>@PathVariable 用户从 url 路径上获取指定参数，标注在参数前 @PathVariable(“ 要获取的参数名”)。</li>
+<li>@RequestParam: 标注在方法参数之前，用于对传入的参数做一些限制</li>
+</ol>
+<blockquote>
+<p>为什么要用 SpringBoot</p>
+</blockquote>
+<p>一、独立运行<br>Spring Boot 内嵌了各种 servlet 容器，Tomcat、Jetty 等，现在不再需要打成 war 包部署到容器中，SpringBoot 只要打成一个可执行的 jar 包就能独立运行，所有的依赖包都在一个 jar 包内。<br>二、简化配置<br>spring-boot-starter-web 启动器自动依赖其他组件，简少了 maven的配置。<br>三、自动配置<br>SpringBoot 能根据当前类路径下的类、jar 包来自动配置 bean，如添加一个 spring-boot-starter-web 启动器就能拥有 web 的功能，无需其他配置。<br>四、无代码生成和 XML 配置<br>Spring Boot 配置过程中无代码生成，也无需 XML 配置文件就能完成所有配置工作，这一切都借助于条件注解完成的，这也是Spring4.x 的核心功能之一</p>
+<blockquote>
+<p>Ajax 应用程序的优势</p>
+</blockquote>
+<ol>
+<li>通过异步模式，提升了用户体验</li>
+<li>优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用</li>
+<li>Ajax 引擎在客户端运行，承担了一部分本来由服务器承担的工作，从而减少了大用户量下的服务器负载</li>
+</ol>
+<h2 id="感谢阅读"><a href="#感谢阅读" class="headerlink" title="感谢阅读"></a>感谢阅读</h2>]]></content>
+      <tags>
+        <tag>答辩相关</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>毕业答辩导师提问的高频问题</title>
+    <url>/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h3 id="提要"><a href="#提要" class="headerlink" title="提要"></a>提要</h3><p>答辩过程中，老师间的问题一般都和你的设计有关，特别是设计中的一些关键技术，比如:数据库链接方式，数据库设计中的 ER 图、范式等。一般不会太难，都是一些学过的知识。</p>
+<p>(回答一定要温柔，<code>不要顶嘴</code>)！</p>
+<p><code>遇到不会的问题 坚定原则:“只答不辩，问就道歉”</code></p>
+<h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><p><a href="https://berserker287.github.io/tags/%E6%AF%95%E8%AE%BE%E6%BA%90%E7%A0%81/">项目源码（前后端）+ 数据库 + 论文PPT等文档 点我查看</a></p>
+<p><code>TIP：项目非免费，谢谢理解</code></p>
+<h3 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h3><p>高频答辩问题 - 技术篇</p>
+<h2 id="正片（未给出例子需要结合项目回答）"><a href="#正片（未给出例子需要结合项目回答）" class="headerlink" title="正片（未给出例子需要结合项目回答）"></a>正片（未给出例子需要结合项目回答）</h2><blockquote>
+<p>为什么要选这个课题？</p>
+</blockquote>
+<p>例子（小区物业系统）因为当初曾经在家里发现附近的老旧改小区还在使用人工以及简单例如Excel的记录方式，觉得疑惑为什么没有配套的物业管理系统进行，后面查询了一下发现国内的只有一些较好的房地产公司在开发楼盘的时候才会有专门开发配套的物业管理系统，而像这种老旧的小区当时并没有开发配套的物业管理系统，所以当时萌生了开发一套小型的物业管理系统对这类小区进行一些简单的管理工作。</p>
+<blockquote>
+<p>具体某个功能是怎么实现的？是否可以解释某某概念？某个部分的执行逻辑?(*****)</p>
+</blockquote>
+<p>例如：支付宝沙箱的支付组件<br>1.配置支付宝SDK依赖组件<br>2.设置支付参数、比如用户ID、支付沙箱的AppID，以及接口公钥以及私钥<br>3.生成支付参数以及订单信息<br>4.发起支付，生成支付链接<br>5.将支付链接返回给前台系统、引导用户在支付宝客户端进行支付<br>最后将支付结果参数返回并通知支付结果</p>
+<blockquote>
+<p>某个技术在程序中是怎么应用的？ </p>
+</blockquote>
+<p>根据使用技术讲出，技术应用逻辑与场景</p>
+<blockquote>
+<p>你这个系统创新点是什么？是否具有实际应用价值? 讲详细点</p>
+</blockquote>
+<p>1.在dao层与持久化层之间加入redis内存数据库用作缓存，将重复的数据直接从MySQL数据库中查找变成从redis内存中查找，提高了对数据的读写速度，减少服务器的压力<br>2.在用户的注册认证中改用百度的人工智能云的人脸识别SDK组件进行人脸信息采集和校验，增加了信息的安全和有效性<br>3.在物业缴费功能上使用支付宝沙箱进行支付，模拟了完整的支付环境，使开发者能够真实的测试和验证支付功能的正确性和稳定性。</p>
+<blockquote>
+<p>你这个系统目前存在什么问题？后期打算怎么解决？</p>
+</blockquote>
+<blockquote>
+<p>数据库表是怎么创建的？</p>
+</blockquote>
+<blockquote>
+<p>关于毕业设计/论文作为开发者你认为有什么不足之处，或者有哪些问题是你还没弄清楚的。 如果继续开发或研究，下一步应该怎么做?</p>
+</blockquote>
+<h3 id="答辩问题讲解与总结"><a href="#答辩问题讲解与总结" class="headerlink" title="答辩问题讲解与总结"></a>答辩问题讲解与总结</h3><blockquote>
+<p>session机制或session怎么应用？setattrbute() getattribute()  微信小程序 wechat StorageSync  vue.$storage</p>
+</blockquote>
+<p>session主要应用到登录中，当登录成功后，就会将用户信息存储到session中，然后在进入到其他功能模块时首先要判断session中是否存在用户信息，如果存在则进行下一步操作，否则，进入到登录页面。其次，session还可以在登录系统后如果长时间不操作，一旦刷新就会进入到登录页面。</p>
+<blockquote>
+<p>数据传递或者http如何发送请求（requeust response）(get post) ajax formt提交 (a)href window.location wx.request() uni.request()</p>
+</blockquote>
+<p>首先是使用服务器控件，如<a href="asp:TextBox">asp:TextBox</a>和<a href="asp:Button">asp:Button</a>，每一个服务器控件都设置有两个属性，分别是ID和runat，如ID=”txtPWD” runat=”server”。以登录为例，点击登录后直接执行Button1的click点击处理事件，即Button1_Click方法，然后也是通过ID分别获取到输入框中的用户名和密码，然后直接执行sql语句去查询实现。Ajax input</p>
+<blockquote>
+<p>轮播图如何设计</p>
+</blockquote>
+<p>swiper-slide js data imgs wx.for img js 时间间隔 div background<br>Swiper swiper-item </p>
+<blockquote>
+<p>分页功能如何设计</p>
+</blockquote>
+<p>github PageInfo PageHelper <el-pagination> pageutils<br>List<Users>-&gt;a.size()-&gt;totals(100 101)-&gt;totals%10 -&gt;totals/10 totals/10+1</p>
+<ol>
+<li>获取总记录数</li>
+<li>计算OFFSET</li>
+<li>根据pageSize和OFFSET查询当前页数据</li>
+<li>封装成Page对象返回</li>
+</ol>
+<blockquote>
+<p>验证码如何实现</p>
+</blockquote>
+<ol>
+<li>random 2) [] -&gt;数字、大小写字母 3）get(4) 4) draw—&gt;img 5) input 与生成的验证码比对 :</li>
+</ol>
+<ol>
+<li>产生验证码图片。这通常需要使用 Java 的图片绘制API,产生一张包含随机字符的图片。</li>
+<li>将验证码字符保存到 Session 中。这是为了后续验证用户输入的验证码是否正确。</li>
+<li>显示验证码图片。将步骤1产生的验证码图片显示在页面上。</li>
+<li>获取用户输入的验证码。获取用户在页面上输入的验证码字符串。</li>
+<li>校验验证码。将用户输入的验证码与Session中保存的验证码进行比对,如果相同则验证码校验通过,否则不通过。</li>
+</ol>
+<blockquote>
+<p>(*****)具体功能实现或数据库如何通过接口实现功能？</p>
+</blockquote>
+<p> 需求分析+数据库设计+程序设计+2min<br>（核心标签(前端)+核心js技术+核心后台方法 controller）</p>
+<blockquote>
+<p>邮箱、手机、身份证、密码（length）（js正则表达式）</p>
+</blockquote>
+<blockquote>
+<p>推荐怎么实现的？协同过滤算法怎么使用的？ </p>
+</blockquote>
+<p>首先要弄懂协同过滤推荐算法机制 ，然后根据机制来看程序。<br>程序中存在很多的数学函数，看不懂没关系，但是为了满足推荐算法实现的业务逻辑肯定要看懂。<br>结合具体功能实现</p>
+<blockquote>
+<p>购物类 潜在问题</p>
+</blockquote>
+<p>（多个用户同时购买一个商品？）并发/事务/锁  （怎么支付？模拟支付-》api（微信支付/支付宝支付））<br>使用，Synchronized 同步</p>
+<blockquote>
+<p>数据库主外键关系 </p>
+</blockquote>
+<p>订单(用户id 商品id) 级联查询  activity(userid)  评论（用户id 作品id）报名（用户id 活动id）</p>
+<blockquote>
+<p>系统有是三种用户权限，(三个用户权限处于同一个登录页面)，怎么从一个登录页面分别进入各自的主页面 或多用户下的权限验证怎么实现？</p>
+</blockquote>
+<p>session admin a user b</p>
+<blockquote>
+<p>(数据解析) 爬虫 </p>
+</blockquote>
+<p>controller-&gt;js =》json-》json解析（键值对）（Jsonobject、Jsonarray）</p>
+<blockquote>
+<p>数据库是怎么设计的？</p>
+</blockquote>
+<p>范式理论 三范式 主外键关系 级联查询 左连接 右连接<br>构造数据库必须遵循一定的规则。在关系数据库中，这种规则就是范式。范式是符合某一种级别的关系模式的集合。关系数据库中的关系必须满足一定的要求，即满足不同的范式。关系数据库有六种范式：第一范式（1NF）、第二范式（2NF）、第三范式（3NF）、第四范式（4NF）、第五范式（5NF）和第六范式（6NF）。满足最低要求的范式是第一范式（1NF）。在第一范式的基础上进一步满足更多要求的称为第二范式（2NF），其余范式以次类推。一般说来，数据库只需满足第三范式（3NF）就行了。</p>
+<blockquote>
+<p>mybatis怎么应用？mybatis怎么与mysql进行关联使用？mybatis-plus注解怎么使用？</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span><span class="tag">&lt;<span class="name">update</span>&gt;</span><span class="tag">&lt;<span class="name">insert</span>&gt;</span><span class="tag">&lt;<span class="name">delete</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>程序与数据库是怎么链接？jdbc 配置<br>在项目的配置文件：application.yml<br>配置数据库用户名、密码、驱动名、url等</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">username:</span> <span class="string">root</span></span><br><span class="line"><span class="attr">password:</span> <span class="number">123456</span></span><br><span class="line"><span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">jdbc:mysql://127.0.0.1:3306/property_cos_20230517?useUnicode=true&amp;characterEncoding=UTF-8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Asia/Shangha</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>dao层与model层的关系，dao到mapper查询数据库等操作？Model是干啥的？</p>
+</blockquote>
+<p>DAO层：DAO层（数据访问对象层）是在应用程序和数据库之间的中间层。它封装了对数据库的访问和操作，提供了与数据持久化相关的方法和接口。DAO层的主要职责是处理数据的增删改查等操作，将数据持久化到数据库或从数据库中检索数据。<br>Model层是应用程序的领域模型或实体对象层。它代表了应用程序的业务数据和业务逻辑。Model层通常包含与业务相关的数据结构、数据验证规则、业务规则和业务逻辑等。Model层的主要职责是定义和封装数据，提供对数据的操作和处理方法。</p>
+<blockquote>
+<p>小程序怎么与后端交互的 </p>
+</blockquote>
+<blockquote>
+<p>上传文件怎么实现</p>
+</blockquote>
+<blockquote>
+<p>ueditor 富文本</p>
+</blockquote>
+<blockquote>
+<p>图片、文档、视频、音频等资源文件上传</p>
+</blockquote>
+<p>mysql数据库存储的就是新生成的文件的名字  如1512908770583.png fileinput transferto<br>获取新的文件名<br>判断该文件路径的父级目录是否存在<br>对文件进行写入处理（保存文件）</p>
+<blockquote>
+<p>用什么方法实现页面之间的跳转</p>
+</blockquote>
+<p>1\ a href=”a.jsp” html<br>2\ window.location.href=”b.jsp” js<br>3\ controller return ”c.jsp” java</p>
+<h3 id="理论-客观问题总结"><a href="#理论-客观问题总结" class="headerlink" title="理论+客观问题总结"></a>理论+客观问题总结</h3><blockquote>
+<p>cs与bs的不同</p>
+</blockquote>
+<p>1、客户端要求<br>C/S客户端的计算机电脑配置要求较高。<br>B/S客户端的计算机电脑配置要求较低。</p>
+<p>2、软件安装<br>C/S每一个客户端都必须安装和配置专用的软件。<br>B/S最大的优点就是不用安装任何专门的软件，只要有一个浏览器就可以。</p>
+<p>3、软件升级和维护<br>C/S每一个客户端都要进行升级和维护。<br>B/S客户端不必安装及维护。 </p>
+<p>4、安全性<br>C/S一般建立在专用的网络上，面向相对固定的用户群，它可以对权限进行多层次校验，提供了更安全的存取模式，对信息安全的控制能力很强。一般高度机密的信息系统应采用C/S结构。<br>B/S建立在广域网之上，面向是不可知的用户群，对安全的控制能力相对弱。</p>
+<blockquote>
+<p>ajax同步与异步的区别</p>
+</blockquote>
+<p>同步：浏览器访问服务器请求，用户看得到页面刷新，重新发请求,等请求完，页面刷新，新内容出现，用户看到新内容,进行下一步操作。<br>异步：浏览器访问服务器请求，用户正常操作，浏览器后端进行请求。等请求完，页面不刷新，新内容也会出现，用户看到新内容。</p>
+<blockquote>
+<p>bean注解原理</p>
+</blockquote>
+<p>一、Bean是啥<br>1、Java面向对象，对象有方法和属性，那么就需要对象实例来调用方法和属性（即实例化）；<br>2、凡是有方法或属性的类都需要实例化，这样才能具象化去使用这些方法和属性；<br>3、规律：凡是子类及带有方法或属性的类都要加上注册Bean到Spring IoC的注解；<br>4、把Bean理解为类的代理或代言人（实际上确实是通过反射、代理来实现的），这样它就能代表类拥有该拥有的东西了<br>5、我们都在微博上@过某某，对方会优先看到这条信息，并给你反馈，那么在Spring中，你标识一个@符号，那么Spring就会来看看，并且从这里拿到一个Bean或者给出一个Bean<br>二、注解分为两类：<br>1、一类是使用Bean，即是把已经在xml文件中配置好的Bean拿来用，完成属性、方法的组装；比如@Autowired , @Resource，可以通过byTYPE（@Autowired）、byNAME（@Resource）的方式获取Bean；<br>2、一类是注册Bean,@Component , @Repository , @ Controller , @Service , @Configration这些注解都是把你要实例化的对象转化成一个Bean，放在IoC容器中，等你要用的时候，它会和上面的@Autowired , @Resource配合到一起，把对象、属性、方法完美组装。<br>总结：<br>1、凡是子类及带属性、方法的类都注册Bean到Spring中，交给它管理；<br>2、@Bean 用在方法上，告诉Spring容器，你可以从下面这个方法中拿到一个Bean<br>3、@Bean明确地指示了一种方法，什么方法呢——产生一个bean的方法，并且交给Spring容器管理；从这我们就明白了为啥@Bean是放在方法的注释上了，因为它很明确地告诉被注释的方法，你给我产生一个Bean，然后交给Spring容器，剩下的你就别管了</p>
+<blockquote>
+<p>创新点是什么？与同类型系统有什么优点？</p>
+</blockquote>
+<blockquote>
+<p>为什么要选题这个课题？</p>
+</blockquote>
+<blockquote>
+<p>ssm/springboot/springcloud微服务 原理 如springboot框架怎么应用？ springAOP实现原理</p>
+</blockquote>
+<blockquote>
+<p>你对整个系统有什么认识? 你觉得有什么弊端等</p>
+</blockquote>
+<blockquote>
+<p>如果升级系统 你最升级哪部分？</p>
+</blockquote>
+<blockquote>
+<p>论文中的技术 具体是怎么实现的（如js）</p>
+</blockquote>
+<blockquote>
+<p>简单陈述选择这个题目的原因？</p>
+</blockquote>
+<blockquote>
+<p>简单介绍一下论文的软硬件开发环境</p>
+</blockquote>
+<blockquote>
+<p>说说你的论文做得突出的地方有哪些？</p>
+</blockquote>
+<blockquote>
+<p>你这个系统所用到的新技术，它的优缺点，特点是什么</p>
+</blockquote>
+<blockquote>
+<p>说明管理信息系统设计和开发的基本过程分为几个阶段？每个阶段的主要工作是什么</p>
+</blockquote>
+<p>需求分析 总体设计 数据库设计 程序设计 程序测试</p>
+<blockquote>
+<p>需求分析阶段的主要任务有哪些？你是怎样进行需求分析的？</p>
+</blockquote>
+<p>功能需求：明确所开发的软件必须具备什么样的功能。<br>性能需求：明确待开发的软件的技术性能指标。<br>环境需求：明确软件运行时所需要的软、硬件的要求。<br>用户界面需求：明确人机交互方式、输入输出数据格式。<br>分析与综合，导出软件的逻辑模型<br>分析人员对获取的需求，进行一致性的分析检查，在分析、综合中逐步细化软件功能，划分成各个子功能。用图文结合的形式，建立起新系统的逻辑模型。</p>
+<p>编写“需求规格说明书”，把双方共同的理解与分析结果用规范的方式描述出来，作为今后各项工作的基础。<br>编写初步用户使用手册，着重反映被开发软件的用户功能界面和用户使用的具体要求，用户手册能强制分析人员从用户使用的观点考虑软件。<br>编写确认测试计划，作为今后确认和验收的依据。<br>修改完善软件开发计划。在需求分析阶段对待开发的系统有了更进一步的了解，所以能更准确地估计开发成本、进度及资源要求，因此对原计划要进行适当修正。</p>
+<blockquote>
+<p>解释什么是用例图和它的作用</p>
+</blockquote>
+<p>用户与系统交互，展现用户和与他相关的用例之间的关系。通过用例图，人们可以获知系统不同种类的用户和用例。用例图也经常和其他图表配合使用。</p>
+<blockquote>
+<p>什么是数据流图？它们的作用是什么？</p>
+</blockquote>
+<p>它从数据传递和加工角度，以图形方式来表达系统的逻辑功能、数据在系统内部的逻辑流向和逻辑变换过程，是结构化系统分析方法的主要表达工具及用于表示软件模型的一种图示方法。</p>
+<blockquote>
+<p>解释E-R图并说明E-R图的作用</p>
+</blockquote>
+<p>E-R图也称实体-联系图(Entity Relationship Diagram)，提供了表示实体类型、属性和联系的方法，用来描述现实世界的概念模型。<br>它是描述现实世界关系概念模型的有效方法。是表示概念关系模型的一种方式。用“矩形框”表示实体型，矩形框内写明实体名称；用“椭圆图框”或圆角矩形表示实体的属性，并用“实心线段”将其与相应关系的“实体型”连接起来；<br>用”菱形框“表示实体型之间的联系成因，在菱形框内写明联系名，并用”实心线段“分别与有关实体型连接起来， 同时在”实心线段“旁标上联系的类型</p>
+<blockquote>
+<p>什么是数据完整性</p>
+</blockquote>
+<p>存储在数据库中的所有数据值均正确的状态。如果数据库中存储有不正确的数据值，则该数据库称为已丧失数据完整性。</p>
+<blockquote>
+<p>你选用的数据库系统是什么？请介绍你所使用的数据库连接方式</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">Sqlserver数据库</span><br><span class="line"><span class="tag">&lt;<span class="name">connectionStrings</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">add</span> <span class="attr">name</span>=<span class="string">&quot;DB&quot;</span> <span class="attr">connectionString</span>=<span class="string">&quot;server=.;database=DangAn;Integrated security = true;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">connectionStrings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>系统设计采用了哪一种框架开发技术，介绍其优缺点</p>
+</blockquote>
+<blockquote>
+<p>MVC设计模式是指什么，其优缺点，怎样用到在你的程序里</p>
+</blockquote>
+<blockquote>
+<p>SSM/SSH框架是指什么，其优缺点，怎样用到在你的程序里</p>
+</blockquote>
+<p>spring+springmvc+mybatis dao service mybatis</p>
+<blockquote>
+<p>简要介绍Web开发前后台系统环境</p>
+</blockquote>
+<blockquote>
+<p>请讲解你采用的Web前后端分离技术是如何实现的</p>
+</blockquote>
+<blockquote>
+<p>简要描述论文实现的主要功能有哪些</p>
+</blockquote>
+<blockquote>
+<p>系统的核心功能是什么？请简要解释其业务流程</p>
+</blockquote>
+<blockquote>
+<p>系统中不同的角色，它们的权限是如何设计并实现的</p>
+</blockquote>
+<blockquote>
+<p>简单介绍一下系统开发的流程</p>
+</blockquote>
+<p>需求分析+数据库设计+程序设计</p>
+<blockquote>
+<p>在系统安全性方面你是如何考虑的</p>
+</blockquote>
+<p>SQL注入</p>
+<blockquote>
+<p>介绍一下论文的测试工作</p>
+</blockquote>
+<blockquote>
+<p>系统的哪些部分做的比较好？哪些地方可以改进</p>
+</blockquote>
+<blockquote>
+<p>在系统开发过程中遇到了哪些困难，如何解决的</p>
+</blockquote>
+<blockquote>
+<p>你觉得课程设计或毕业实习对毕业论文的影响大吗</p>
+</blockquote>
+<blockquote>
+<p>有的code，或者出现的200 500 数字是什么</p>
+</blockquote>
+<p>200 表示程序执行成功； 500表示服务器错误； 404表示页面找不到或者请求方法找不到</p>
+<h2 id="感谢阅读"><a href="#感谢阅读" class="headerlink" title="感谢阅读"></a>感谢阅读</h2>]]></content>
+      <tags>
+        <tag>答辩相关</tag>
+      </tags>
+  </entry>
 </search>

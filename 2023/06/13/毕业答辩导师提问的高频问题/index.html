@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="提要答辩过程中，老师间的问题一般都和你的设计有关，特别是设计中的一些关键技术，比如:数据库链接方式，数据库设计中的 ER 图、范式等。一般不会太难，都是一些学过的知识。 (回答一定要温柔，不要顶嘴)！ 遇到不会的问题 坚定原则:“只答不辩，问就道歉” 项目项目源码（前后端）+ 数据库 + 论文PPT等文档 点我查看 TIP：项目非免费，谢谢理解 往期高频答辩问题 - 技术篇 正片（未给出例子需要结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="毕业答辩导师提问的高频问题">
+<meta property="og:url" content="http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="FanK">
+<meta property="og:description" content="提要答辩过程中，老师间的问题一般都和你的设计有关，特别是设计中的一些关键技术，比如:数据库链接方式，数据库设计中的 ER 图、范式等。一般不会太难，都是一些学过的知识。 (回答一定要温柔，不要顶嘴)！ 遇到不会的问题 坚定原则:“只答不辩，问就道歉” 项目项目源码（前后端）+ 数据库 + 论文PPT等文档 点我查看 TIP：项目非免费，谢谢理解 往期高频答辩问题 - 技术篇 正片（未给出例子需要结">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-13T13:33:24.000Z">
+<meta property="article:modified_time" content="2023-06-13T12:22:21.082Z">
+<meta property="article:author" content="FanK">
+<meta property="article:tag" content="答辩相关">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>毕业答辩导师提问的高频问题</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&text=毕业答辩导师提问的高频问题"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&title=毕业答辩导师提问的高频问题"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&is_video=false&description=毕业答辩导师提问的高频问题"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=毕业答辩导师提问的高频问题&body=Check out this article: http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&title=毕业答辩导师提问的高频问题"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&title=毕业答辩导师提问的高频问题"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&title=毕业答辩导师提问的高频问题"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&title=毕业答辩导师提问的高频问题"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&name=毕业答辩导师提问的高频问题&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&t=毕业答辩导师提问的高频问题"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">提要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%80%E6%9C%9F"><span class="toc-number">3.</span> <span class="toc-text">往期</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E7%89%87%EF%BC%88%E6%9C%AA%E7%BB%99%E5%87%BA%E4%BE%8B%E5%AD%90%E9%9C%80%E8%A6%81%E7%BB%93%E5%90%88%E9%A1%B9%E7%9B%AE%E5%9B%9E%E7%AD%94%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">正片（未给出例子需要结合项目回答）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98%E8%AE%B2%E8%A7%A3%E4%B8%8E%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">答辩问题讲解与总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%AE%BA-%E5%AE%A2%E8%A7%82%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93"><span class="toc-number">2.</span> <span class="toc-text">理论+客观问题总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%84%9F%E8%B0%A2%E9%98%85%E8%AF%BB"><span class="toc-number"></span> <span class="toc-text">感谢阅读</span></a>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        毕业答辩导师提问的高频问题
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">FanK</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-06-13T13:33:24.000Z" itemprop="datePublished">2023-06-13</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E7%AD%94%E8%BE%A9%E7%9B%B8%E5%85%B3/" rel="tag">答辩相关</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="提要"><a href="#提要" class="headerlink" title="提要"></a>提要</h3><p>答辩过程中，老师间的问题一般都和你的设计有关，特别是设计中的一些关键技术，比如:数据库链接方式，数据库设计中的 ER 图、范式等。一般不会太难，都是一些学过的知识。</p>
+<p>(回答一定要温柔，<code>不要顶嘴</code>)！</p>
+<p><code>遇到不会的问题 坚定原则:“只答不辩，问就道歉”</code></p>
+<h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><p><a target="_blank" rel="noopener" href="https://berserker287.github.io/tags/%E6%AF%95%E8%AE%BE%E6%BA%90%E7%A0%81/">项目源码（前后端）+ 数据库 + 论文PPT等文档 点我查看</a></p>
+<p><code>TIP：项目非免费，谢谢理解</code></p>
+<h3 id="往期"><a href="#往期" class="headerlink" title="往期"></a>往期</h3><p>高频答辩问题 - 技术篇</p>
+<h2 id="正片（未给出例子需要结合项目回答）"><a href="#正片（未给出例子需要结合项目回答）" class="headerlink" title="正片（未给出例子需要结合项目回答）"></a>正片（未给出例子需要结合项目回答）</h2><blockquote>
+<p>为什么要选这个课题？</p>
+</blockquote>
+<p>例子（小区物业系统）因为当初曾经在家里发现附近的老旧改小区还在使用人工以及简单例如Excel的记录方式，觉得疑惑为什么没有配套的物业管理系统进行，后面查询了一下发现国内的只有一些较好的房地产公司在开发楼盘的时候才会有专门开发配套的物业管理系统，而像这种老旧的小区当时并没有开发配套的物业管理系统，所以当时萌生了开发一套小型的物业管理系统对这类小区进行一些简单的管理工作。</p>
+<blockquote>
+<p>具体某个功能是怎么实现的？是否可以解释某某概念？某个部分的执行逻辑?(*****)</p>
+</blockquote>
+<p>例如：支付宝沙箱的支付组件<br>1.配置支付宝SDK依赖组件<br>2.设置支付参数、比如用户ID、支付沙箱的AppID，以及接口公钥以及私钥<br>3.生成支付参数以及订单信息<br>4.发起支付，生成支付链接<br>5.将支付链接返回给前台系统、引导用户在支付宝客户端进行支付<br>最后将支付结果参数返回并通知支付结果</p>
+<blockquote>
+<p>某个技术在程序中是怎么应用的？ </p>
+</blockquote>
+<p>根据使用技术讲出，技术应用逻辑与场景</p>
+<blockquote>
+<p>你这个系统创新点是什么？是否具有实际应用价值? 讲详细点</p>
+</blockquote>
+<p>1.在dao层与持久化层之间加入redis内存数据库用作缓存，将重复的数据直接从MySQL数据库中查找变成从redis内存中查找，提高了对数据的读写速度，减少服务器的压力<br>2.在用户的注册认证中改用百度的人工智能云的人脸识别SDK组件进行人脸信息采集和校验，增加了信息的安全和有效性<br>3.在物业缴费功能上使用支付宝沙箱进行支付，模拟了完整的支付环境，使开发者能够真实的测试和验证支付功能的正确性和稳定性。</p>
+<blockquote>
+<p>你这个系统目前存在什么问题？后期打算怎么解决？</p>
+</blockquote>
+<blockquote>
+<p>数据库表是怎么创建的？</p>
+</blockquote>
+<blockquote>
+<p>关于毕业设计/论文作为开发者你认为有什么不足之处，或者有哪些问题是你还没弄清楚的。 如果继续开发或研究，下一步应该怎么做?</p>
+</blockquote>
+<h3 id="答辩问题讲解与总结"><a href="#答辩问题讲解与总结" class="headerlink" title="答辩问题讲解与总结"></a>答辩问题讲解与总结</h3><blockquote>
+<p>session机制或session怎么应用？setattrbute() getattribute()  微信小程序 wechat StorageSync  vue.$storage</p>
+</blockquote>
+<p>session主要应用到登录中，当登录成功后，就会将用户信息存储到session中，然后在进入到其他功能模块时首先要判断session中是否存在用户信息，如果存在则进行下一步操作，否则，进入到登录页面。其次，session还可以在登录系统后如果长时间不操作，一旦刷新就会进入到登录页面。</p>
+<blockquote>
+<p>数据传递或者http如何发送请求（requeust response）(get post) ajax formt提交 (a)href window.location wx.request() uni.request()</p>
+</blockquote>
+<p>首先是使用服务器控件，如<a href="asp:TextBox">asp:TextBox</a>和<a href="asp:Button">asp:Button</a>，每一个服务器控件都设置有两个属性，分别是ID和runat，如ID=”txtPWD” runat=”server”。以登录为例，点击登录后直接执行Button1的click点击处理事件，即Button1_Click方法，然后也是通过ID分别获取到输入框中的用户名和密码，然后直接执行sql语句去查询实现。Ajax input</p>
+<blockquote>
+<p>轮播图如何设计</p>
+</blockquote>
+<p>swiper-slide js data imgs wx.for img js 时间间隔 div background<br>Swiper swiper-item </p>
+<blockquote>
+<p>分页功能如何设计</p>
+</blockquote>
+<p>github PageInfo PageHelper <el-pagination> pageutils<br>List<Users>-&gt;a.size()-&gt;totals(100 101)-&gt;totals%10 -&gt;totals/10 totals/10+1</p>
+<ol>
+<li>获取总记录数</li>
+<li>计算OFFSET</li>
+<li>根据pageSize和OFFSET查询当前页数据</li>
+<li>封装成Page对象返回</li>
+</ol>
+<blockquote>
+<p>验证码如何实现</p>
+</blockquote>
+<ol>
+<li>random 2) [] -&gt;数字、大小写字母 3）get(4) 4) draw—&gt;img 5) input 与生成的验证码比对 :</li>
+</ol>
+<ol>
+<li>产生验证码图片。这通常需要使用 Java 的图片绘制API,产生一张包含随机字符的图片。</li>
+<li>将验证码字符保存到 Session 中。这是为了后续验证用户输入的验证码是否正确。</li>
+<li>显示验证码图片。将步骤1产生的验证码图片显示在页面上。</li>
+<li>获取用户输入的验证码。获取用户在页面上输入的验证码字符串。</li>
+<li>校验验证码。将用户输入的验证码与Session中保存的验证码进行比对,如果相同则验证码校验通过,否则不通过。</li>
+</ol>
+<blockquote>
+<p>(*****)具体功能实现或数据库如何通过接口实现功能？</p>
+</blockquote>
+<p> 需求分析+数据库设计+程序设计+2min<br>（核心标签(前端)+核心js技术+核心后台方法 controller）</p>
+<blockquote>
+<p>邮箱、手机、身份证、密码（length）（js正则表达式）</p>
+</blockquote>
+<blockquote>
+<p>推荐怎么实现的？协同过滤算法怎么使用的？ </p>
+</blockquote>
+<p>首先要弄懂协同过滤推荐算法机制 ，然后根据机制来看程序。<br>程序中存在很多的数学函数，看不懂没关系，但是为了满足推荐算法实现的业务逻辑肯定要看懂。<br>结合具体功能实现</p>
+<blockquote>
+<p>购物类 潜在问题</p>
+</blockquote>
+<p>（多个用户同时购买一个商品？）并发/事务/锁  （怎么支付？模拟支付-》api（微信支付/支付宝支付））<br>使用，Synchronized 同步</p>
+<blockquote>
+<p>数据库主外键关系 </p>
+</blockquote>
+<p>订单(用户id 商品id) 级联查询  activity(userid)  评论（用户id 作品id）报名（用户id 活动id）</p>
+<blockquote>
+<p>系统有是三种用户权限，(三个用户权限处于同一个登录页面)，怎么从一个登录页面分别进入各自的主页面 或多用户下的权限验证怎么实现？</p>
+</blockquote>
+<p>session admin a user b</p>
+<blockquote>
+<p>(数据解析) 爬虫 </p>
+</blockquote>
+<p>controller-&gt;js =》json-》json解析（键值对）（Jsonobject、Jsonarray）</p>
+<blockquote>
+<p>数据库是怎么设计的？</p>
+</blockquote>
+<p>范式理论 三范式 主外键关系 级联查询 左连接 右连接<br>构造数据库必须遵循一定的规则。在关系数据库中，这种规则就是范式。范式是符合某一种级别的关系模式的集合。关系数据库中的关系必须满足一定的要求，即满足不同的范式。关系数据库有六种范式：第一范式（1NF）、第二范式（2NF）、第三范式（3NF）、第四范式（4NF）、第五范式（5NF）和第六范式（6NF）。满足最低要求的范式是第一范式（1NF）。在第一范式的基础上进一步满足更多要求的称为第二范式（2NF），其余范式以次类推。一般说来，数据库只需满足第三范式（3NF）就行了。</p>
+<blockquote>
+<p>mybatis怎么应用？mybatis怎么与mysql进行关联使用？mybatis-plus注解怎么使用？</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span><span class="tag">&lt;<span class="name">update</span>&gt;</span><span class="tag">&lt;<span class="name">insert</span>&gt;</span><span class="tag">&lt;<span class="name">delete</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>程序与数据库是怎么链接？jdbc 配置<br>在项目的配置文件：application.yml<br>配置数据库用户名、密码、驱动名、url等</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">username:</span> <span class="string">root</span></span><br><span class="line"><span class="attr">password:</span> <span class="number">123456</span></span><br><span class="line"><span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">jdbc:mysql://127.0.0.1:3306/property_cos_20230517?useUnicode=true&amp;characterEncoding=UTF-8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Asia/Shangha</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>dao层与model层的关系，dao到mapper查询数据库等操作？Model是干啥的？</p>
+</blockquote>
+<p>DAO层：DAO层（数据访问对象层）是在应用程序和数据库之间的中间层。它封装了对数据库的访问和操作，提供了与数据持久化相关的方法和接口。DAO层的主要职责是处理数据的增删改查等操作，将数据持久化到数据库或从数据库中检索数据。<br>Model层是应用程序的领域模型或实体对象层。它代表了应用程序的业务数据和业务逻辑。Model层通常包含与业务相关的数据结构、数据验证规则、业务规则和业务逻辑等。Model层的主要职责是定义和封装数据，提供对数据的操作和处理方法。</p>
+<blockquote>
+<p>小程序怎么与后端交互的 </p>
+</blockquote>
+<blockquote>
+<p>上传文件怎么实现</p>
+</blockquote>
+<blockquote>
+<p>ueditor 富文本</p>
+</blockquote>
+<blockquote>
+<p>图片、文档、视频、音频等资源文件上传</p>
+</blockquote>
+<p>mysql数据库存储的就是新生成的文件的名字  如1512908770583.png fileinput transferto<br>获取新的文件名<br>判断该文件路径的父级目录是否存在<br>对文件进行写入处理（保存文件）</p>
+<blockquote>
+<p>用什么方法实现页面之间的跳转</p>
+</blockquote>
+<p>1\ a href=”a.jsp” html<br>2\ window.location.href=”b.jsp” js<br>3\ controller return ”c.jsp” java</p>
+<h3 id="理论-客观问题总结"><a href="#理论-客观问题总结" class="headerlink" title="理论+客观问题总结"></a>理论+客观问题总结</h3><blockquote>
+<p>cs与bs的不同</p>
+</blockquote>
+<p>1、客户端要求<br>C/S客户端的计算机电脑配置要求较高。<br>B/S客户端的计算机电脑配置要求较低。</p>
+<p>2、软件安装<br>C/S每一个客户端都必须安装和配置专用的软件。<br>B/S最大的优点就是不用安装任何专门的软件，只要有一个浏览器就可以。</p>
+<p>3、软件升级和维护<br>C/S每一个客户端都要进行升级和维护。<br>B/S客户端不必安装及维护。 </p>
+<p>4、安全性<br>C/S一般建立在专用的网络上，面向相对固定的用户群，它可以对权限进行多层次校验，提供了更安全的存取模式，对信息安全的控制能力很强。一般高度机密的信息系统应采用C/S结构。<br>B/S建立在广域网之上，面向是不可知的用户群，对安全的控制能力相对弱。</p>
+<blockquote>
+<p>ajax同步与异步的区别</p>
+</blockquote>
+<p>同步：浏览器访问服务器请求，用户看得到页面刷新，重新发请求,等请求完，页面刷新，新内容出现，用户看到新内容,进行下一步操作。<br>异步：浏览器访问服务器请求，用户正常操作，浏览器后端进行请求。等请求完，页面不刷新，新内容也会出现，用户看到新内容。</p>
+<blockquote>
+<p>bean注解原理</p>
+</blockquote>
+<p>一、Bean是啥<br>1、Java面向对象，对象有方法和属性，那么就需要对象实例来调用方法和属性（即实例化）；<br>2、凡是有方法或属性的类都需要实例化，这样才能具象化去使用这些方法和属性；<br>3、规律：凡是子类及带有方法或属性的类都要加上注册Bean到Spring IoC的注解；<br>4、把Bean理解为类的代理或代言人（实际上确实是通过反射、代理来实现的），这样它就能代表类拥有该拥有的东西了<br>5、我们都在微博上@过某某，对方会优先看到这条信息，并给你反馈，那么在Spring中，你标识一个@符号，那么Spring就会来看看，并且从这里拿到一个Bean或者给出一个Bean<br>二、注解分为两类：<br>1、一类是使用Bean，即是把已经在xml文件中配置好的Bean拿来用，完成属性、方法的组装；比如@Autowired , @Resource，可以通过byTYPE（@Autowired）、byNAME（@Resource）的方式获取Bean；<br>2、一类是注册Bean,@Component , @Repository , @ Controller , @Service , @Configration这些注解都是把你要实例化的对象转化成一个Bean，放在IoC容器中，等你要用的时候，它会和上面的@Autowired , @Resource配合到一起，把对象、属性、方法完美组装。<br>总结：<br>1、凡是子类及带属性、方法的类都注册Bean到Spring中，交给它管理；<br>2、@Bean 用在方法上，告诉Spring容器，你可以从下面这个方法中拿到一个Bean<br>3、@Bean明确地指示了一种方法，什么方法呢——产生一个bean的方法，并且交给Spring容器管理；从这我们就明白了为啥@Bean是放在方法的注释上了，因为它很明确地告诉被注释的方法，你给我产生一个Bean，然后交给Spring容器，剩下的你就别管了</p>
+<blockquote>
+<p>创新点是什么？与同类型系统有什么优点？</p>
+</blockquote>
+<blockquote>
+<p>为什么要选题这个课题？</p>
+</blockquote>
+<blockquote>
+<p>ssm/springboot/springcloud微服务 原理 如springboot框架怎么应用？ springAOP实现原理</p>
+</blockquote>
+<blockquote>
+<p>你对整个系统有什么认识? 你觉得有什么弊端等</p>
+</blockquote>
+<blockquote>
+<p>如果升级系统 你最升级哪部分？</p>
+</blockquote>
+<blockquote>
+<p>论文中的技术 具体是怎么实现的（如js）</p>
+</blockquote>
+<blockquote>
+<p>简单陈述选择这个题目的原因？</p>
+</blockquote>
+<blockquote>
+<p>简单介绍一下论文的软硬件开发环境</p>
+</blockquote>
+<blockquote>
+<p>说说你的论文做得突出的地方有哪些？</p>
+</blockquote>
+<blockquote>
+<p>你这个系统所用到的新技术，它的优缺点，特点是什么</p>
+</blockquote>
+<blockquote>
+<p>说明管理信息系统设计和开发的基本过程分为几个阶段？每个阶段的主要工作是什么</p>
+</blockquote>
+<p>需求分析 总体设计 数据库设计 程序设计 程序测试</p>
+<blockquote>
+<p>需求分析阶段的主要任务有哪些？你是怎样进行需求分析的？</p>
+</blockquote>
+<p>功能需求：明确所开发的软件必须具备什么样的功能。<br>性能需求：明确待开发的软件的技术性能指标。<br>环境需求：明确软件运行时所需要的软、硬件的要求。<br>用户界面需求：明确人机交互方式、输入输出数据格式。<br>分析与综合，导出软件的逻辑模型<br>分析人员对获取的需求，进行一致性的分析检查，在分析、综合中逐步细化软件功能，划分成各个子功能。用图文结合的形式，建立起新系统的逻辑模型。</p>
+<p>编写“需求规格说明书”，把双方共同的理解与分析结果用规范的方式描述出来，作为今后各项工作的基础。<br>编写初步用户使用手册，着重反映被开发软件的用户功能界面和用户使用的具体要求，用户手册能强制分析人员从用户使用的观点考虑软件。<br>编写确认测试计划，作为今后确认和验收的依据。<br>修改完善软件开发计划。在需求分析阶段对待开发的系统有了更进一步的了解，所以能更准确地估计开发成本、进度及资源要求，因此对原计划要进行适当修正。</p>
+<blockquote>
+<p>解释什么是用例图和它的作用</p>
+</blockquote>
+<p>用户与系统交互，展现用户和与他相关的用例之间的关系。通过用例图，人们可以获知系统不同种类的用户和用例。用例图也经常和其他图表配合使用。</p>
+<blockquote>
+<p>什么是数据流图？它们的作用是什么？</p>
+</blockquote>
+<p>它从数据传递和加工角度，以图形方式来表达系统的逻辑功能、数据在系统内部的逻辑流向和逻辑变换过程，是结构化系统分析方法的主要表达工具及用于表示软件模型的一种图示方法。</p>
+<blockquote>
+<p>解释E-R图并说明E-R图的作用</p>
+</blockquote>
+<p>E-R图也称实体-联系图(Entity Relationship Diagram)，提供了表示实体类型、属性和联系的方法，用来描述现实世界的概念模型。<br>它是描述现实世界关系概念模型的有效方法。是表示概念关系模型的一种方式。用“矩形框”表示实体型，矩形框内写明实体名称；用“椭圆图框”或圆角矩形表示实体的属性，并用“实心线段”将其与相应关系的“实体型”连接起来；<br>用”菱形框“表示实体型之间的联系成因，在菱形框内写明联系名，并用”实心线段“分别与有关实体型连接起来， 同时在”实心线段“旁标上联系的类型</p>
+<blockquote>
+<p>什么是数据完整性</p>
+</blockquote>
+<p>存储在数据库中的所有数据值均正确的状态。如果数据库中存储有不正确的数据值，则该数据库称为已丧失数据完整性。</p>
+<blockquote>
+<p>你选用的数据库系统是什么？请介绍你所使用的数据库连接方式</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Sqlserver数据库</span><br><span class="line"><span class="tag">&lt;<span class="name">connectionStrings</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">add</span> <span class="attr">name</span>=<span class="string">&quot;DB&quot;</span> <span class="attr">connectionString</span>=<span class="string">&quot;server=.;database=DangAn;Integrated security = true;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">connectionStrings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>系统设计采用了哪一种框架开发技术，介绍其优缺点</p>
+</blockquote>
+<blockquote>
+<p>MVC设计模式是指什么，其优缺点，怎样用到在你的程序里</p>
+</blockquote>
+<blockquote>
+<p>SSM/SSH框架是指什么，其优缺点，怎样用到在你的程序里</p>
+</blockquote>
+<p>spring+springmvc+mybatis dao service mybatis</p>
+<blockquote>
+<p>简要介绍Web开发前后台系统环境</p>
+</blockquote>
+<blockquote>
+<p>请讲解你采用的Web前后端分离技术是如何实现的</p>
+</blockquote>
+<blockquote>
+<p>简要描述论文实现的主要功能有哪些</p>
+</blockquote>
+<blockquote>
+<p>系统的核心功能是什么？请简要解释其业务流程</p>
+</blockquote>
+<blockquote>
+<p>系统中不同的角色，它们的权限是如何设计并实现的</p>
+</blockquote>
+<blockquote>
+<p>简单介绍一下系统开发的流程</p>
+</blockquote>
+<p>需求分析+数据库设计+程序设计</p>
+<blockquote>
+<p>在系统安全性方面你是如何考虑的</p>
+</blockquote>
+<p>SQL注入</p>
+<blockquote>
+<p>介绍一下论文的测试工作</p>
+</blockquote>
+<blockquote>
+<p>系统的哪些部分做的比较好？哪些地方可以改进</p>
+</blockquote>
+<blockquote>
+<p>在系统开发过程中遇到了哪些困难，如何解决的</p>
+</blockquote>
+<blockquote>
+<p>你觉得课程设计或毕业实习对毕业论文的影响大吗</p>
+</blockquote>
+<blockquote>
+<p>有的code，或者出现的200 500 数字是什么</p>
+</blockquote>
+<p>200 表示程序执行成功； 500表示服务器错误； 404表示页面找不到或者请求方法找不到</p>
+<h2 id="感谢阅读"><a href="#感谢阅读" class="headerlink" title="感谢阅读"></a>感谢阅读</h2>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">提要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%80%E6%9C%9F"><span class="toc-number">3.</span> <span class="toc-text">往期</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E7%89%87%EF%BC%88%E6%9C%AA%E7%BB%99%E5%87%BA%E4%BE%8B%E5%AD%90%E9%9C%80%E8%A6%81%E7%BB%93%E5%90%88%E9%A1%B9%E7%9B%AE%E5%9B%9E%E7%AD%94%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">正片（未给出例子需要结合项目回答）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98%E8%AE%B2%E8%A7%A3%E4%B8%8E%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">答辩问题讲解与总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%AE%BA-%E5%AE%A2%E8%A7%82%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93"><span class="toc-number">2.</span> <span class="toc-text">理论+客观问题总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%84%9F%E8%B0%A2%E9%98%85%E8%AF%BB"><span class="toc-number"></span> <span class="toc-text">感谢阅读</span></a>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&text=毕业答辩导师提问的高频问题"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&title=毕业答辩导师提问的高频问题"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&is_video=false&description=毕业答辩导师提问的高频问题"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=毕业答辩导师提问的高频问题&body=Check out this article: http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&title=毕业答辩导师提问的高频问题"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&title=毕业答辩导师提问的高频问题"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&title=毕业答辩导师提问的高频问题"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&title=毕业答辩导师提问的高频问题"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&name=毕业答辩导师提问的高频问题&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/&t=毕业答辩导师提问的高频问题"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    FanK
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
