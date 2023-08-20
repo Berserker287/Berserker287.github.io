@@ -2699,4 +2699,82 @@
         <tag>日常记录</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基于SpringBoot酒店客房管理系统</title>
+    <url>/2022/08/20/Java%E5%AE%A2%E6%88%BF%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot酒店客房管理系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<p>（1）管理员系统公告管理</p>
+<p>（2）用户对客房的收藏与删除</p>
+<p>（3）管理员酒店商品管理</p>
+<p>（4）酒店部门信息管理</p>
+<p>（5）酒店附近美食推荐</p>
+<p>（6）客户对酒店及客房的留言信息</p>
+<p>（7）客户对已经下单的订单做出评价</p>
+<p>（8）对可预约的客房进行下单处理</p>
+<p>（9）酒店职位信息管理</p>
+<p>（10）客户对酒店商品的采购记录</p>
+<p>（11）酒店客房的房间管理</p>
+<p>（12）员工管理</p>
+<p>（13）用户管理及消息通知</p>
+<p>（14）客房类型管理</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>test1<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8Iu1H.png" alt="pP8Iu1H.png"></td>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8IGAf.png" alt="pP8IGAf.png"></td>
+</tr>
+<tr>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8IlnI.png" alt="pP8IlnI.png"></td>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8I3HP.png" alt="pP8I3HP.png"></td>
+</tr>
+<tr>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8IMjA.png" alt="pP8IMjA.png"></td>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8IY4S.png" alt="pP8IY4S.png"></td>
+</tr>
+<tr>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8IKcd.png" alt="pP8IKcd.png"></td>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8odPO.png" alt="pP8odPO.png"></td>
+</tr>
+<tr>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8In9e.png" alt="pP8In9e.png"></td>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8oNa6.png" alt="pP8oNa6.png"></td>
+</tr>
+<tr>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8IJN8.png" alt="pP8IJN8.png"></td>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8oUIK.png" alt="pP8oUIK.png"></td>
+</tr>
+<tr>
+<td><img src="https://s1.ax1x.com/2023/08/20/pP8I1Bt.png" alt="pP8I1Bt.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#110;&#49;&#x6b;&#101;&#50;&#107;&#101;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;">&#102;&#x61;&#110;&#49;&#x6b;&#101;&#50;&#107;&#101;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
 </search>
