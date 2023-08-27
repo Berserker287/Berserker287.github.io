@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="设置自定义接口  1234567891011121314151617&#x2F;** * 设置字段展示顺序 * 设置字段展示名称 * @author sup *&#x2F;@Target(&amp;#123;ElementType.FIELD&amp;#125;)@Retention(RetentionPolicy.RUNTIME)@Documentedpublic @interface FieldDisplay &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot对比字段更新">
+<meta property="og:url" content="http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/index.html">
+<meta property="og:site_name" content="FanK">
+<meta property="og:description" content="设置自定义接口  1234567891011121314151617&#x2F;** * 设置字段展示顺序 * 设置字段展示名称 * @author sup *&#x2F;@Target(&amp;#123;ElementType.FIELD&amp;#125;)@Retention(RetentionPolicy.RUNTIME)@Documentedpublic @interface FieldDisplay &amp;#123;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-30T14:02:24.000Z">
+<meta property="article:modified_time" content="2023-08-27T13:15:56.854Z">
+<meta property="article:author" content="FanK">
+<meta property="article:tag" content="技术分享">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>SpringBoot对比字段更新</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2023/08/27/Java%E8%8D%AF%E5%93%81%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&text=SpringBoot对比字段更新"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&title=SpringBoot对比字段更新"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&is_video=false&description=SpringBoot对比字段更新"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SpringBoot对比字段更新&body=Check out this article: http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&title=SpringBoot对比字段更新"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&title=SpringBoot对比字段更新"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&title=SpringBoot对比字段更新"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&title=SpringBoot对比字段更新"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&name=SpringBoot对比字段更新&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&t=SpringBoot对比字段更新"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        SpringBoot对比字段更新
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">FanK</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-08-30T14:02:24.000Z" itemprop="datePublished">2023-08-30</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>设置自定义接口</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置字段展示顺序</span></span><br><span class="line"><span class="comment"> * 设置字段展示名称</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> sup</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Target(&#123;ElementType.FIELD&#125;)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> FieldDisplay &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**设置字段展示顺序*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">order</span><span class="params">()</span> <span class="keyword">default</span> &quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**设置字段展示名称*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> &quot;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>变更内容实体类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line"> * 变更内容实体类</span><br><span class="line"> * <span class="meta">@author</span> uap</span><br><span class="line"> * <span class="meta">@date</span> <span class="number">2021</span>-09-<span class="number">15</span></span><br><span class="line"> */</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FieldDisplayResult</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 成员变量值 */</span></span><br><span class="line">    <span class="keyword">private</span> String value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 成员变量名称 */</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 成员量展示名称 */</span></span><br><span class="line">    <span class="keyword">private</span> String displayName;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 变更flag(0:,1:) */</span></span><br><span class="line">    <span class="keyword">private</span> String compareFlag;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 变更前内容 */</span></span><br><span class="line">    <span class="keyword">private</span> String beforeValue;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 变更后内容 */</span></span><br><span class="line">    <span class="keyword">private</span> String afterValue;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setValue</span><span class="params">(String value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.value = value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDisplayName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> displayName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDisplayName</span><span class="params">(String displayName)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.displayName = displayName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCompareFlag</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> compareFlag;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCompareFlag</span><span class="params">(String compareFlag)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.compareFlag = compareFlag;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getBeforeValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> beforeValue;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBeforeValue</span><span class="params">(String beforeValue)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.beforeValue = beforeValue;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAfterValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> afterValue;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAfterValue</span><span class="params">(String afterValue)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.afterValue = afterValue;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;FieldDisplayResult&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;value=&#x27;&quot;</span> + value + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, displayName=&#x27;&quot;</span> + displayName + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, compareFlag=&#x27;&quot;</span> + compareFlag + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, beforeValue=&#x27;&quot;</span> + beforeValue + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, afterValue=&#x27;&quot;</span> + afterValue + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>实体类比较工具类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 实体类比较工具类</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> uap</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2021-09-15</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FieldDisplayUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对两个相同实体类类字段变更内容</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> o 变更前</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 变更后</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;FieldDisplayResult&gt; <span class="title">compareAndReturnDifferent</span><span class="params">(Object o, Object n)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer, FieldDisplayResult&gt; oMap = FieldDisplayUtils.convertObj2SortMap(o);</span><br><span class="line">        Map&lt;Integer, FieldDisplayResult&gt; nMap = FieldDisplayUtils.convertObj2SortMap(n);</span><br><span class="line">        <span class="keyword">return</span> compareSortMap(oMap, nMap);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  根据注解获取其字段信息，并按照设置的展示顺序排序</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> obj 实体类对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Map&lt;Integer, FieldDisplayResult&gt; <span class="title">convertObj2SortMap</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//获取所有成员变量</span></span><br><span class="line">        Class&lt;?&gt; clazz = obj.getClass();</span><br><span class="line">        Field[] fields = clazz.getDeclaredFields();</span><br><span class="line">        TreeMap&lt;Integer, FieldDisplayResult&gt; sortMap = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历成员变量，记录含有@FieldDisplay注解的字段，以及注解上标注的内容</span></span><br><span class="line">        <span class="keyword">for</span> (Field field : fields) &#123;</span><br><span class="line">            <span class="comment">//忽略序列化字段</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;serialVersionUID&quot;</span>.equals(field.getName())) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//设置可读</span></span><br><span class="line">            field.setAccessible(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取注解，跳过未加注解字段</span></span><br><span class="line">            FieldDisplay annotation = field.getAnnotation(FieldDisplay.class);</span><br><span class="line">            <span class="keyword">if</span> (annotation == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取字段名</span></span><br><span class="line">            String displayName = annotation.name();</span><br><span class="line">            <span class="keyword">if</span> (StringUtils.isBlank(annotation.name())) &#123;</span><br><span class="line">                displayName = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Object value;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">//取得成员变量get方法，获取其内容</span></span><br><span class="line">                value = <span class="keyword">new</span> PropertyDescriptor(field.getName(), clazz).getReadMethod().invoke(obj);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (value == <span class="keyword">null</span>) &#123;</span><br><span class="line">                value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value <span class="keyword">instanceof</span> Date) &#123;</span><br><span class="line">                String dateFormat = <span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>;</span><br><span class="line"></span><br><span class="line">                JsonFormat annotationDateJ = field.getAnnotation(JsonFormat.class);</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">null</span> != annotationDateJ) &#123;</span><br><span class="line">                    dateFormat = annotationDateJ.pattern();</span><br><span class="line">                &#125;</span><br><span class="line">                Excel annotationDate = field.getAnnotation(Excel.class);</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">null</span> != annotationDate) &#123;</span><br><span class="line">                    dateFormat = annotationDate.dateFormat();</span><br><span class="line">                &#125;</span><br><span class="line">                value = DateFormatUtils.format((Date) value, dateFormat);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value <span class="keyword">instanceof</span> BigDecimal) &#123;</span><br><span class="line">                value = <span class="keyword">new</span> BigDecimal(value.toString()).toPlainString();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            FieldDisplayResult result = <span class="keyword">new</span> FieldDisplayResult();</span><br><span class="line">            result.setName(field.getName());</span><br><span class="line">            result.setValue(value.toString());</span><br><span class="line">            result.setDisplayName(displayName);</span><br><span class="line">            sortMap.put(Integer.parseInt(annotation.order()), result);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sortMap;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对比字段，判断是否产生变更</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> beforeMap 变更前字段Map</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> afterMap 变更后字段Map</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;FieldDisplayResult&gt; <span class="title">compareSortMap</span><span class="params">(Map&lt;Integer, FieldDisplayResult&gt; beforeMap, Map&lt;Integer, FieldDisplayResult&gt; afterMap)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        List&lt;FieldDisplayResult&gt; resultList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Integer, FieldDisplayResult&gt; beforeEntry : beforeMap.entrySet()) &#123;</span><br><span class="line">            <span class="comment">//获取变更前后对象</span></span><br><span class="line">            FieldDisplayResult r = <span class="keyword">new</span> FieldDisplayResult();</span><br><span class="line">            FieldDisplayResult before = beforeEntry.getValue();</span><br><span class="line">            FieldDisplayResult after = afterMap.get(beforeEntry.getKey());</span><br><span class="line"></span><br><span class="line">            <span class="comment">//检查内容是否修改</span></span><br><span class="line">            <span class="keyword">if</span> (StrUtil.equals(before.getValue(), after.getValue())) &#123;</span><br><span class="line">                <span class="comment">//未修改</span></span><br><span class="line">                r.setCompareFlag(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//修改</span></span><br><span class="line">                r.setCompareFlag(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//成员变量名称</span></span><br><span class="line">            r.setName(before.getName());</span><br><span class="line">            <span class="comment">//成员量展示名称</span></span><br><span class="line">            r.setDisplayName(before.getDisplayName());</span><br><span class="line">            <span class="comment">//变更前内容</span></span><br><span class="line">            r.setBeforeValue(before.getValue());</span><br><span class="line">            <span class="comment">//变更后内容</span></span><br><span class="line">            r.setAfterValue(after.getValue());</span><br><span class="line">            resultList.add(r);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> resultList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用示例</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;FieldDisplayResult&gt; baseChangeList = FieldDisplayUtils.compareAndReturnDifferent(oldBase, newBase);</span><br></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&text=SpringBoot对比字段更新"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&title=SpringBoot对比字段更新"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&is_video=false&description=SpringBoot对比字段更新"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SpringBoot对比字段更新&body=Check out this article: http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&title=SpringBoot对比字段更新"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&title=SpringBoot对比字段更新"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&title=SpringBoot对比字段更新"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&title=SpringBoot对比字段更新"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&name=SpringBoot对比字段更新&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/08/30/SpringBoot%E5%AF%B9%E6%AF%94%E5%AD%97%E6%AE%B5%E6%9B%B4%E6%96%B0/&t=SpringBoot对比字段更新"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    FanK
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
