@@ -2981,4 +2981,31 @@
         <tag>日常记录</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Spring添加数据后立即查询</title>
+    <url>/2023/10/20/spring%E6%B7%BB%E5%8A%A0%E5%90%8E%E7%AB%8B%E5%8D%B3%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[<p>Spring新增数据后立即查询,但是查询不到#Mybatis新增数据丢失</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">查一下数据库隔离级别，<span class="keyword">select</span> @<span class="variable">@global</span>.tx_isolation;</span><br></pre></td></tr></table></figure>
+
+<p>读未提交（READ UNCOMMITTED）：一个事务还没提交时，它做的变更就能被别的事务看到。</p>
+<p>读提交（READ COMMITTED）：一个事务提交之后，它做的变更才会被其他事务看到。</p>
+<p>可重复读（REPEATABLE READ）：一个事务执行过程中看到的数据，总是跟这个事务在启动时看到的数据是一致的。当然在可重复读隔离级别下，未提交变更对其他事务也是不可见的。</p>
+<p>串行化（SERIALIZABLE）：对于同一行记录，“写”会加“写锁”，“读”会加“读锁”，当出现读写锁冲突的时候，后访问的事务必须等前一个事务执行完成，才能继续执行。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRES_NEW)</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>技术分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日常</title>
+    <url>/2023/10/18/%E6%97%A5%E5%B8%B81018/</url>
+    <content><![CDATA[<blockquote>
+<p>我的生命像是下着雨的无尽长廊，雨夜挨着雨夜，一眼望不到尽头，每当我试图靠近谁的时候，他们就会像沙子一样地飘洒，最后只给我留下满身泥污。我与你之间好像隔着一副巨大的玻璃，你在那边欢笑，我在这边叫喊，直到我心灰意冷，消失在雨中。</p>
+</blockquote>
+<p><a href="https://imgloc.com/image/rNrf0"><img src="https://i.imgs.ovh/2023/10/18/rNrf0.th.jpeg" alt="rNrf0.th.jpeg"></a> <a href="https://imgloc.com/image/rN2RC"><img src="https://i.imgs.ovh/2023/10/18/rN2RC.th.jpeg" alt="rN2RC.th.jpeg"></a> <a href="https://imgloc.com/image/rNFTt"><img src="https://i.imgs.ovh/2023/10/18/rNFTt.th.jpeg" alt="rNFTt.th.jpeg"></a> <a href="https://imgloc.com/image/rNZnm"><img src="https://i.imgs.ovh/2023/10/18/rNZnm.th.jpeg" alt="rNZnm.th.jpeg"></a> <a href="https://imgloc.com/image/rNlbN"><img src="https://i.imgs.ovh/2023/10/18/rNlbN.th.jpeg" alt="rNlbN.th.jpeg"></a> <a href="https://imgloc.com/image/rNn5R"><img src="https://i.imgs.ovh/2023/10/18/rNn5R.th.jpeg" alt="rNn5R.th.jpeg"></a> <a href="https://imgloc.com/image/rNMrp"><img src="https://i.imgs.ovh/2023/10/18/rNMrp.th.jpeg" alt="rNMrp.th.jpeg"></a> <a href="https://imgloc.com/image/rNpBT"><img src="https://i.imgs.ovh/2023/10/18/rNpBT.th.jpeg" alt="rNpBT.th.jpeg"></a> <a href="https://imgloc.com/image/rNwJu"><img src="https://i.imgs.ovh/2023/10/18/rNwJu.th.jpeg" alt="rNwJu.th.jpeg"></a> <a href="https://imgloc.com/image/rN3yl"><img src="https://i.imgs.ovh/2023/10/18/rN3yl.th.jpeg" alt="rN3yl.th.jpeg"></a> <a href="https://imgloc.com/image/rNmfd"><img src="https://i.imgs.ovh/2023/10/18/rNmfd.th.jpeg" alt="rNmfd.th.jpeg"></a> <a href="https://imgloc.com/image/rN6RK"><img src="https://i.imgs.ovh/2023/10/18/rN6RK.th.jpeg" alt="rN6RK.th.jpeg"></a> <a href="https://imgloc.com/image/rNWq2"><img src="https://i.imgs.ovh/2023/10/18/rNWq2.th.jpeg" alt="rNWq2.th.jpeg"></a> <a href="https://imgloc.com/image/rN0nj"><img src="https://i.imgs.ovh/2023/10/18/rN0nj.th.jpeg" alt="rN0nj.th.jpeg"></a> <a href="https://imgloc.com/image/rNBoI"><img src="https://i.imgs.ovh/2023/10/18/rNBoI.th.jpeg" alt="rNBoI.th.jpeg"></a> <a href="https://imgloc.com/image/rNIYV"><img src="https://i.imgs.ovh/2023/10/18/rNIYV.th.jpeg" alt="rNIYV.th.jpeg"></a> <a href="https://imgloc.com/image/rNsrJ"><img src="https://i.imgs.ovh/2023/10/18/rNsrJ.th.jpeg" alt="rNsrJ.th.jpeg"></a></p>
+]]></content>
+      <tags>
+        <tag>日常记录</tag>
+      </tags>
+  </entry>
 </search>
