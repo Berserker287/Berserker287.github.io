@@ -165,6 +165,12 @@
 
 <h2 id="多属性过滤"><a href="#多属性过滤" class="headerlink" title="多属性过滤"></a>多属性过滤</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;SupplierEvaluationYear&gt; filter = supEvaluationYearList.stream()</span><br><span class="line">        .distinct()</span><br><span class="line">        .filter(e -&gt; !(supplierEvaluationYears.stream()</span><br><span class="line">                .map(y -&gt; y.getSupplierId() + <span class="string">&quot;:&quot;</span> + y.getPurchaseId() + <span class="string">&quot;:&quot;</span> + y.getProductType() + <span class="string">&quot;:&quot;</span> + y.getYear())</span><br><span class="line">                .collect(toList())</span><br><span class="line">                .contains(e.getSupplierId() + <span class="string">&quot;:&quot;</span> + e.getPurchaseId() + <span class="string">&quot;:&quot;</span> + e.getProductType() + <span class="string">&quot;:&quot;</span> + e.getYear())))</span><br><span class="line">        .collect(toList());</span><br></pre></td></tr></table></figure>
 
+<h2 id="根据部门进行分组，并获取汇总人数"><a href="#根据部门进行分组，并获取汇总人数" class="headerlink" title="根据部门进行分组，并获取汇总人数"></a>根据部门进行分组，并获取汇总人数</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;String, Long&gt; collect4 = inputForms.stream().collect(Collectors.groupingBy(InputForm::getCreateDeptName, Collectors.counting()));</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="拼接某个字段的值，可以设置前缀，后缀或者分隔符"><a href="#拼接某个字段的值，可以设置前缀，后缀或者分隔符" class="headerlink" title="拼接某个字段的值，可以设置前缀，后缀或者分隔符"></a>拼接某个字段的值，可以设置前缀，后缀或者分隔符</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String collect3 = inputForms.stream().map(InputForm::getCreateUserName).collect(Collectors.joining(<span class="string">&quot;,&quot;</span>, <span class="string">&quot;我是前缀&quot;</span>, <span class="string">&quot;我是后缀&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+
 <p>More info: <a href="https://segmentfault.com/a/1190000022791696">MartinDai</a></p>
 ]]></content>
       <tags>
@@ -3022,6 +3028,78 @@
 ]]></content>
       <tags>
         <tag>日常记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot二手交易服务系统</title>
+    <url>/2023/10/28/Java%E4%BA%8C%E6%89%8B%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot二手交易服务系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<blockquote>
+<p>用户注册、密码修改、销售情况统计、交易市场、商品评论、公告管理、用户收藏、商品管理、评价管理、订单管理、商品类型、消息管理、用户管理、订单物流更新、商品购买、订单评价</p>
+</blockquote>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户1]<br>fank<br>1234qwer</p>
+<p>[用户2]<br>test2<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FNaM0.png" alt="FNaM0.png"></td>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FNd2D.png" alt="FNd2D.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FN1CW.png" alt="FN1CW.png"></td>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FN8ho.png" alt="FN8ho.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FNJmv.png" alt="FNJmv.png"></td>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FNDUA.png" alt="FNDUA.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FNzce.png" alt="FNzce.png"></td>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FNTC5.png" alt="FNTC5.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FNU93.png" alt="FNU93.png"></td>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FNq6s.png" alt="FNq6s.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FNjH9.png" alt="FNjH9.png"></td>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FN9eX.png" alt="FN9eX.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FN4SO.png" alt="FN4SO.png"></td>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FNG9U.png" alt="FNG9U.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FN5dH.png" alt="FN5dH.png"></td>
+<td><img src="https://i0.imgs.ovh/2023/10/28/FNvuC.png" alt="FNvuC.png"></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#97;&#x6e;&#x31;&#107;&#101;&#50;&#x6b;&#x65;&#64;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#x66;&#97;&#x6e;&#x31;&#107;&#101;&#50;&#x6b;&#x65;&#64;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
       </tags>
   </entry>
 </search>
