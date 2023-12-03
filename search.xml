@@ -3102,4 +3102,131 @@
         <tag>毕设源码</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基于SpringBoot点餐配送系统</title>
+    <url>/2023/12/03/Java%E7%82%B9%E9%A4%90%E9%85%8D%E9%80%81%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot点餐配送系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<blockquote>
+<p>管理员端功能模块：</p>
+</blockquote>
+<ol>
+<li>商家管理模块：商家信息的查询、增加、修改、删除等</li>
+<li>用户管理模块：用户信息的查询、增加、修改、删除等</li>
+<li>个人中心模块：当天日期时间，日历、登录用户名等</li>
+<li>退出登录：退出到登录页面</li>
+<li>销售与统计模块：统计系统所有商品销售数量，当天营业额</li>
+<li>用户地址管理</li>
+<li>公告信息管理</li>
+<li>菜品信息管理</li>
+<li>订单信息与订单评价</li>
+<li>积分物品管理</li>
+<li>商家信息管理</li>
+<li>员工信息管理</li>
+<li>注册用户管理</li>
+</ol>
+<blockquote>
+<p>商家端功能模块：</p>
+</blockquote>
+<ol>
+<li>注册、登录模块：商家进行注册、登录到商家端口。</li>
+<li>菜系信息管理模块：菜系信息查询、添加、修改、删除等。</li>
+<li>菜品评论管理模块：查看用户对相应菜品的评价</li>
+<li>订单管理模块：订单处理、订单记录查询、查看顾客消费历史记录等。</li>
+<li>营养分析模块：根据所选菜品，自动计算热量、蛋白质、脂肪等营养成分，帮助顾客更加健康地饮食。（热量 蛋白质 脂肪等放在菜品信息的营养里，加入购物车或者结算的时候 在能量计算里累计 超出当日摄入量时 提示）</li>
+<li>会员管理模块：商品对会员进行增、删、改、查</li>
+<li>个人中心模块：当天日期时间，日历、登录用户名等</li>
+<li>退出登录：退出到登录页面</li>
+<li>销售与统计模块：统计本家商品销售数量，当天营业额</li>
+<li>店家会员积分调整</li>
+<li>员工信息管理：处理本家员工信息</li>
+</ol>
+<blockquote>
+<p>用户端功能模块：</p>
+</blockquote>
+<ol>
+<li>注册、登录模块：用户进行注册、登录到用户端口</li>
+<li>首页模块：轮播图推荐菜品、商户查询、菜系查询、菜品查询</li>
+<li>购物车模块：加入购物车、购物车结算（支付宝沙箱）、购物车管理、清空购物车等。</li>
+<li>评价模块：对已消费的菜品进行评价，为其他用户参考。</li>
+<li>个人中心模块：当天日期时间，日历、登录用户名</li>
+<li>退出登录：退出到登录页面</li>
+<li>积分兑换模块：通过购买商品获取对应的积分，一定的积分可以兑换相应的商品。</li>
+<li>会员折扣模块：对支付的商品根据会员等级进行相应的折扣</li>
+<li>配送收货地址管理</li>
+<li>订单支付支付宝沙盒支付，支付后邮件通知</li>
+<li>积分物品兑换记录管理</li>
+</ol>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<p>[商家]<br>shangjia<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://i.imgs.ovh/2023/12/03/wb980.png" alt="wb980.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/03/wo27l.png" alt="wo27l.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/03/wbquU.png" alt="wbquU.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/03/woF8d.png" alt="woF8d.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/03/wbNAC.png" alt="wbNAC.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/03/woZAK.png" alt="woZAK.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/03/wbast.png" alt="wbast.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/03/wolx2.png" alt="wolx2.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/03/wbvim.png" alt="wbvim.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/03/wonij.png" alt="wonij.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/03/woCPN.png" alt="woCPN.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/03/woMVI.png" alt="woMVI.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/03/woPWR.png" alt="woPWR.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/03/wopkV.png" alt="wopkV.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/03/woVgp.png" alt="woVgp.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/03/wowgJ.png" alt="wowgJ.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/03/woLGT.png" alt="woLGT.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/03/wo3NW.png" alt="wo3NW.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/03/worpu.png" alt="worpu.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/03/wompv.png" alt="wompv.png"></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#97;&#x6e;&#49;&#x6b;&#x65;&#50;&#x6b;&#x65;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#x66;&#97;&#x6e;&#49;&#x6b;&#x65;&#50;&#x6b;&#x65;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
 </search>
