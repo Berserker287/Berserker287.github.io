@@ -3357,4 +3357,89 @@
         <tag>毕设源码</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基于SpringBoot的仓库管理系统</title>
+    <url>/2022/11/19/Java%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot的仓库管理系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios<br>报表：Spread.js</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<p>商户管理，套餐管理，申请记录，库房管理，入库记录，出库记录，采购计划，报表统计，耗材类别，出入库物品明细</p>
+<p>制定申请物品-&gt;管理员审批制定采购计划-&gt;采购员采购-&gt;入库-&gt;出库</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[采购员]<br>caigou<br>1234qwer</p>
+<p>[用户]<br>lisi<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxCqp.png" alt="WxCqp.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/20/Wx623.png" alt="Wx623.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxAz2.png" alt="WxAz2.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxWI9.png" alt="WxWI9.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxFIK.png" alt="WxFIK.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxkzO.png" alt="WxkzO.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxZyj.png" alt="WxZyj.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxBCH.png" alt="WxBCH.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxnmI.png" alt="WxnmI.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxImD.png" alt="WxImD.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxHcV.png" alt="WxHcV.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/20/Wxhco.png" alt="Wxhco.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxMqJ.png" alt="WxMqJ.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/20/Wxs9A.png" alt="Wxs9A.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxwHW.png" alt="WxwHW.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxKH5.png" alt="WxKH5.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/20/Wx3ov.png" alt="Wx3ov.png"></td>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxbSs.png" alt="WxbSs.png"></td>
+</tr>
+<tr>
+<td><img src="https://i.imgs.ovh/2023/12/20/WxfYe.png" alt="WxfYe.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#x6e;&#49;&#x6b;&#101;&#50;&#107;&#101;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#x61;&#x6e;&#49;&#x6b;&#101;&#50;&#107;&#101;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
+<h4 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h4><p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年答辩顺利通过</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年答辩通过率100%</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
 </search>
