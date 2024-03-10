@@ -3681,4 +3681,115 @@
         <tag>毕设源码</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基于微信小程序的商品购买系统</title>
+    <url>/2024/03/11/Java%E5%95%86%E5%93%81%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot微信小程序的商品购买系统</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<blockquote>
+<p>商铺管理员<br>商铺信息、我的商品、商铺订单、订单评价、消息回复、商铺审核、用户沟通</p>
+</blockquote>
+<blockquote>
+<p>系统管理员<br>收货地址管理、商铺审核管理、公告信息、商品管理、用户评价、消息管理、订单管理、贴子管理、商铺管理、用户管理、商品类型</p>
+</blockquote>
+<blockquote>
+<p>用户<br>商铺详情、查看公告、搜索商品、系统论坛、发帖回复、用户订单、加入购物车、收货地址管理、订单评价、联系客服</p>
+</blockquote>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[商家]<br>test1<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyWTX.png" alt="QyWTX.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/09/Qy6Qs.png" alt="Qy6Qs.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyBb0.png" alt="QyBb0.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyJyV.png" alt="QyJyV.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/09/Qy0lU.png" alt="Qy0lU.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyUfJ.png" alt="QyUfJ.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyjTv.png" alt="QyjTv.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyiRW.png" alt="QyiRW.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyI5C.png" alt="QyI5C.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyxBm.png" alt="QyxBm.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QysXt.png" alt="QysXt.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyK1N.png" alt="QyK1N.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/09/Qy7Tu.png" alt="Qy7Tu.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyRbd.png" alt="QyRbd.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyQnl.png" alt="QyQnl.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/09/Qyc5K.png" alt="Qyc5K.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QybvR.png" alt="QybvR.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/09/Qygr2.png" alt="Qygr2.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QySfp.png" alt="QySfp.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QytBj.png" alt="QytBj.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/09/QyuQT.png" alt="QyuQT.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/09/Qy1JI.png" alt="Qy1JI.png"></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#97;&#x6e;&#x31;&#x6b;&#x65;&#50;&#x6b;&#x65;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">&#102;&#97;&#x6e;&#x31;&#x6b;&#x65;&#50;&#x6b;&#x65;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日常</title>
+    <url>/2024/03/12/%E6%97%A5%E5%B8%B80311/</url>
+    <content><![CDATA[<blockquote>
+<p>Torn Apart</p>
+</blockquote>
+<p><img src="https://i0.imgs.ovh/2024/03/09/QyYo3.jpeg" alt="QyYo3.jpeg"></p>
+<p><img src="https://i0.imgs.ovh/2024/03/09/Qy5ne.jpeg" alt="Qy5ne.jpeg"></p>
+<p><img src="https://i0.imgs.ovh/2024/03/09/Qyd59.jpeg" alt="Qyd59.jpeg"></p>
+<p><img src="https://i0.imgs.ovh/2024/03/09/QyDrO.jpeg" alt="QyDrO.jpeg"></p>
+<p><img src="https://i0.imgs.ovh/2024/03/09/QyEIH.jpeg" alt="QyEIH.jpeg"></p>
+<p><img src="https://i0.imgs.ovh/2024/03/09/QyTJD.jpeg" alt="QyTJD.jpeg"></p>
+<p><img src="https://i0.imgs.ovh/2024/03/09/Qyqyo.jpeg" alt="Qyqyo.jpeg"></p>
+<p><img src="https://i0.imgs.ovh/2024/03/09/QyGmA.jpeg" alt="QyGmA.jpeg"></p>
+<p><img src="https://i0.imgs.ovh/2024/03/09/QyNR5.jpeg" alt="QyNR5.jpeg"></p>
+<p><img src="https://i0.imgs.ovh/2024/03/09/Qyaqs.jpeg" alt="Qyaqs.jpeg"></p>
+<p><img src="https://i0.imgs.ovh/2024/03/09/QyyHX.jpeg" alt="QyyHX.jpeg"></p>
+]]></content>
+      <tags>
+        <tag>日常记录</tag>
+      </tags>
+  </entry>
 </search>
