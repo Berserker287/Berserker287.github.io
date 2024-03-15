@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="基于SpringBoot显卡售后服务系统. 安装环境JAVA 环境  Node.js环境 [https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;] 选择14.17 Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs Mysql 数据库 [https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_40303031&#x2F;article&#x2F;details&#x2F;88935262] 一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于SpringBoot的显卡售后服务系统">
+<meta property="og:url" content="http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="FanK">
+<meta property="og:description" content="基于SpringBoot显卡售后服务系统. 安装环境JAVA 环境  Node.js环境 [https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;] 选择14.17 Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs Mysql 数据库 [https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_40303031&#x2F;article&#x2F;details&#x2F;88935262] 一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/caISe.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/cacuX.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/cahd3.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/caedU.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/cax29.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/catF0.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/caKhO.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/ca1sC.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/cabUH.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/caJUt.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/caSCD.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/caUPm.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/cau6o.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/cai6N.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/ca7eA.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/cajeR.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/caO95.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/ca4Gp.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/caRMs.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/caYMT.png">
+<meta property="og:image" content="https://i0.imgs.ovh/2024/03/14/caduu.png">
+<meta property="article:published_time" content="2024-03-15T16:11:24.000Z">
+<meta property="article:modified_time" content="2024-03-15T16:15:34.664Z">
+<meta property="article:author" content="FanK">
+<meta property="article:tag" content="毕设源码">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i0.imgs.ovh/2024/03/14/caISe.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>基于SpringBoot的显卡售后服务系统</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2024/03/15/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&text=基于SpringBoot的显卡售后服务系统"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的显卡售后服务系统"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&is_video=false&description=基于SpringBoot的显卡售后服务系统"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=基于SpringBoot的显卡售后服务系统&body=Check out this article: http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的显卡售后服务系统"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的显卡售后服务系统"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的显卡售后服务系统"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的显卡售后服务系统"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&name=基于SpringBoot的显卡售后服务系统&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&t=基于SpringBoot的显卡售后服务系统"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">安装环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%8A%9F%E8%83%BD"><span class="toc-number">2.</span> <span class="toc-text">采用技术及功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">前台启动方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%90%8E%E5%8F%B0%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">默认后台账户密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE"><span class="toc-number">5.</span> <span class="toc-text">项目截图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91"><span class="toc-number">6.</span> <span class="toc-text">演示视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">获取方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5JAVAWEB%E6%AF%95%E8%AE%BE%EF%BC%8C%E7%BA%AF%E5%8E%9F%E5%88%9B%EF%BC%8C%E4%BB%B7%E6%A0%BC%E5%85%AC%E9%81%93%EF%BC%8C%E8%AF%9A%E4%BF%A1%E7%AC%AC%E4%B8%80"><span class="toc-number">8.</span> <span class="toc-text">接JAVAWEB毕设，纯原创，价格公道，诚信第一</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        基于SpringBoot的显卡售后服务系统
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">FanK</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-03-15T16:11:24.000Z" itemprop="datePublished">2024-03-16</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%AF%95%E8%AE%BE%E6%BA%90%E7%A0%81/" rel="tag">毕设源码</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>基于SpringBoot显卡售后服务系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a target="_blank" rel="noopener" href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、Thymeleaf<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件) + SpreadJS</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<p>管理员<br>1、用户管理 2、员工管理 3、评价管理 4、服务类型 5、预约管理 6、维修信息 7、产品信息 8、缴费记录 9、工单管理 10、公告信息 11.产品序号</p>
+<p>客户<br>1.我的工单 2.个人信息 3.缴费记录 4.维修信息</p>
+<p>维修员<br>1.我的任务 产品售后服务系统</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br><a href="mailto:&#102;&#97;&#110;&#49;&#107;&#101;&#x32;&#107;&#101;&#64;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#102;&#97;&#110;&#49;&#107;&#101;&#x32;&#107;&#101;&#64;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;</a><br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caISe.png" alt="caISe.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cacuX.png" alt="cacuX.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cahd3.png" alt="cahd3.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caedU.png" alt="caedU.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cax29.png" alt="cax29.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/catF0.png" alt="catF0.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caKhO.png" alt="caKhO.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/ca1sC.png" alt="ca1sC.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cabUH.png" alt="cabUH.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caJUt.png" alt="caJUt.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caSCD.png" alt="caSCD.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caUPm.png" alt="caUPm.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cau6o.png" alt="cau6o.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cai6N.png" alt="cai6N.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/ca7eA.png" alt="ca7eA.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cajeR.png" alt="cajeR.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caO95.png" alt="caO95.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/ca4Gp.png" alt="ca4Gp.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caRMs.png" alt="caRMs.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caYMT.png" alt="caYMT.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caduu.png" alt="caduu.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#x61;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a target="_blank" rel="noopener" href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">安装环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%8A%9F%E8%83%BD"><span class="toc-number">2.</span> <span class="toc-text">采用技术及功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">前台启动方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%90%8E%E5%8F%B0%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">默认后台账户密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE"><span class="toc-number">5.</span> <span class="toc-text">项目截图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91"><span class="toc-number">6.</span> <span class="toc-text">演示视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">获取方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5JAVAWEB%E6%AF%95%E8%AE%BE%EF%BC%8C%E7%BA%AF%E5%8E%9F%E5%88%9B%EF%BC%8C%E4%BB%B7%E6%A0%BC%E5%85%AC%E9%81%93%EF%BC%8C%E8%AF%9A%E4%BF%A1%E7%AC%AC%E4%B8%80"><span class="toc-number">8.</span> <span class="toc-text">接JAVAWEB毕设，纯原创，价格公道，诚信第一</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&text=基于SpringBoot的显卡售后服务系统"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的显卡售后服务系统"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&is_video=false&description=基于SpringBoot的显卡售后服务系统"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=基于SpringBoot的显卡售后服务系统&body=Check out this article: http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的显卡售后服务系统"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的显卡售后服务系统"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的显卡售后服务系统"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的显卡售后服务系统"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&name=基于SpringBoot的显卡售后服务系统&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/&t=基于SpringBoot的显卡售后服务系统"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    FanK
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

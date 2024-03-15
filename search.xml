@@ -3882,4 +3882,87 @@
         <tag>毕设源码</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基于SpringBoot的显卡售后服务系统</title>
+    <url>/2024/03/16/Java%E6%98%BE%E5%8D%A1%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot显卡售后服务系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、Thymeleaf<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件) + SpreadJS</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<p>管理员<br>1、用户管理 2、员工管理 3、评价管理 4、服务类型 5、预约管理 6、维修信息 7、产品信息 8、缴费记录 9、工单管理 10、公告信息 11.产品序号</p>
+<p>客户<br>1.我的工单 2.个人信息 3.缴费记录 4.维修信息</p>
+<p>维修员<br>1.我的任务 产品售后服务系统</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br><a href="mailto:&#102;&#97;&#110;&#49;&#107;&#101;&#x32;&#107;&#101;&#64;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#102;&#97;&#110;&#49;&#107;&#101;&#x32;&#107;&#101;&#64;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;</a><br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caISe.png" alt="caISe.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cacuX.png" alt="cacuX.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cahd3.png" alt="cahd3.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caedU.png" alt="caedU.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cax29.png" alt="cax29.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/catF0.png" alt="catF0.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caKhO.png" alt="caKhO.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/ca1sC.png" alt="ca1sC.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cabUH.png" alt="cabUH.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caJUt.png" alt="caJUt.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caSCD.png" alt="caSCD.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caUPm.png" alt="caUPm.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cau6o.png" alt="cau6o.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cai6N.png" alt="cai6N.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/ca7eA.png" alt="ca7eA.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/cajeR.png" alt="cajeR.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caO95.png" alt="caO95.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/ca4Gp.png" alt="ca4Gp.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caRMs.png" alt="caRMs.png"></td>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caYMT.png" alt="caYMT.png"></td>
+</tr>
+<tr>
+<td><img src="https://i0.imgs.ovh/2024/03/14/caduu.png" alt="caduu.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#x61;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
 </search>
