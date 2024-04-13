@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="基于SpringBoot停车场车位出租系统. 安装环境JAVA 环境  Node.js环境 [https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;] 选择14.17 Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs Mysql 数据库 [https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_40303031&#x2F;article&#x2F;details&#x2F;88935262]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于SpringBoot的停车场车位出租系统">
+<meta property="og:url" content="http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="FanK">
+<meta property="og:description" content="基于SpringBoot停车场车位出租系统. 安装环境JAVA 环境  Node.js环境 [https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;] 选择14.17 Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs Mysql 数据库 [https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_40303031&#x2F;article&#x2F;details&#x2F;88935262]">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028991726.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029198442.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028983586.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029187339.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028963155.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029165546.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028934008.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029141024.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028919536.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029130546.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028907072.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029122077.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028896699.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029101970.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029224651.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029059420.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029215949.png">
+<meta property="og:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029044370.png">
+<meta property="article:published_time" content="2024-04-13T17:46:24.000Z">
+<meta property="article:modified_time" content="2024-04-13T17:48:23.569Z">
+<meta property="article:author" content="FanK">
+<meta property="article:tag" content="毕设源码">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028991726.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>基于SpringBoot的停车场车位出租系统</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2024/04/13/Java%E7%89%A9%E6%96%99%E8%B4%A8%E9%87%8F%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&text=基于SpringBoot的停车场车位出租系统"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的停车场车位出租系统"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&is_video=false&description=基于SpringBoot的停车场车位出租系统"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=基于SpringBoot的停车场车位出租系统&body=Check out this article: http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的停车场车位出租系统"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的停车场车位出租系统"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的停车场车位出租系统"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的停车场车位出租系统"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&name=基于SpringBoot的停车场车位出租系统&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&t=基于SpringBoot的停车场车位出租系统"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">安装环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%8A%9F%E8%83%BD"><span class="toc-number">2.</span> <span class="toc-text">采用技术及功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">前台启动方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%90%8E%E5%8F%B0%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">默认后台账户密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE"><span class="toc-number">5.</span> <span class="toc-text">项目截图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91"><span class="toc-number">6.</span> <span class="toc-text">演示视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">获取方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5JAVAWEB%E6%AF%95%E8%AE%BE%EF%BC%8C%E7%BA%AF%E5%8E%9F%E5%88%9B%EF%BC%8C%E4%BB%B7%E6%A0%BC%E5%85%AC%E9%81%93%EF%BC%8C%E8%AF%9A%E4%BF%A1%E7%AC%AC%E4%B8%80"><span class="toc-number">8.</span> <span class="toc-text">接JAVAWEB毕设，纯原创，价格公道，诚信第一</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        基于SpringBoot的停车场车位出租系统
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">FanK</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-04-13T17:46:24.000Z" itemprop="datePublished">2024-04-14</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%AF%95%E8%AE%BE%E6%BA%90%E7%A0%81/" rel="tag">毕设源码</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>基于SpringBoot停车场车位出租系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a target="_blank" rel="noopener" href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件) + SpreadJS</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<blockquote>
+<p>此项目的研究内容主要是建立基于Web的停车场管理系统，该系统面向停车场管理员、停车场用户，不同的用户登录系统获得的权限不同，使用的功能也不同，获取的信息也有所差异。</p>
+</blockquote>
+<p>停车场管理员可以通过系统登录并管理停车场的日常运营，包括车辆进出管理、停车位管理、收费管理等。停车场工作人员主要负责车辆进出管理，监控停车场的车辆进出情况，使用系统进行车辆识别、放行、收费等操作，且工作人员可以实时查看停车场的停车位情况，并在需要时进行停车位的调整和管理。停车场用户功能有通过系统注册账号并登录，进行停车预订、支付等操；可以通过系统查询停车场的空闲停车位信息，并进行预订操作，选择停车场和停车位，预定停车时间；系统根据用户停车时间和停车场收费标准计算停车费用，用户可以通过系统选择支付方式进行支付。<br>具体如下：</p>
+<blockquote>
+<p>系统公告、用户消息、订单管理、车位预约、车位管理、车位状态、用户管理、车辆管理、数据统计、月份统计、车位实时状态、我的信息、个人信息、我的车辆、车位预约、我的订单、我的消息、缴费成功</p>
+</blockquote>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028991726.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029198442.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028983586.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029187339.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028963155.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029165546.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028934008.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029141024.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028919536.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029130546.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028907072.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029122077.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028896699.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029101970.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029224651.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029059420.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029215949.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029044370.png"></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#97;&#x6e;&#49;&#x6b;&#101;&#50;&#x6b;&#101;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;">&#102;&#97;&#x6e;&#49;&#x6b;&#101;&#50;&#x6b;&#101;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a target="_blank" rel="noopener" href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">安装环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%8A%9F%E8%83%BD"><span class="toc-number">2.</span> <span class="toc-text">采用技术及功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">前台启动方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%90%8E%E5%8F%B0%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">默认后台账户密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE"><span class="toc-number">5.</span> <span class="toc-text">项目截图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91"><span class="toc-number">6.</span> <span class="toc-text">演示视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">获取方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5JAVAWEB%E6%AF%95%E8%AE%BE%EF%BC%8C%E7%BA%AF%E5%8E%9F%E5%88%9B%EF%BC%8C%E4%BB%B7%E6%A0%BC%E5%85%AC%E9%81%93%EF%BC%8C%E8%AF%9A%E4%BF%A1%E7%AC%AC%E4%B8%80"><span class="toc-number">8.</span> <span class="toc-text">接JAVAWEB毕设，纯原创，价格公道，诚信第一</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&text=基于SpringBoot的停车场车位出租系统"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的停车场车位出租系统"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&is_video=false&description=基于SpringBoot的停车场车位出租系统"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=基于SpringBoot的停车场车位出租系统&body=Check out this article: http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的停车场车位出租系统"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的停车场车位出租系统"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的停车场车位出租系统"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&title=基于SpringBoot的停车场车位出租系统"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&name=基于SpringBoot的停车场车位出租系统&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/&t=基于SpringBoot的停车场车位出租系统"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    FanK
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

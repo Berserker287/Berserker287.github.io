@@ -4325,4 +4325,83 @@
         <tag>毕设源码</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基于SpringBoot的停车场车位出租系统</title>
+    <url>/2024/04/14/Java%E5%81%9C%E8%BD%A6%E5%9C%BA%E8%BD%A6%E4%BD%8D%E5%87%BA%E7%A7%9F%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot停车场车位出租系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件) + SpreadJS</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<blockquote>
+<p>此项目的研究内容主要是建立基于Web的停车场管理系统，该系统面向停车场管理员、停车场用户，不同的用户登录系统获得的权限不同，使用的功能也不同，获取的信息也有所差异。</p>
+</blockquote>
+<p>停车场管理员可以通过系统登录并管理停车场的日常运营，包括车辆进出管理、停车位管理、收费管理等。停车场工作人员主要负责车辆进出管理，监控停车场的车辆进出情况，使用系统进行车辆识别、放行、收费等操作，且工作人员可以实时查看停车场的停车位情况，并在需要时进行停车位的调整和管理。停车场用户功能有通过系统注册账号并登录，进行停车预订、支付等操；可以通过系统查询停车场的空闲停车位信息，并进行预订操作，选择停车场和停车位，预定停车时间；系统根据用户停车时间和停车场收费标准计算停车费用，用户可以通过系统选择支付方式进行支付。<br>具体如下：</p>
+<blockquote>
+<p>系统公告、用户消息、订单管理、车位预约、车位管理、车位状态、用户管理、车辆管理、数据统计、月份统计、车位实时状态、我的信息、个人信息、我的车辆、车位预约、我的订单、我的消息、缴费成功</p>
+</blockquote>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028991726.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029198442.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028983586.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029187339.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028963155.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029165546.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028934008.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029141024.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028919536.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029130546.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028907072.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029122077.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713028896699.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029101970.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029224651.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029059420.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029215949.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1713029044370.png"></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#97;&#x6e;&#49;&#x6b;&#101;&#50;&#x6b;&#101;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;">&#102;&#97;&#x6e;&#49;&#x6b;&#101;&#50;&#x6b;&#101;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
 </search>
