@@ -1852,7 +1852,9 @@
 <blockquote>
 <p>倒叙</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">dataMap.keySet().stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">dataMap.keySet().stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+
+<h3 id="Mysql递归查询"><a href="#Mysql递归查询" class="headerlink" title="Mysql递归查询"></a>Mysql递归查询</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">WITH RECURSIVE subcategories AS (</span><br><span class="line">	SELECT</span><br><span class="line">		department_id,</span><br><span class="line">		parent_id,</span><br><span class="line">		`name` </span><br><span class="line">	FROM</span><br><span class="line">		t_department </span><br><span class="line">	WHERE</span><br><span class="line">		department_id = 1 UNION ALL</span><br><span class="line">	SELECT</span><br><span class="line">		c.department_id,</span><br><span class="line">		c.parent_id,</span><br><span class="line">		c.`name` </span><br><span class="line">	FROM</span><br><span class="line">		t_department c</span><br><span class="line">		INNER JOIN subcategories sc ON c.parent_id = sc.department_id </span><br><span class="line">	) SELECT</span><br><span class="line">	* </span><br><span class="line">FROM</span><br><span class="line">	subcategories;</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>技术分享</tag>
       </tags>
@@ -4916,6 +4918,16 @@
 ]]></content>
       <tags>
         <tag>日常记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue前端代理</title>
+    <url>/2024/08/30/Vue%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">proxyTable: &#123;</span><br><span class="line">  <span class="string">&#x27;/api&#x27;</span>: &#123;</span><br><span class="line">    <span class="attr">target</span>: api_host,  <span class="comment">// 目标服务器地址</span></span><br><span class="line">    <span class="attr">changeOrigin</span>: <span class="literal">true</span>,  <span class="comment">// 允许跨域</span></span><br><span class="line">    <span class="attr">pathRewrite</span>: &#123; <span class="string">&#x27;^/api&#x27;</span>: <span class="string">&#x27;&#x27;</span> &#125;,  <span class="comment">// 重写路径</span></span><br><span class="line">    <span class="attr">secure</span>: <span class="literal">false</span>,  <span class="comment">// 如果是https接口，需要配置这个参数</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h2 id="axios统一配置"><a href="#axios统一配置" class="headerlink" title="axios统一配置"></a>axios统一配置</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 统一配置</span></span><br><span class="line"><span class="keyword">let</span> FEBS_REQUEST = axios.create(&#123;</span><br><span class="line">  <span class="attr">baseURL</span>: <span class="string">&#x27;/api&#x27;</span>,</span><br><span class="line">  <span class="attr">responseType</span>: <span class="string">&#x27;json&#x27;</span>,</span><br><span class="line">  validateStatus (status) &#123;</span><br><span class="line">    <span class="comment">// 200 外的状态码都认定为失败</span></span><br><span class="line">    <span class="keyword">return</span> status === <span class="number">200</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>技术分享</tag>
       </tags>
   </entry>
 </search>
