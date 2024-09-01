@@ -4770,9 +4770,9 @@
       </tags>
   </entry>
   <entry>
-    <title>基于SpringBoot的仓储管理系统</title>
+    <title>基于SpringBoot的智能云医疗系统</title>
     <url>/2024/08/04/Java%E6%99%BA%E8%83%BD%E4%BA%91%E5%8C%BB%E7%96%97%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>基于SpringBoot的仓储管理系统.</p>
+    <content><![CDATA[<p>基于SpringBoot的智能云医疗系统.</p>
 <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
 <p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
 <p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
@@ -4879,7 +4879,7 @@
 </tr>
 </tbody></table>
 <h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
-<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#97;&#x6e;&#x31;&#107;&#x65;&#x32;&#107;&#x65;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#x66;&#97;&#x6e;&#x31;&#107;&#x65;&#x32;&#107;&#x65;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#110;&#49;&#x6b;&#101;&#x32;&#x6b;&#x65;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;">&#102;&#x61;&#110;&#49;&#x6b;&#101;&#x32;&#x6b;&#x65;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;</a></p>
 <p>WeChat: <code>Storm_Berserker</code></p>
 <p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
 <h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
@@ -4928,6 +4928,180 @@
 <h2 id="axios统一配置"><a href="#axios统一配置" class="headerlink" title="axios统一配置"></a>axios统一配置</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 统一配置</span></span><br><span class="line"><span class="keyword">let</span> FEBS_REQUEST = axios.create(&#123;</span><br><span class="line">  <span class="attr">baseURL</span>: <span class="string">&#x27;/api&#x27;</span>,</span><br><span class="line">  <span class="attr">responseType</span>: <span class="string">&#x27;json&#x27;</span>,</span><br><span class="line">  validateStatus (status) &#123;</span><br><span class="line">    <span class="comment">// 200 外的状态码都认定为失败</span></span><br><span class="line">    <span class="keyword">return</span> status === <span class="number">200</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>技术分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot的企业订货系统</title>
+    <url>/2024/09/01/Java%E4%BC%81%E4%B8%9A%E8%AE%A2%E8%B4%A7%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot的企业订货系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>收货地址、预警配置、公告管理、商品管理、商品折扣、商品类型、配送物流、订单管理、库房出库、库房入库、库存预警、库房管理、库房记录、用户管理、数据统计、订单年统计、订单月统计</p>
+<h3 id="用户（企业）："><a href="#用户（企业）：" class="headerlink" title="用户（企业）："></a>用户（企业）：</h3><p>个人信息、收货地址、订单物流、订单管理、商品选购、邮件通知</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163842940.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724164056131.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163823376.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724164024329.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163813056.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724164012814.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163770938.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163997617.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724164442822.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163964368.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724164427269.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163941639.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724164199384.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163915206.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724164177340.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163904112.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724164120157.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163889722.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724164105989.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163873611.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724164095248.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724163854188.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1724164074310.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#x6e;&#x31;&#107;&#101;&#50;&#107;&#101;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#x6d;">&#x66;&#x61;&#x6e;&#x31;&#107;&#101;&#50;&#107;&#101;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot的家具销售系统</title>
+    <url>/2024/09/01/Java%E5%AE%B6%E5%85%B7%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot的家具销售系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>用户收货地址，公告管理，家具管理，家具类型，订单评价，积分兑换，物品积分，会员积分，商家管理，商家会员，订单管理，员工管理，用户管理，帖子审核，数据统计</p>
+<h3 id="商家："><a href="#商家：" class="headerlink" title="商家："></a>商家：</h3><p>数据统计，家具管理，订单评价，订单管理，员工管理，商家会员，商家信息管理</p>
+<h3 id="用户："><a href="#用户：" class="headerlink" title="用户："></a>用户：</h3><p>用户注册，个人信息修改，收货地址，订单下单，订单评价，商品收藏，帖子发布与评论，论坛发帖，支付为支付宝沙盒支付</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[商家管理员]<br>shangjia<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153101917.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153580458.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725154173768.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153562930.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153939901.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153548220.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153905308.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153504617.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153879407.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153468723.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153810745.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153450030.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153782847.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153434742.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153747060.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153415062.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153672982.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153404097.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153652662.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153362753.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153632512.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153310432.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1725153603322.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#110;&#49;&#107;&#101;&#50;&#107;&#x65;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#x6d;">&#x66;&#x61;&#110;&#49;&#107;&#101;&#50;&#107;&#x65;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>因为要恰饭资源非免费，伸手党勿扰，谢谢理解</code></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
       </tags>
   </entry>
 </search>
