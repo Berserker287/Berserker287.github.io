@@ -7217,7 +7217,8 @@
   <entry>
     <title>基于SpringBoot + Vue的在线杂志订阅系统</title>
     <url>/2025/08/10/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E5%9C%A8%E7%BA%BF%E6%9D%82%E5%BF%97%E8%AE%A2%E9%98%85%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h1 id="基于SpringBoot-Vue的在线杂志订阅系统"><a href="#基于SpringBoot-Vue的在线杂志订阅系统" class="headerlink" title="基于SpringBoot + Vue的在线杂志订阅系统."></a>基于SpringBoot + Vue的在线杂志订阅系统.</h1><h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+    <content><![CDATA[<p>基于SpringBoot + Vue的在线杂志订阅系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
 <p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
 <p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
 <p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
@@ -7287,7 +7288,7 @@
 </tr>
 </tbody></table>
 <h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
-<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#110;&#x31;&#x6b;&#x65;&#50;&#x6b;&#x65;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;">&#102;&#x61;&#110;&#x31;&#x6b;&#x65;&#50;&#x6b;&#x65;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;</a></p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#97;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#102;&#97;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a></p>
 <p>WeChat: <code>Storm_Berserker</code></p>
 <p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
 <blockquote>
