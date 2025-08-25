@@ -7848,4 +7848,1744 @@
         <tag>毕设源码</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的充电桩小程序</title>
+    <url>/2025/08/25/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E5%85%85%E7%94%B5%E6%A1%A9%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的充电桩小程序.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>微信登录</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>系统公告 、会员管理 、用户消息 、订单管理 、充电预约 、会员价格 、充电桩管理 、充电桩状态 、用户管理 、车辆管理 、数据统计 、会员订单 、员工管理 、投诉记录 、优惠券管理 、订单评价 、积分兑换 、物品积分 、缴费记录 、商家管理 、社区论坛、数据统计。</p>
+<h3 id="商家："><a href="#商家：" class="headerlink" title="商家："></a>商家：</h3><p>商家注册登录、密码修改、订单管理 、充电预约 、充电桩管理 、充电桩状态 、评价管理 、商家信息 、员工管理 、用户沟通。</p>
+<h3 id="用户："><a href="#用户：" class="headerlink" title="用户："></a>用户：</h3><p>小程序账户注册登录、个人信息修改、消息通知、充电预约、会员购买、我的优惠券、我的订单、车辆管理、订单评价、订单投诉、社区论坛回复、积分兑换。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4027bde4-c2ee-4f29-8d80-1a9a4b9cbbfb.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1ba115ea-f741-47ac-a93d-77b22aec00eb.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3538f9af-2a18-4481-adc3-322f62327036.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/dc815d6b-0666-4983-bb29-09bcd04f5349.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/668f2aa0-cf8b-493b-b9b8-8a11e2a786ec.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/da876246-abc1-4a2d-8330-144bc3ee4158.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/458d8474-8e64-441b-a456-4d9ab1f8848f.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c2dda804-288b-4627-9eed-a958c2f9f421.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/65d81932-c17c-44b9-879a-7f8587ec6bb4.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ba7bcfd2-bdd6-4794-a8cf-1641fabd27f6.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/60f35a99-c107-416d-bfee-2074c79952d2.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b15bcb6b-4682-4ace-9339-ce47e92afab7.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5e9ac82b-ef57-473f-809b-25f5935857b9.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a7ccc275-5925-4c2e-90a6-adee830fe470.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4f1e4aa5-e56d-4cde-9291-dff809ff5e16.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/18192a0f-fb0c-4f04-989e-67c180c05b21.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/2dae35c6-0985-4fd7-a310-b424b93130e1.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/7696f88d-7ad2-44c6-ba66-47f67698dda8.png"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/02582d0b-ac29-4935-81ca-cdfba3c0673c.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/9a63d43c-5b26-4e04-a3cf-5245176b3c44.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/91ac2d3e-cf18-4e68-b0f4-739f485d49e7.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/fbce5e05-3226-4778-8ed7-a19227806dfc.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/64df715b-f446-4cf1-925f-9f3336e6fbdf.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f8f357c2-ceca-4b91-8f23-afe4ccb2a6d3.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/055a79cb-fe68-4790-bffd-0e9757509607.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ee5c5a40-18a8-4953-949e-6a1a7bb8a38e.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/54fdc238-5307-4afb-a1fb-184a5633a789.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6327002d-44e3-4a2f-b5bc-300120c9b538.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/49cb965f-5827-435b-809a-23aae1a39b3f.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/05316c95-4b1f-4e3d-ba99-dec0c5155978.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/43a2e582-2bbf-486f-8e7a-16eb94b54ce2.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#x6e;&#x31;&#x6b;&#x65;&#50;&#x6b;&#101;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;">&#102;&#x61;&#x6e;&#x31;&#x6b;&#x65;&#50;&#x6b;&#101;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的公寓报修系统</title>
+    <url>/2025/08/14/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E5%85%AC%E5%AF%93%E6%8A%A5%E4%BF%AE%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的公寓报修系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>楼宇管理 、公告管理 、出入库记录 、设备管理 、申请记录 、房屋管理 、维修工单 、设施检查 、业主管理 、采购申请 、库房管理 、出库记录 、入库记录 、物品类型 、员工管理 、投诉管理 、工单评价 、库房采购、采购入库、出库审核、数据统计。</p>
+<h3 id="业主："><a href="#业主：" class="headerlink" title="业主："></a>业主：</h3><p>账户注册、账户登录、密码修改、我的房屋 、维修工单 、工单评价 、投诉记录 、在线支付 、业主信息、房屋看板。</p>
+<h3 id="维修工："><a href="#维修工：" class="headerlink" title="维修工："></a>维修工：</h3><p>账户登录、密码修改、个人信息 、投诉记录 、工单评价 、我的工单 、设施巡检。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0fb3c2d1-64bd-411f-828f-2ef4c68b47a1.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/977a8012-6661-4f3f-82a9-e335b0af4f12.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0d09c3a7-1663-4c23-9ac3-cb32a8a69d36.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/959c86bb-b449-48fa-820f-6a58fd16084f.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/fef5e18d-bd9c-4511-aff7-26eafaac089a.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/612a1385-dd7f-4210-82b6-8cc4c21da2bd.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f0ac229f-20e9-41e8-b026-250563629f63.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/134b7fb0-f0d7-4fdc-864e-9110b7a79610.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e46273e6-6186-4bec-a750-9d7631f8a17a.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/78b9c655-18a2-471b-9539-cba1815e212a.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c1969147-e65b-40b0-8b0a-9067064322b6.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/71ab101a-5f9b-4a7b-a154-de33055d9a1d.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c7e4ac60-26f5-4b5c-ba05-0e82734479fe.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/20a8687f-8ae6-4f7e-acc9-4210f385eac2.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c7c2a707-9382-496e-a4e1-2a171ce4d035.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6a55c94f-d6e4-47d8-a1c9-9f7e18795aea.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b6245db9-19e4-4fb7-8274-bab5d3db72b1.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4fed4860-a533-4f4c-a6bd-c24aab0d6d9a.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/59339489-ecfe-4c44-ac23-aeee142642e1.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3ca50b51-b3cd-4cce-a294-9bda18b5337b.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/170115f9-b1a0-4e30-9af4-4e9cb4435883.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3ac07d01-9c42-446c-8ebb-4354509cae4e.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/13303f71-b81d-49a9-8d3d-d15852634b89.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3ac2de77-7f45-405b-bac6-988bf2db62fc.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/03794a54-6f93-4890-9855-515e19d30fcd.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#110;&#49;&#x6b;&#x65;&#x32;&#107;&#x65;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#x66;&#x61;&#110;&#49;&#x6b;&#x65;&#x32;&#107;&#x65;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的学会会员管理系统</title>
+    <url>/2025/08/25/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E5%AD%A6%E4%BC%9A%E4%BC%9A%E5%91%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的学会会员管理系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>公告管理 、研究任务 、打卡记录 、会议记录 、小组管理 、资料文档 、会员缴费 、留言列表 、消息信息 、用户通知 、职位管理 、会员管理 、活动管理 、活动预约 、等级规则 、投票管理 、投票记录 、兑换记录 、积分兑换、数据统计。</p>
+<h3 id="用户："><a href="#用户：" class="headerlink" title="用户："></a>用户：</h3><p>注册登录、密码修改、个人信息 、我的打卡 、研究任务 、学术会议 、资料文件 、会员缴费 、留言发布 、请假申请 、会员沟通 、我的消息 、兑换记录 、积分兑换 、活动展板 、活动预约 、投票统计 、我的投票 、在线缴费。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8a048318-48c4-4f18-8507-18937fc437f0.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a7d74c46-ff41-449c-ab8e-70d5e4380791.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6f872519-ab32-4b71-ab48-5dcbaeded21f.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/02772256-c59c-4bc5-bd38-977e5132bcfa.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3fb2d7e7-d3a1-4d6d-89e3-451edebaee70.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/346134fd-ff2f-4bf3-b1e5-826a83ebb052.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/02a8bfa0-4f0d-47eb-8cd0-e36aa4c224b8.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/58931f1b-3541-4d49-9dc6-a1ff95500e1c.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ff7aea90-952f-47b7-8f3d-7c66e8f00827.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/53612b20-a2a2-4dcb-8477-35716e1a70f1.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ff6b49ff-1a0e-4106-acc9-320a8a886c20.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6784f308-e74e-40ec-a955-3e109a56d281.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e7583321-2c57-4e13-9305-ded8dfa021b4.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/462d08db-54e5-4753-a0fb-121d89aa50cf.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/d83c3950-79b2-40b7-b973-ba781ca30b55.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/95d15959-0056-4778-92ec-f181d42d2967.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/cfcb2608-5dbc-42a7-bec5-bbfa1c9b1be9.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/55c26e53-e150-4369-b8d0-1f2c1090ab81.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/cd8916a8-38bc-47eb-87a6-bfd290bf6260.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/53edf5e1-60b8-40db-a81a-f3ab1aaf8400.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a4601b88-dec6-43f4-ba40-df984620ad91.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/9b54ffb6-2d03-4139-9a68-d5b60b55a428.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a97ab93b-7561-423b-8215-dcc2f52abc28.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#x6e;&#49;&#x6b;&#101;&#x32;&#107;&#101;&#x40;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#x66;&#x61;&#x6e;&#49;&#x6b;&#101;&#x32;&#107;&#101;&#x40;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的学校行政办公系统</title>
+    <url>/2025/08/25/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E5%AD%A6%E6%A0%A1%E8%A1%8C%E6%94%BF%E5%8A%9E%E5%85%AC%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的学校行政办公系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>微信登录</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>学校管理、待办任务、考勤记录、会议记录、部门管理、共享文档、财务申请、留言列表、请假申请、消息信息、用户通知、岗位管理、员工管理。</p>
+<h3 id="学校："><a href="#学校：" class="headerlink" title="学校："></a>学校：</h3><p>学校信息、员工待办、考勤记录、会议记录、部门管理、文件管理、财务审核、留言记录、请假审核、消息记录、员工通知、岗位管理、员工管理、财务支付。</p>
+<h3 id="员工："><a href="#员工：" class="headerlink" title="员工："></a>员工：</h3><p>我的考勤、我的任务、会议记录、共享文件、财务申请、留言发布、请假申请、员工沟通、我的消息。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/76e07b26-a48b-451f-98bd-7ec68fc6ce0f.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c6924690-3dea-4947-9d10-6fa617c4bcc3.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/23e4629a-c098-409c-94b2-37ed2c1f51e1.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c0cafb24-72d5-450c-86cc-8e156de89f49.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8fd99501-30b0-4607-b7a8-9848d5ae0c1f.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/bcba2d4d-262f-4df2-97ba-4a71d4bd6072.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8d425260-04af-4758-a2b8-bf021cb8dd73.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b9014664-eb00-418d-a52b-cd94e4cbf0a9.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1ec4eda8-dee4-40da-8c70-0a4399681aa8.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b63ff514-d56d-417b-8dd4-8eefc88a27c9.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0cd74bef-750a-49da-99ae-1a26f9b18f88.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b8dd7e23-b9ca-409b-a6fb-1022a2a270a2.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ff0b3bc7-3c7f-43bb-a8cb-300413ca3503.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/19568e7c-b11c-4dff-91c2-a5050213be7f.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f952258e-6d6d-49f5-a83c-9992d0d26874.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4658cd17-a190-4b2e-aaf7-154cb684192f.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f497daa0-4f7c-4607-ab8f-d501dc6d6983.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/612afdf9-7095-4563-8c11-58beaddd9618.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f06fb988-f596-4db3-aa98-329ac957898d.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/98a21ff8-f48a-4cc3-ae99-1063d1a4e5be.png"></td>
+</tr>
+</tbody></table>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#110;&#49;&#x6b;&#x65;&#50;&#x6b;&#101;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#109;">&#102;&#x61;&#110;&#49;&#x6b;&#x65;&#50;&#x6b;&#101;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的家具维修售后系统</title>
+    <url>/2025/08/25/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E5%AE%B6%E5%85%B7%E7%BB%B4%E4%BF%AE%E5%94%AE%E5%90%8E%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的家具维修售后系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>微信登录</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>公告信息 、工单管理 、缴费记录 、家具产品 、维修信息 、预约管理 、服务类型 、评价管理 、员工管理 、客户管理 、数据统计 、工作状态 、评价统计 、家具出厂、数据统计。</p>
+<h3 id="客户："><a href="#客户：" class="headerlink" title="客户："></a>客户：</h3><p>账户注册登录、个人信息修改、维修工单添加、维修费用支付、维修记录、工单评价。</p>
+<h3 id="维修工："><a href="#维修工：" class="headerlink" title="维修工："></a>维修工：</h3><p>注册登录、密码修改、维修任务、工单评价。</p>
+<h3 id="客服："><a href="#客服：" class="headerlink" title="客服："></a>客服：</h3><p>注册登录、密码修改、工单管理 、维修信息 、预约管理 、服务类型 、评价管理 。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/75786fb6-fe41-40c1-b477-d6b426cc99a4.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/02aecf0e-6584-4386-bf08-cc12586b31bd.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/924132c9-abf2-4f3e-a551-2070161e814d.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3c990501-1604-4a11-b84c-967074155693.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/67741639-0f37-4fa3-901b-20654f1c5195.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3e80c94c-d916-4926-84fb-cbe42e5c7673.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a89fdb17-4413-425a-9295-652de4a85864.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5c0ef5d2-5c06-41e4-8c8d-f78a11b02402.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ad4330d5-35a1-40ee-bb72-11a1dc0b15a9.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/16c5f98b-e9f0-4499-8538-f6944a762769.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b6b8ef42-4a09-421e-84ea-9a890a0d09db.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/27eb5235-8d3d-44c4-a4b5-0e3362fdd4aa.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b8a25bbe-9691-473e-b0e7-0fd6ce1d5e8e.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/28ca5407-014a-41ef-b8ec-8ef67ccf7531.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b429d544-683b-4b46-b8c5-8a54df161777.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/60a0a927-1ee2-4f36-8e47-2ba8bc44d365.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b899768b-603c-4e52-9ed4-61657ae3a59e.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/289f6f88-cb11-4bd1-82ec-9658a12a4c30.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c4df9b0e-355b-42be-a71f-123962aa9e5c.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/680d931f-686e-4ff0-aaf8-daf874d33906.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e3fc053e-1ea6-4c86-8f97-3e4a71acb04e.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/7824ff09-076c-44cf-a57e-f50c3bd8d9d3.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e51f276b-6fcc-465e-95df-fc2f93107d0d.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/13761b23-2bc8-4a22-a0d3-6a503e11a76c.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f80561bd-c1e4-4c20-9804-b5a089d3744b.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/20476df5-bc00-47cd-9ef1-f45429ab8ad6.png"></td>
+</tr>
+</tbody></table>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#97;&#110;&#49;&#107;&#x65;&#50;&#x6b;&#x65;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#102;&#97;&#110;&#49;&#107;&#x65;&#50;&#x6b;&#x65;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的库房订单物流调度系统</title>
+    <url>/2025/08/14/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E5%BA%93%E6%88%BF%E8%AE%A2%E5%8D%95%E7%89%A9%E6%B5%81%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的库房订单物流调度系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>用户地址 、公告管理 、商品管理 、订单评价 、会员积分 、商家管理 、商家会员 、订单管理 、用户管理 、采购记录 、商品类型 、供应商管理 、商品采购 、库存预警 、采购物流 、商家库存 、车辆管理 、车次调度 、问题检查 、保质期预警、数据统计。</p>
+<h3 id="商家："><a href="#商家：" class="headerlink" title="商家："></a>商家：</h3><p>商家注册登录、密码修改、商品管理 、订单评价 、商家会员 、订单管理 、商家信息 、会员积分 、采购记录 、商品采购 、库存预警 、采购物流 、商家库存 、问题检查 、保质期预警 、车辆管理  、车次调度。</p>
+<h3 id="用户："><a href="#用户：" class="headerlink" title="用户："></a>用户：</h3><p>账户注册登录、密码修改、个人信息 、地址管理 、选购下单 、我的订单 、订单评价 、在线支付 、商品收藏。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/2fe5d67a-2067-428a-a2be-2084092405b8.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/51d51f57-be0d-4b19-9597-d2591b10c337.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0c66307b-b16b-4fcc-abe7-5c5fc441c720.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/32f1afeb-7dd3-4786-9b42-9e67a425f404.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/00c601e2-844d-4f92-b3eb-ffb77ad85b12.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/25f01d17-9094-4a21-8ce6-ce462c170c7e.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/feff565a-a94e-4e87-bc70-e3c29f04beaa.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/9fc4fc1c-2e62-4e04-8e30-06dbf42de89b.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f1be105b-e74b-44a1-846d-3952e6be6531.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8c75b6ff-063a-4f9a-9ec5-b57903faa043.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e740b288-3427-4822-8c7d-b2dec9387577.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8c9bf041-cad4-4b0f-bed1-15828f9635f8.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c5c8d8ca-2a3b-4055-ad6b-2a01ce35f695.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6f834822-b3bd-4288-98a6-d1a4a1ebfbb9.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c5acba66-8809-4033-8061-f143d832c045.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6e981a5c-2c80-404d-8d02-b99e6b0e2874.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/10262052-96d8-47ac-915f-b2aefc203828.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5f1faeb7-9515-44a2-945b-d43d2c5e83b5.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/7655b993-71ea-4183-87c6-4276026c6259.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5b3dbb54-c06d-4dc1-bfe2-0885baeac38f.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/239f93c9-afe9-4968-b4fa-049f6035167f.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4b4a7e0c-34b2-4751-9bea-087c67f70426.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/89b3c414-2d6e-43b5-a418-9abc9395001d.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#110;&#49;&#107;&#101;&#50;&#x6b;&#x65;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;">&#x66;&#x61;&#110;&#49;&#107;&#101;&#50;&#x6b;&#x65;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的学校教学系统</title>
+    <url>/2025/08/25/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E6%95%99%E5%AD%A6%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的学校教学系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>微信登录</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>公告管理 、班级管理 、课程信息 、部门管理 、选修课分数 、共享文件 、留言信息 、专业管理 、消息通知 、岗位管理 、班级课表 、选修课表 、课程分数 、课表模板 、导师管理 、学生管理 、系管理 、选课预约。</p>
+<h3 id="教师："><a href="#教师：" class="headerlink" title="教师："></a>教师：</h3><p>注册登录、密码修改、班级管理 、我的课程 、选课审核 、选课分数 、共享文件 、留言信息 、我的消息 、班级课表 、选修课表 、课程分数 、我的信息 、班级学生。</p>
+<h3 id="学生："><a href="#学生：" class="headerlink" title="学生："></a>学生：</h3><p>注册登录、密码修改、个人信息 、我的预约 、选修分数 、共享文件 、我的留言 、我的消息 、班级课表 、选修课表 、课程分数。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3a65d402-e6b8-4a08-9bae-5e1162ba9900.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3228e736-0c95-4541-b6a2-f267c0a411b5.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0f524a59-632b-4ca8-8634-dbe163c6f111.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/986bf5be-9713-4e0a-a3fd-a4d9023bca79.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0ea32ddc-5600-4872-946b-9592518e5111.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/450d4fda-9929-465e-a8f8-0fc7621c0662.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e090705b-42ee-4a64-b3b3-d8860fd068ca.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/83b6a26d-63ec-4945-bb2f-266298539035.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/d9559b0d-8631-468e-971f-b7a7d9b08ea5.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/82fdb123-f0ea-408c-b805-db6014f49f97.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/cfc50aed-ef7e-406e-ac25-00b1f9e6a206.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/71e2faad-218a-45f1-beda-692085a92458.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c283b8c9-9057-4692-8fa2-6ec10f246f0b.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/9f480dcf-820f-485f-ae2d-59482e7e1cb0.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b0f7a120-86c4-421c-bdf6-6e3812df2b08.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/9b707714-0d5b-40b4-8a4a-2b9f732fcb0e.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a9900158-0699-466f-a0e9-5769cfb02251.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/7c31c55a-3f00-4769-b271-abdd241018a0.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a0dd9c4d-057f-4469-8962-c7840457c4e4.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5d01df3c-01b1-42b2-a24f-31fbc8fe7545.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5261a2dd-212b-425d-8590-7940c0822f67.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3dd1b5a0-97ce-4726-8c9e-5e6582db2ef9.png"></td>
+</tr>
+</tbody></table>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#97;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#64;&#103;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;">&#102;&#97;&#110;&#x31;&#x6b;&#101;&#50;&#107;&#101;&#64;&#103;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的有机食品销售系统</title>
+    <url>/2025/08/13/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E6%9C%89%E6%9C%BA%E9%A3%9F%E5%93%81%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的有机食品销售系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>用户地址 、公告管理 、商品管理 、订单评价 、积分兑换 、物品积分 、会员积分 、商家管理 、商家会员 、订单管理 、员工管理 、用户管理 、采购记录 、商品类型 、商品收藏 、贴子模块 、贴子列表 、消息回复 、社区管理 、数据统计。</p>
+<h3 id="用户："><a href="#用户：" class="headerlink" title="用户："></a>用户：</h3><p>账户注册登录、密码修改、个人信息 、我的订单 、订单评价 、在线支付 、兑换记录 、积分兑换 、收货地址 、商品收藏 、我的贴子 、消息回复。</p>
+<h3 id="商家："><a href="#商家：" class="headerlink" title="商家："></a>商家：</h3><p>商家注册登录、密码修改、商品管理 、订单评价 、商家会员 、订单管理 、员工管理 、采购记录 、商家信息 、会员积分、数据统计。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/25c42645-44e7-4fcc-b29b-f68b225d1b53.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e58af412-1cd5-4275-977d-c538d0c23277.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/18b85e29-687e-48f3-9480-fb1c68bfb399.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e6d06631-a5ac-4650-8a40-440a30fb1e06.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8e639a65-0911-40b6-9cee-94a2362be6a6.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/d7b7406f-6395-46eb-b13c-2582fc65f1b9.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/7febe835-c90b-41d4-8bf5-1ad5802cfcdf.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ba3bc1a0-6ba8-47fb-a392-7c4d44141d42.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/7b88bde4-af17-4fe2-b379-dbe5b427fd4f.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b598ce9f-01ee-46a2-ae73-f7449f9a0953.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/06e81f30-ba4d-4c29-ba8c-9ddfed20304c.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8783a9b5-0218-48b8-a53e-5396809785f7.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3d911d18-1860-4974-aa24-1522a1f2727a.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8104c9c1-9b19-41d4-b7ac-27a950f8f1b4.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/2ef2ba60-b8f7-4e64-a64f-6b26f66e6093.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5606e6f8-38b4-4396-9925-c83ffb16192a.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0f3a6d48-6d61-48e0-830c-30f8e5dc76ec.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5384bfc1-fc09-4c0f-8f6c-b66f9a34e78a.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0c6fb6d4-d8a6-492c-af10-069337d548c2.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4704fece-1c3a-4820-ad55-a5153cd66567.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ee2724e3-e9b3-4660-bd48-f8b8eb32179a.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/752aed4d-34e0-405d-9315-3c8ed2611d90.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ed8bcda8-e8ea-40ef-96ce-47f160e6b2f2.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/74e82819-e3a7-459f-b7bd-f743a1ca80ea.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#97;&#x6e;&#x31;&#107;&#101;&#50;&#107;&#x65;&#64;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;">&#102;&#97;&#x6e;&#x31;&#107;&#101;&#50;&#107;&#x65;&#64;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的校园快递配送系统</title>
+    <url>/2025/08/25/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E6%A0%A1%E5%9B%AD%E5%BF%AB%E9%80%92%E9%85%8D%E9%80%81%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的校园快递配送系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>微信登录</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>公告信息 、用户地址 、优惠券管理 、订单评价 、兑换记录 、物品管理 、订单管理 、员工管理 、员工收益 、用户管理 、提现记录 、员工审核 、接单中心 、投诉记录 、消息通知 、社区论坛 、贴子回复 、价格规则 、配送排行、数据统计。</p>
+<h3 id="用户-配送员："><a href="#用户-配送员：" class="headerlink" title="用户/配送员："></a>用户/配送员：</h3><p>小程序账户注册登录、个人信息修改、优惠券兑换、地址管理、我的订单、我的收益、消息通知、社区论坛、发帖回复、积分兑换、我的优惠券、下单配送计算、在线沟通、申请配送员、在线接单、订单评价、订单投诉。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f5e91d86-310f-4111-bfe8-04e0b7b055e0.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/454515fb-2463-47f7-a500-35401bc079aa.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e447a13a-d1c5-4e69-b061-d894fef7c8e5.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/25947bbd-f2d5-46ac-ad0a-9f6e218d6910.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/d10e855d-bfbd-4657-9e29-c135b1973cbb.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8b62f175-7fe0-4190-85aa-5c5f528810e4.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c4213d24-8a49-40c6-af83-abc39186a3d1.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/7e62d7e2-3298-4608-8d6e-1fcbb7b8473e.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c0fe139b-28fe-433b-9274-ff5532e0041b.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/7db593fd-18f1-4950-b9b6-6997b43e7b9a.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b5075868-b8eb-4d88-bb6f-ca2a7703d73b.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/004fb194-6703-42e8-9d42-c1e479893a5a.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a6e11f18-119d-46a5-9356-a767d1476c83.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/2bdc98f9-a462-4ca1-91cc-9bddd84da105.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a2b607b4-f347-45cf-86b0-cb20f9db5658.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ff41a5a7-51a5-4c96-9c60-0e20b2dbcb63.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/92090130-219a-4171-bd09-4f046f959167.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/51331379-1bf9-46e6-8e9a-03d69bef0f49.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3dc6f4e7-7b51-420d-8e82-17a79baf72c0.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/34998475-cbe9-413b-a6bf-cce8c7313c8a.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1e97f1ef-5bcf-4080-9bbf-bb08063b79c1.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5249bf69-2c8f-468f-8420-09b86fce685f.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0f86ec82-d089-469c-bc41-dc81a2137a44.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/914f6307-1eae-468a-8a65-5c8421406b01.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0f2def3a-01e6-490d-87bb-b3474250f959.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/84e64eca-2245-4b62-9f5e-e2e8f36dfb8e.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f3a15e94-e28e-481e-9e08-3ac833933f6d.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/54d4c328-fa21-45af-869d-2c34093326ba.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e9172a0e-9ad0-44cb-a4a2-22d1fce1169d.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8fbc3748-b300-4ded-813b-b2c657bf165f.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ce0c1cf3-4d25-4675-9fd8-b50892444427.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8b29271b-2b77-47c5-9b07-d28b375d7186.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a663a92d-e431-471b-b054-15c5300431ec.png"></td>
+</tr>
+</tbody></table>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#110;&#49;&#x6b;&#x65;&#50;&#x6b;&#x65;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#109;">&#x66;&#x61;&#110;&#49;&#x6b;&#x65;&#50;&#x6b;&#x65;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的疫苗销售系统</title>
+    <url>/2025/08/14/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E7%96%AB%E8%8B%97%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的疫苗销售系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>公告管理 、疫苗管理 、库存统计 、物流信息 、订单详情 、订单评价 、订单信息 、缴费记录 、商家管理 、商家库存 、员工管理 、用户管理 、管理员管理 、供应商管理 、疫苗处方 、疫苗采购 、库房预警 、疫苗处方 、采购物流、数据统计。</p>
+<h3 id="用户："><a href="#用户：" class="headerlink" title="用户："></a>用户：</h3><p>账户注册登录、密码修改、个人信息 、我的订单 、缴费记录 、订单评价 、疫苗购订 、在线支付 、疫苗处方。</p>
+<h3 id="商家："><a href="#商家：" class="headerlink" title="商家："></a>商家：</h3><p>商家注册登录、密码修改、疫苗处方 、库存统计 、订单物流 、订单管理 、订单评价 、店内库存 、员工管理。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/2c12ed3d-c8e3-4767-9b10-54d6b94d2072.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8129d19c-39cb-4b70-b50e-81516a7401a5.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1ad1a8c2-0d7d-41b8-ab86-5f565cf1b9d4.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/892b86cf-3242-4f72-af97-ca8161671406.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0c7fdf5a-b029-4d03-b933-8f17862e3654.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/70d31a70-0b81-4db8-8c80-56e9233f65aa.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f5ca8ca9-bd70-4eb9-bf32-18677b21dcb3.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/63dbbdcf-8dc5-43e0-bb98-f66c5c67e9d1.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/d3904594-1682-4e52-9ad8-773147e12245.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/052ce775-ba54-4338-897b-9521c3b1913f.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/af1de67d-8530-4b0c-b650-b00c9b5fa4b1.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/26f9123d-3c6a-41e3-b21b-df7f7fe3386a.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a80c7b3e-64d8-447a-9c8e-7242e7a69319.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/25fd6f47-af0d-40fe-9924-c1586114e6bc.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/69224351-6636-4abe-bae5-9e5294802a04.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/15efde07-2caf-4ed9-b502-e7c5700a31d2.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/756667aa-9aca-43d2-b1a8-4032721a1c44.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4a239b05-1da1-4aca-86a6-095ed6ad0f9c.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/9160e180-2213-4446-9b83-aec3d445fdec.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3dd50bfe-89b1-4567-aae1-1d061cb2718d.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#x6e;&#x31;&#107;&#101;&#50;&#x6b;&#x65;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#99;&#111;&#x6d;">&#102;&#x61;&#x6e;&#x31;&#107;&#101;&#50;&#x6b;&#x65;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#99;&#111;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的社区老年人服务系统</title>
+    <url>/2025/08/14/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E7%A4%BE%E5%8C%BA%E8%80%81%E5%B9%B4%E4%BA%BA%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的社区老年人服务系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>用户管理、公告管理、社区交流、敏感词管理、模块管理、消息回复内容管理、社区新闻、留言板信息、首页图片管理、帮助服务信息、积分物品上架、志愿者积分兑换、视频课程。</p>
+<h3 id="志愿者："><a href="#志愿者：" class="headerlink" title="志愿者："></a>志愿者：</h3><p>账户注册、账户登录、个人信息、密码修改、积分物品兑换、我的兑换记录、我的接单、服务看板。</p>
+<h3 id="用户："><a href="#用户：" class="headerlink" title="用户："></a>用户：</h3><p>小程序账户注册登录、个人信息修改、社区交流、我的贴子、发布贴子、视频课程观看、发布服务内容、消息内容回复。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/32db93e0-558b-45c8-b3a9-31e5a6d40a3e.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5236423b-070d-4e47-9a33-c45e550afcca.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4d44290b-38ef-4196-abe1-90403bb2c57f.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/876e7e98-17ec-4d1c-8638-c403a5d48b35.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f102016b-9a6d-4585-89e4-3a1b4523cc16.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/169a5945-7eda-4b79-8768-572c0896403b.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e4dfc82c-ccb1-440f-bffe-e9e3503bdbce.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/97ec0bb4-1db9-481e-991d-4229727acb63.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c0d1d454-90a6-4dae-b47d-d5cac51e40a9.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/71e7aed3-9440-48c6-95a2-53644bfb57fd.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a4a863a0-a285-44ad-ab41-cb620367340b.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/68baf897-b469-4490-89fb-4f0392e7264a.png"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e8e00350-9821-4893-b139-4c85414c2bb6.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/43254711-2d42-43f7-813e-90089239715d.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/de3dc67f-6bbc-47bc-b4b6-4025603f41f0.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/331e115e-a5f0-401c-b423-04d2b8cdf2d8.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/d975f825-2f8e-4faf-8e12-9bd139a19930.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/194b0b90-863b-4af4-a6ab-150f0d2e4270.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c6be1a63-061d-4305-b5c0-53ede07650ed.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4d5f39ce-6b0c-4c0c-8892-5b4e14f94747.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/bff79178-417a-4d1a-8d72-08fb2e97ed91.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e932fe65-ffd8-424e-8c86-804a787057bf.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/79752991-6d12-4cea-b2db-db5b138aa6f4.png"></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>| <img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"> |</p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#97;&#x6e;&#x31;&#x6b;&#101;&#50;&#x6b;&#x65;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;">&#102;&#97;&#x6e;&#x31;&#x6b;&#101;&#50;&#x6b;&#x65;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的自习室预约系统</title>
+    <url>/2025/08/25/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E8%87%AA%E4%B9%A0%E5%AE%A4%E9%A2%84%E7%BA%A6%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的自习室预约系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>公告信息 、信用积分记录 、房间管理 、房间类型 、装修公司 、消息通知 、支付记录 、房间装修 、租借订单 、房间保洁 、员工管理 、用户管理 、数据统计。</p>
+<h3 id="用户："><a href="#用户：" class="headerlink" title="用户："></a>用户：</h3><p>账户注册登录、密码修改、个人信息 、我的消息 、我的订单 、支付记录 、信用积分 、在线支付 、订单评价 、订单评价。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6d848aa3-3c8b-4151-b816-f11d1bfdd7ea.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/dc2110bb-fa2d-4203-bf71-3bc45e7f9f67.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4d2495f1-a4d4-4ce8-94d3-c1d92f20e80a.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b1985af4-00de-4241-853f-4acbb2e691e7.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3fef8828-550f-4a85-ba8a-cbaafcbe98c1.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b2adcbba-7235-4a37-96fa-71301b2fbbde.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0b8e1dde-c965-437e-826c-4f5ba19ce96b.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/28651cc6-bf47-4792-86b8-de323952dbd0.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ec08215d-b924-458a-84a4-5071fb6ab3ae.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/21609b91-bcf6-40d9-a396-0ed6d53e95f6.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/eafd5a0a-33f9-4195-a995-fe7f305c7e20.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/771ca0b7-06e4-4c3c-a312-e627c607ab95.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e4973487-7ca1-43bd-889d-1fda83b9e6e2.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/699c0eaf-07f5-4dc8-a8e1-9bc77aac0d59.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e18e83d0-aa3a-47bb-afc7-3f8a522fa97c.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/24f2e7f1-4bb5-4c0d-9e97-435dd708af88.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e6db588b-9332-46ee-a158-e8f39e2e6a1e.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/22aa4e8a-9a4f-4ca1-a652-e659ab58ad7a.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e3e4b7ba-a764-41d0-8644-8e6a9ea26dff.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/18e7e41f-461e-44f0-bcc1-6ec18f614d2e.png"></td>
+</tr>
+</tbody></table>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#97;&#110;&#x31;&#x6b;&#x65;&#50;&#x6b;&#101;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x66;&#97;&#110;&#x31;&#x6b;&#x65;&#50;&#x6b;&#101;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的订餐小程序</title>
+    <url>/2025/08/13/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E8%AE%A2%E9%A4%90%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的订餐小程序.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>收货地址 、商铺审核 、公告信息 、餐品管理 、用户评价 、消息管理 、订单管理 、贴子管理 、商铺管理 、用户管理 、餐品类型 、数据统计。</p>
+<h3 id="用户："><a href="#用户：" class="headerlink" title="用户："></a>用户：</h3><p>小程序账户注册登录、个人信息、收货地址管理、查看公告、搜索菜品、我的订单、贴子管理、在线点餐、加入购物车、商家在线沟通。</p>
+<h3 id="商家："><a href="#商家：" class="headerlink" title="商家："></a>商家：</h3><p>商铺注册、密码修改、我的餐品 、商铺订单 、订单评价 、消息回复 、商铺审核 、用户沟通。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/449e06b7-4445-4adb-bbd0-ebea9f9f47c4.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f18cb4e4-801b-498c-8e3a-996eb9d66be8.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/17a6f271-baf2-4212-8c56-2e9bf6688f2c.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/db449a0c-3134-4700-8768-eb61b4a0c089.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/7fc95d62-586d-4583-8395-ea112b8713e4.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b9d80070-b91c-47ab-bc7b-c9231987c82d.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1eff2ccc-7b1f-44cd-adda-cb87a92527a8.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b9a1d6f7-a06b-4308-bb47-158d38f12a72.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5afd9ccc-adbf-4e44-9cfb-007b149e8b61.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a925698a-f3f3-485a-971a-3415540af581.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f78c1e0d-992d-4818-a188-452612dd1577.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ac5de942-d065-4d47-8e15-0395f1cafa61.png"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/064ccba6-95b1-4b2a-b8cc-1beb4f13cf5b.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6d7037d3-fcb7-434d-b631-19a2a51506ad.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4943076e-ebd1-4365-a5e1-630694e21ed5.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6c5ba778-758d-4ebb-91b0-51f2c6317ff4.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/926ef7f3-8436-44d3-a34a-38941820244c.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c5bf2a96-2ac6-40c5-b19a-3ce10eae52ed.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/57d79f33-7289-4640-80e9-512aed0bdffe.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c1caa938-061f-4f09-a9f8-ee56045003da.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/44f7d226-d086-4ecf-aa1c-45b3bc3ff013.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/afd95c0e-0b1f-41a9-96c2-f490debdd132.png"></td>
+</tr>
+</tbody></table>
+<p>| <img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"> |</p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#x61;&#x6e;&#x31;&#x6b;&#x65;&#x32;&#107;&#101;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#x66;&#x61;&#x6e;&#x31;&#x6b;&#x65;&#x32;&#107;&#101;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的药店销售配送管理库存管理系统</title>
+    <url>/2025/08/25/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E8%8D%AF%E6%88%BF%E9%94%80%E5%94%AE%E5%B9%B3%E5%8F%B0/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的药店销售配送管理库存管理系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>用户地址 、公告管理 、药品管理 、订单评价 、积分兑换 、商品积分 、会员积分 、药店管理 、药店会员 、订单管理 、员工管理 、用户管理 、采购记录 、药品类型 、药品收藏 、贴子模块 、贴子列表 、消息回复 、供应商管理 、药品采购 、库存预警 、采购物流 、药店库存 、数据统计 、薪资发放 、问题检查 、保质期预警 、订单模板 、员工考勤。</p>
+<h3 id="药店："><a href="#药店：" class="headerlink" title="药店："></a>药店：</h3><p>药店注册登录、密码修改、药品管理 、订单评价 、药店会员 、订单管理 、员工管理 、药店信息 、会员积分 、采购记录 、员工薪资 、员工考勤 、采购供应 、药品采购 、库存预警 、采购物流 、药店库存 、问题检查 、保质期预警 、药店收入支出数据统计。</p>
+<h3 id="员工："><a href="#员工：" class="headerlink" title="员工："></a>员工：</h3><p>员工登录、密码修改、药品管理 、订单评价 、药店会员 、订单管理 、我的考勤 、我的薪资 、我的信息 、药店采购 、药品采购 、库存预警 、采购物流 、药店库存 、问题检查 、保质期预警。</p>
+<h3 id="用户："><a href="#用户：" class="headerlink" title="用户："></a>用户：</h3><p>注册登录、密码修改、个人信息 、我的订单 、订单评价 、在线支付 、兑换记录 、积分兑换 、收货地址 、药品收藏 、我的贴子 、消息回复。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5086ad8e-e240-4cff-a24f-63a3cf1f7f40.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/d3412132-00da-487d-8a39-bc7990b13405.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0887aed8-ea94-4680-95ae-eeddbde76c9d.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/d07b9bed-25b2-4e13-88ea-f97f508517bf.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/824c42a6-5118-459a-9ff6-2ac3737cfb60.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/cf148c60-e4bb-473a-9386-7b2c240d3d40.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/556cb377-f89c-42ff-bc0b-ec87e32e3ee5.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/cc156eec-1707-4c22-b6da-93c8a9426ccb.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/67bc8e1d-2201-422e-818d-57a5adea5a91.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c8cad3bf-7500-4c52-a62b-521da35442ea.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/41e3d408-aa20-479c-8759-1fdb15ff3da6.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/bcdbaea7-9b27-4fc5-93ad-37c43e7eb7c2.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/08aa5dad-1195-4e6a-a793-5a1f6201d1fc.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/bb4eebd9-995c-4908-b704-b287b95d9abf.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/7a10f92c-9f7e-4b4f-bc0b-e356019fa198.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ae18bbe7-7ed2-4947-b3a8-271cc884bada.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5d427f6c-dfa4-4f06-9e9a-6f897d51f953.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a3501d88-455a-4613-b6f9-9606f2711ec2.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/05a117e3-c7dd-4c0d-ad50-b12220fa53ae.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a306b31c-d000-459d-b387-b5115309a401.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/2e2a5c3c-1c95-4d40-8d5c-9ff0dca4abb5.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a9e4aabe-4b61-48cf-b729-7f49a5f140e4.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1beaea66-f9a9-4581-9fdf-4b5e0b5be6c9.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a0dd76d3-bd0b-4320-b0fd-52929b635995.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/eb8e0f5e-9596-4988-b668-6bfc75ea9809.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/96848b07-ac19-493e-8899-780e3edeee7a.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ea5ff184-0aad-431c-90d6-6da1091754e7.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/74590d22-ab30-49e1-bdb4-992dad006a4e.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/df0d139b-1307-4e08-8563-a1705b240986.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8109fa99-7f88-49af-b3e6-7f771d234c38.png"></td>
+</tr>
+</tbody></table>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#97;&#x6e;&#49;&#107;&#x65;&#x32;&#107;&#101;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x66;&#97;&#x6e;&#49;&#107;&#x65;&#x32;&#107;&#101;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的连锁药店管理系统</title>
+    <url>/2025/08/13/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E8%BF%9E%E9%94%81%E8%8D%AF%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的连锁药店管理系统.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>fank<br>1234qwer</p>
+<h6 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h6><p>公告管理 、药品管理 、库存统计 、物流信息 、订单详情 、订单评价 、订单信息 、缴费记录 、药店管理 、库存调整 、员工管理 、用户管理 、数据统计 、销售排行 、员工统计 、供应采购 、供应商管理 、电子处方 、药品采购 、库房预警 、销售统计 、药品处方 、采购物流 、管理员管理 、药店库存 、职位变动 、薪资发放。</p>
+<h6 id="用户："><a href="#用户：" class="headerlink" title="用户："></a>用户：</h6><p>账户注册登录、密码修改、个人信息 、我的订单 、缴费记录 、订单评价 、药品购买 、在线支付。</p>
+<h6 id="药店："><a href="#药店：" class="headerlink" title="药店："></a>药店：</h6><p>账户注册登录、密码修改、订单管理 、员工管理 、药店信息 、库存调整 、员工薪资 、订单详情 、岗位调整 、出入库详情 、药店库存、数据台账统计。</p>
+<h6 id="员工："><a href="#员工：" class="headerlink" title="员工："></a>员工：</h6><p>账户注册登录、密码修改、我的信息 、我的薪资 、订单管理 、药品记录。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/226ea20e-c557-4015-a64b-47016ddd2f64.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e6d2a2bb-55a7-4b15-99a0-5501181efb4b.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/82ee4ca4-319a-4c92-969f-628e1facc4a2.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/dfa9991d-7a7f-425f-98f7-4726c212fc2c.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/65b9d3a9-f18c-4a73-94b0-15a2b225d3f7.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/d314c2e0-10d9-4333-9728-01dfbd02820f.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/25f9657e-7cf9-4edb-b29c-fb713fabbe99.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/bbaf4f47-ae8f-4448-9130-dee595b45798.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8e208c92-51be-4019-9f9f-0afd39124dbe.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b911adf6-db70-4247-b870-1f44a15b22e1.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/7d069500-257b-4442-82c7-d682f4c0eb1a.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a5c13cff-9ebe-4a5d-a9b3-9bdfa3daa043.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5c84a71f-d119-4972-9eba-c79592c90125.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/2057544b-b437-4cb1-8572-8421b871b59d.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5a55b28c-3c40-488f-b183-1a7ef9141c40.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/995138bf-c205-4cb6-87dc-83745af2a1d7.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4ea622be-4455-4e7c-9610-ee8cdbc4adab.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/006408aa-a9fe-4060-9f5c-377864c824e5.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3e5eb475-381b-4474-baac-b857a51a1157.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6215e83e-0c81-4dc8-8541-37067ca08bfa.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/2e446824-b944-4d04-8168-114e08cab531.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/627de6fb-5a75-4fa5-a6c6-2c7b83462228.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0f9fb450-3feb-4767-bfa1-53f343dd0d12.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></td>
+</tr>
+</tbody></table>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#x66;&#97;&#x6e;&#x31;&#x6b;&#101;&#50;&#107;&#x65;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#109;">&#x66;&#97;&#x6e;&#x31;&#x6b;&#101;&#50;&#107;&#x65;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#109;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SpringBoot + Vue的配送物流接单小程序</title>
+    <url>/2025/08/25/%E5%9F%BA%E4%BA%8ESpringBoot%20+%20Vue%E7%9A%84%E9%85%8D%E9%80%81%E7%89%A9%E6%B5%81%E6%8E%A5%E5%8D%95%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<p>基于SpringBoot + Vue的配送物流接单小程序.</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>JAVA 环境 </p>
+<p>Node.js环境 [<a href="https://nodejs.org/en/]">https://nodejs.org/en/]</a> 选择14.17</p>
+<p>Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs</p>
+<p>Mysql 数据库 [<a href="https://blog.csdn.net/qq_40303031/article/details/88935262]">https://blog.csdn.net/qq_40303031/article/details/88935262]</a> 一定要把账户和密码记住</p>
+<p>redis</p>
+<p>Idea 编译器 [<a href="https://blog.csdn.net/weixin_44505194/article/details/104452880]">https://blog.csdn.net/weixin_44505194/article/details/104452880]</a></p>
+<p>WebStorm OR VScode 编译器 [<a href="https://www.jianshu.com/p/d63b5bae9dff]">https://www.jianshu.com/p/d63b5bae9dff]</a></p>
+<h2 id="采用技术及功能"><a href="#采用技术及功能" class="headerlink" title="采用技术及功能"></a>采用技术及功能</h2><p>后端：SpringBoot、MybatisPlus、MySQL、Redis、<br>前端：Vue、Apex、Antd、Axios</p>
+<p>平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)</p>
+<p>平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)</p>
+<p>开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok</p>
+<h2 id="前台启动方式"><a href="#前台启动方式" class="headerlink" title="前台启动方式"></a>前台启动方式</h2><p>安装所需文件 yarn install<br>运行 yarn run dev</p>
+<h2 id="默认后台账户密码"><a href="#默认后台账户密码" class="headerlink" title="默认后台账户密码"></a>默认后台账户密码</h2><p>[管理员]<br>admin<br>1234qwer</p>
+<p>[用户]<br>微信登录</p>
+<h3 id="管理员："><a href="#管理员：" class="headerlink" title="管理员："></a>管理员：</h3><p>公告信息 、用户地址 、优惠券管理 、订单评价 、兑换记录 、物品管理 、订单管理 、员工管理 、员工收益 、用户管理 、提现记录 、员工审核 、接单中心 、投诉记录 、消息通知 、社区论坛 、贴子回复 、价格规则 、配送排行、数据统计。</p>
+<h3 id="用户-配送员："><a href="#用户-配送员：" class="headerlink" title="用户/配送员："></a>用户/配送员：</h3><p>小程序账户注册登录、个人信息修改、优惠券兑换、地址管理、我的订单、我的收益、消息通知、社区论坛、发帖回复、积分兑换、我的优惠券、下单配送计算、在线沟通、申请配送员、在线接单、订单评价、订单投诉。</p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p>暂无</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f0aae20c-0515-4bba-b0d2-e8ba34321cd8.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/17936bec-d97b-4e93-97e8-d2c635279193.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ed7dfc29-baeb-4c89-8985-5bc1f36bee6d.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/410dbf7e-87be-4e04-a72b-21596e8e5d72.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e1707f76-25ce-4f5c-a9ef-afdc9e3c9cd7.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/236b98a4-b5c5-4a00-939a-d360876f86f6.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e82bf34b-5ab4-49d9-b240-9f34a6c7b622.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/167fd88b-dea6-4cb3-8445-b68503be6112.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/db6dfb84-1ba5-4607-9752-13139fb08a6c.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/85c27f73-60ae-488e-9624-3fac70ff6f9c.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/d05fd435-34cc-4839-9607-98ee1450146d.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/063c5404-857b-458a-811b-d38a596c4522.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c4a82bac-17c8-4a87-a358-d09407cb5bb1.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/03e0f4d5-7e36-46d4-a768-45d4c2031a8f.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/99734fec-0640-4d51-acc4-5cdacf9e39fc.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/fa261320-6ddd-4062-bfa7-2428ac51e867.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/77866c9f-07d8-42ea-8f1d-e60893611b32.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/f8b8155d-9792-43e8-99a2-446e2b52cda8.png"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/5895f2b0-eead-4750-96e3-295132c74a46.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ffb261a9-8fc2-445a-8a89-d48a9c881d55.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4305d395-23e2-40ea-8594-5467b1c3bbbe.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/db14dcf3-b919-4607-898f-cc8fdb000233.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/932f8e6c-b09b-4673-932c-78a8afff9062.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b54cfd86-5843-48a6-8016-48bb9f9ca39a.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/89b86181-eb7a-4a13-a4eb-681fdd91dc24.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a6e218ec-7bdb-4f95-b6a2-d71f6729498b.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/004a760d-16c3-4ee6-b5af-227005f2c87d.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/91432dd2-a237-4b80-b3d6-5e04efbce207.png"></td>
+</tr>
+<tr>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0d5417e1-4e2a-454c-bbbb-1323980a2d85.png"></td>
+<td><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/68231e46-283f-46c1-b6ae-dab14bfd0ca0.png"></td>
+</tr>
+</tbody></table>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png"></p>
+<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><p>暂无</p>
+<h2 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h2><p>Email: <a href="mailto:&#102;&#x61;&#x6e;&#x31;&#x6b;&#101;&#x32;&#x6b;&#101;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#102;&#x61;&#x6e;&#x31;&#x6b;&#101;&#x32;&#x6b;&#101;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></p>
+<p>WeChat: <code>Storm_Berserker</code></p>
+<p><code>附带部署与讲解服务，因为要恰饭资源非免费，伸手党勿扰，谢谢理解😭</code></p>
+<blockquote>
+<p>1.项目纯原创，不做二手贩子 2.一次购买终身有效 3.项目讲解持续到答辩结束 4.非常负责的答辩指导 5.黑奴价格</p>
+</blockquote>
+<blockquote>
+<p>项目部署调试不好包退！功能逻辑没讲明白包退！</p>
+</blockquote>
+<p><img src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png"></p>
+<h2 id="其它资源"><a href="#其它资源" class="headerlink" title="其它资源"></a>其它资源</h2><p><a href="https://berserker287.github.io/2024/06/06/2024%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2024年-答辩顺利通过-客户评价👻</a></p>
+<p><a href="https://berserker287.github.io/2023/06/14/2023%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/">2023年-答辩顺利通过-客户评价🐢</a></p>
+<p><a href="https://berserker287.github.io/2022/05/25/%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95/">2022年-答辩通过率100%-客户评价🐣</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9%E5%AF%BC%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98/">毕业答辩导师提问的高频问题</a></p>
+<p><a href="https://berserker287.github.io/2023/06/13/50%E4%B8%AA%E9%AB%98%E9%A2%91%E7%AD%94%E8%BE%A9%E9%97%AE%E9%A2%98-%E6%8A%80%E6%9C%AF%E7%AF%87/">50个高频答辩问题-技术篇</a></p>
+<p><a href="https://www.zhihu.com/question/31020988">计算机毕设答辩时都会问到哪些问题？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145911029">计算机专业毕业答辩小tips</a></p>
+<h2 id="接JAVAWEB毕设，纯原创，价格公道，诚信第一"><a href="#接JAVAWEB毕设，纯原创，价格公道，诚信第一" class="headerlink" title="接JAVAWEB毕设，纯原创，价格公道，诚信第一"></a>接JAVAWEB毕设，纯原创，价格公道，诚信第一</h2><p><code>网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT</code></p>
+<p>More info: <a href="https://berserker287.github.io/">悲伤的橘子树</a></p>
+]]></content>
+      <tags>
+        <tag>毕设源码</tag>
+      </tags>
+  </entry>
 </search>
